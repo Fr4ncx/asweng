@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ECoreTest/src" modelPluginID="ECoreTest" modelName="ECoreTest"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>eCoreTest.ecore</foreignModel>
+  <genPackages prefix="ECoreTest" disposableProviderFactory="true" ecorePackage="eCoreTest.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eCoreTest.ecore#//FormatType">
+      <genEnumLiterals ecoreEnumLiteral="eCoreTest.ecore#//FormatType/JSON"/>
+      <genEnumLiterals ecoreEnumLiteral="eCoreTest.ecore#//FormatType/JSV"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eCoreTest.ecore#//SchemaType">
+      <genEnumLiterals ecoreEnumLiteral="eCoreTest.ecore#//SchemaType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="eCoreTest.ecore#//SchemaType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="eCoreTest.ecore#//SchemaType/date"/>
+    </genEnums>
+    <genClasses ecoreClass="eCoreTest.ecore#//Tasks"/>
+    <genClasses ecoreClass="eCoreTest.ecore#//DataCollectionTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//DataCollectionTask/format"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//DataCollectionTask/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//DataCollectionTask/endpoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//DataCollectionTask/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//DataIntegrationTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//DataIntegrationTask/source"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//DataCleaningTask"/>
+    <genClasses ecoreClass="eCoreTest.ecore#//DataAnalysis"/>
+    <genClasses ecoreClass="eCoreTest.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//Model/pipeline"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//Pipeline">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//Pipeline/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//Source">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//Source/URL"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//Source/source"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//File"/>
+    <genClasses ecoreClass="eCoreTest.ecore#//RestService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//RestService/USER"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//RestService/PWD"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//Database">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//Database/PORT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//Database/USER"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//Database/PWD"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//CollectionSchema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCoreTest.ecore#//CollectionSchema/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="eCoreTest.ecore#//AttributeSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//AttributeSchema/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCoreTest.ecore#//AttributeSchema/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
