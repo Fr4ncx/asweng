@@ -1,0 +1,102 @@
+@namespace(uri="http://www.example.org/dataAnalysis", prefix="DataAnalysis")
+package DataAnalysis;
+
+class Model {
+  val Pipeline[*] pipelines;
+}
+
+class Pipeline {
+  val Task[*] tasks;
+}
+
+abstract class Task {
+}
+
+enum CategoryType {
+  DESCRIPTION = 0;
+  CLASSIFICATION = 0;
+}
+
+enum FormatType {
+  JSON = 0;
+  CSV = 0;
+}
+
+class DataCollection extends Task {
+  attr FormatType format;
+  attr String endpoint;
+  attr String conditions;
+  val CollectionSchema[1] schema;
+  val Source source;
+}
+
+class DataIntegration extends Task {
+  val Source[*] sources;
+}
+
+class DataCleaning extends Task {
+  val Operation[*] operations;
+}
+
+class DataAnalysis extends Task {
+}
+
+class CollectionSchema {
+  val AttributeSchema[*] attributes;
+}
+
+class AttributeSchema {
+  attr String name;
+  attr AttributeType type;
+}
+
+enum AttributeType {
+  INT = 0;
+  STRING = 0;
+  DATE = 0;
+}
+
+abstract class Source {
+  attr String url;
+}
+
+class File extends Source {
+}
+
+class Database extends Source {
+  attr int port;
+  attr String user;
+  attr String pwd;
+}
+
+class RestService extends Source {
+  attr String user;
+  attr String pwd;
+}
+
+abstract class Operation {
+}
+
+class RemoveNull extends Operation {
+}
+
+class FormatData extends Operation {
+}
+
+class Custom extends Operation {
+  attr CustomAction action;
+}
+
+enum CustomAction {
+  MODIFY = 0;
+  DELETE_SCHEMA = 0;
+  DELETE_ATTRIBUTE = 0;
+}
+
+class DataVisualization extends Task {
+}
+
+class ExportData extends Task {
+  attr FormatType format;
+}
+
