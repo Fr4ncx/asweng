@@ -1,0 +1,23 @@
+context Pipeline {
+
+        constraint firstElementAsDataCollection{
+                check: self.firstElementAsDataCollection()
+                message: "The first task must be a task of type Data Collection."
+        }
+}
+
+
+operation Pipeline firstElementAsDataCollection() : Boolean {
+	if (self.tasks.size() == 0 ) {
+		return true;
+	}
+   
+	var index = 0;
+	for (task in self.tasks) {
+	  if (task.isTypeOf(DataCollection)) {
+	      return true;
+	  } else if (index == 0) {
+	    return false;
+	  }
+	}
+}
