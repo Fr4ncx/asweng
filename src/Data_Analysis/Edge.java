@@ -33,7 +33,7 @@ public interface Edge extends GraphElement {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Node)
 	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Source()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Node getSource();
@@ -59,7 +59,7 @@ public interface Edge extends GraphElement {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Node)
 	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Target()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Node getTarget();
