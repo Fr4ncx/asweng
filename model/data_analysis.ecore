@@ -13,7 +13,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="toFlow" upperBound="-1"
         eType="#//DataFlow"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTimestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isExecuted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CategoryType">
     <eLiterals name="DESCRIPTION"/>
@@ -26,15 +27,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataCollection" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//FormatType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Source" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="schema" eType="#//CollectionSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataIntegration" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inSchema" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinAttributes" lowerBound="1"
         eType="#//CollectionSchema"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outSchema" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outAttributes" lowerBound="1"
         eType="#//CollectionSchema"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataCleaning" eSuperTypes="#//Task">
@@ -43,8 +45,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataAnalysis" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="CollectionSchema">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//AttributeSchema" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//AttributeSchema" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -88,4 +90,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="toTask" upperBound="-1"
         eType="#//Task"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NotEx" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExp" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExp" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lt" eSuperTypes="#//ValueCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Lte" eSuperTypes="#//ValueCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gt" eSuperTypes="#//ValueCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gte" eSuperTypes="#//ValueCondition"/>
 </ecore:EPackage>

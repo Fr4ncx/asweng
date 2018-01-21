@@ -1,11 +1,15 @@
 context Pipeline {
 
-        constraint firstElementAsDataCollection{
+        constraint dataCollectionAsFirstTask{
                 check: self.firstElementAsDataCollection()
                 message: "The first task must be a task of type Data Collection."
         }
+        
+        constraint timestamp{
+                check: self.growingTaskTimestamps()
+                message: "Growing timestamp."
+        }
 }
-
 
 operation Pipeline firstElementAsDataCollection() : Boolean {
 	if (self.tasks.size() == 0 ) {
@@ -20,4 +24,17 @@ operation Pipeline firstElementAsDataCollection() : Boolean {
 	    return false;
 	  }
 	}
+}
+
+operation Pipeline growingTaskTimestamps() : Boolean {
+	var max = 0;
+	for (task in self.tasks) {
+	 	if (task.timestamp > max) {
+	 	  max = task.timestamp;
+	 	} else {
+	 	   return false;
+	 	}
+	}
+	
+	return true;
 }
