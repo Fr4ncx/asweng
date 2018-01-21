@@ -34,7 +34,6 @@ import Data_Analysis.GraphElement;
 import Data_Analysis.Gt;
 import Data_Analysis.Gte;
 import Data_Analysis.LogicalExp;
-import Data_Analysis.LogicalExpr;
 import Data_Analysis.Lt;
 import Data_Analysis.Lte;
 import Data_Analysis.Node;
@@ -1557,6 +1556,25 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// gmf.diagram
+		createGmfAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations() {
+		String source = "gmf.diagram";	
+		addAnnotation
+		  (pipelineEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //Data_AnalysisPackageImpl

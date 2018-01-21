@@ -4,14 +4,18 @@ package Data_Analysis.impl;
 
 import Data_Analysis.DataVisualization;
 import Data_Analysis.Data_AnalysisPackage;
-
 import Data_Analysis.Diagram;
 import Data_Analysis.Graph;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -39,6 +43,7 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	 * @ordered
 	 */
 	protected EList<Graph> graphs;
+
 	/**
 	 * The cached value of the '{@link #getDiagrams() <em>Diagrams</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

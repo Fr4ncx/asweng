@@ -4,7 +4,6 @@ package Data_Analysis;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Data Visualization</b></em>'.
@@ -23,7 +22,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface DataVisualization extends Task {
-
 	/**
 	 * Returns the value of the '<em><b>Graphs</b></em>' containment reference list.
 	 * The list contents are of type {@link Data_Analysis.Graph}.
@@ -55,4 +53,5 @@ public interface DataVisualization extends Task {
 	 * @generated
 	 */
 	EList<Diagram> getDiagrams();
+
 } // DataVisualization

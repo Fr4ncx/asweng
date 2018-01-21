@@ -20,7 +20,6 @@ package Data_Analysis;
  * @generated
  */
 public interface DataAnalysis extends Task {
-
 	/**
 	 * Returns the value of the '<em><b>Category</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -46,4 +45,5 @@ public interface DataAnalysis extends Task {
 	 * @generated
 	 */
 	void setCategory(Category value);
+
 } // DataAnalysis

@@ -36,7 +36,9 @@ public enum FormatType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CSV(0, "CSV", "CSV"), /**
+	CSV(0, "CSV", "CSV"),
+
+	/**
 	 * The '<em><b>XML</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -44,7 +46,9 @@ public enum FormatType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	XML(0, "XML", "XML"), /**
+	XML(0, "XML", "XML"),
+
+	/**
 	 * The '<em><b>HTML</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,7 +56,9 @@ public enum FormatType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HTML(0, "HTML", "HTML"), /**
+	HTML(0, "HTML", "HTML"),
+
+	/**
 	 * The '<em><b>TXT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -2,7 +2,7 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_N-zQUP3JEee5TfnmNtVCrg" type="Ecore" name="data_analysis.ecore_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_k6gXEP3JEee5TfnmNtVCrg" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_k6gXEv3JEee5TfnmNtVCrg" type="5001"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_k6gXE_3JEee5TfnmNtVCrg" type="7001">
+    <children xmi:type="notation:BasicCompartment" xmi:id="_k6gXE_3JEee5TfnmNtVCrg" type="7001" collapsed="true">
       <styles xmi:type="notation:SortingStyle" xmi:id="_k6gXFP3JEee5TfnmNtVCrg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_k6gXFf3JEee5TfnmNtVCrg"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_lvgscP3JEee5TfnmNtVCrg" value="0.23076923076923078"/>
@@ -13,12 +13,16 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_lvhTgP3JEee5TfnmNtVCrg" value="0.23076923076923078"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_k6gXGf3JEee5TfnmNtVCrg" type="7003">
+      <children xmi:type="notation:Node" xmi:id="_4W0MoP63EeebsajxaVBpXQ" type="3003">
+        <element xmi:type="ecore:EAnnotation" href="data_analysis.ecore#//Pipeline/%gmf.diagram%"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4W0Mof63EeebsajxaVBpXQ"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_k6gXGv3JEee5TfnmNtVCrg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_k6gXG_3JEee5TfnmNtVCrg"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_lvhTgf3JEee5TfnmNtVCrg" value="0.23076923076923078"/>
     </children>
     <element xmi:type="ecore:EClass" href="data_analysis.ecore#//Pipeline"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6gXEf3JEee5TfnmNtVCrg" x="780" y="-15" width="81" height="51"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6gXEf3JEee5TfnmNtVCrg" x="760" y="-15" width="101" height="61"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_y2nFkP3JEee5TfnmNtVCrg" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_y2nsoP3JEee5TfnmNtVCrg" type="5001"/>
@@ -1170,10 +1174,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Tz0YgP6xEeebsajxaVBpXQ" type="4003" source="_-_vx0P6eEeebsajxaVBpXQ" target="_M9KpwP6xEeebsajxaVBpXQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_Tz0Yg_6xEeebsajxaVBpXQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tz0YhP6xEeebsajxaVBpXQ" x="14" y="-32"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tz0YhP6xEeebsajxaVBpXQ" x="-49" y="33"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_Tz0Yhf6xEeebsajxaVBpXQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tz0Yhv6xEeebsajxaVBpXQ" x="23" y="-65"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tz0Yhv6xEeebsajxaVBpXQ" x="-28" y="-17"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Tz0Ygf6xEeebsajxaVBpXQ" fontName="Segoe UI"/>
     <element xmi:type="ecore:EReference" href="data_analysis.ecore#//Condition/expressions"/>

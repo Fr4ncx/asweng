@@ -3,6 +3,7 @@
 package Data_Analysis;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,13 +23,12 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Condition extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
 	 * The list contents are of type {@link Data_Analysis.LogicalExp}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Expressions</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -38,4 +38,5 @@ public interface Condition extends EObject {
 	 * @generated
 	 */
 	EList<LogicalExp> getExpressions();
+
 } // Condition
