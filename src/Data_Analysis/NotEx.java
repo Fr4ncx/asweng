@@ -13,5 +13,5 @@ package Data_Analysis;
  * @model
  * @generated
  */
-public interface NotEx extends Condition {
+public interface NotEx extends LogicalExp {
 } // NotEx

@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ValueConditionImpl extends ConditionImpl implements ValueCondition {
+public class ValueConditionImpl extends LogicalExpImpl implements ValueCondition {
 	/**
 	 * The default value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
 	 * <!-- begin-user-doc -->

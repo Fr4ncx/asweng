@@ -247,6 +247,105 @@ public interface Data_AnalysisFactory extends EFactory {
 	Gte createGte();
 
 	/**
+	 * Returns a new object of class '<em>Logical Exp</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Exp</em>'.
+	 * @generated
+	 */
+	LogicalExp createLogicalExp();
+
+	/**
+	 * Returns a new object of class '<em>Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Category</em>'.
+	 * @generated
+	 */
+	Category createCategory();
+
+	/**
+	 * Returns a new object of class '<em>Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Description</em>'.
+	 * @generated
+	 */
+	Description createDescription();
+
+	/**
+	 * Returns a new object of class '<em>Prediction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Prediction</em>'.
+	 * @generated
+	 */
+	Prediction createPrediction();
+
+	/**
+	 * Returns a new object of class '<em>Clustering</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Clustering</em>'.
+	 * @generated
+	 */
+	Clustering createClustering();
+
+	/**
+	 * Returns a new object of class '<em>Classification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Classification</em>'.
+	 * @generated
+	 */
+	Classification createClassification();
+
+	/**
+	 * Returns a new object of class '<em>Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Graph</em>'.
+	 * @generated
+	 */
+	Graph createGraph();
+
+	/**
+	 * Returns a new object of class '<em>Graph Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Graph Element</em>'.
+	 * @generated
+	 */
+	GraphElement createGraphElement();
+
+	/**
+	 * Returns a new object of class '<em>Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Node</em>'.
+	 * @generated
+	 */
+	Node createNode();
+
+	/**
+	 * Returns a new object of class '<em>Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Edge</em>'.
+	 * @generated
+	 */
+	Edge createEdge();
+
+	/**
+	 * Returns a new object of class '<em>Diagram</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Diagram</em>'.
+	 * @generated
+	 */
+	Diagram createDiagram();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

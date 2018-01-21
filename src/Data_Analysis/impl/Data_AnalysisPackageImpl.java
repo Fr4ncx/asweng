@@ -5,7 +5,10 @@ package Data_Analysis.impl;
 import Data_Analysis.AndExp;
 import Data_Analysis.AttributeSchema;
 import Data_Analysis.AttributeType;
+import Data_Analysis.Category;
 import Data_Analysis.CategoryType;
+import Data_Analysis.Classification;
+import Data_Analysis.Clustering;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.Condition;
 import Data_Analysis.Custom;
@@ -19,18 +22,27 @@ import Data_Analysis.DataVisualization;
 import Data_Analysis.Data_AnalysisFactory;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Database;
+import Data_Analysis.Description;
+import Data_Analysis.Diagram;
+import Data_Analysis.Edge;
 import Data_Analysis.ExportData;
 import Data_Analysis.File;
 import Data_Analysis.FormatData;
 import Data_Analysis.FormatType;
+import Data_Analysis.Graph;
+import Data_Analysis.GraphElement;
 import Data_Analysis.Gt;
 import Data_Analysis.Gte;
+import Data_Analysis.LogicalExp;
+import Data_Analysis.LogicalExpr;
 import Data_Analysis.Lt;
 import Data_Analysis.Lte;
+import Data_Analysis.Node;
 import Data_Analysis.NotEx;
 import Data_Analysis.Operation;
 import Data_Analysis.OrExp;
 import Data_Analysis.Pipeline;
+import Data_Analysis.Prediction;
 import Data_Analysis.RemoveNull;
 import Data_Analysis.RestService;
 import Data_Analysis.Source;
@@ -247,6 +259,83 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * @generated
 	 */
 	private EClass gteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicalExpEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass categoryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass descriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predictionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass clusteringEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass classificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass graphEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass graphElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass edgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass diagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -522,6 +611,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataAnalysis_Category() {
+		return (EReference)dataAnalysisEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCollectionSchema() {
 		return collectionSchemaEClass;
 	}
@@ -711,6 +809,24 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataVisualization_Graphs() {
+		return (EReference)dataVisualizationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataVisualization_Diagrams() {
+		return (EReference)dataVisualizationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExportData() {
 		return exportDataEClass;
 	}
@@ -758,6 +874,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EClass getCondition() {
 		return conditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCondition_Expressions() {
+		return (EReference)conditionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -855,6 +980,195 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLogicalExp() {
+		return logicalExpEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCategory() {
+		return categoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDescription() {
+		return descriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrediction() {
+		return predictionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getClustering() {
+		return clusteringEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getClassification() {
+		return classificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGraph() {
+		return graphEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGraph_Elements() {
+		return (EReference)graphEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGraphElement() {
+		return graphElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNode() {
+		return nodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Width() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Height() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_X() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Y() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEdge() {
+		return edgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEdge_Source() {
+		return (EReference)edgeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEdge_Target() {
+		return (EReference)edgeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEdge_Width() {
+		return (EAttribute)edgeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiagram() {
+		return diagramEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiagram_XAttribute() {
+		return (EAttribute)diagramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiagram_YAttribute() {
+		return (EAttribute)diagramEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCategoryType() {
 		return categoryTypeEEnum;
 	}
@@ -939,6 +1253,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEReference(dataCleaningEClass, DATA_CLEANING__OPERATIONS);
 
 		dataAnalysisEClass = createEClass(DATA_ANALYSIS);
+		createEReference(dataAnalysisEClass, DATA_ANALYSIS__CATEGORY);
 
 		collectionSchemaEClass = createEClass(COLLECTION_SCHEMA);
 		createEReference(collectionSchemaEClass, COLLECTION_SCHEMA__ATTRIBUTES);
@@ -971,6 +1286,8 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(customEClass, CUSTOM__ACTION);
 
 		dataVisualizationEClass = createEClass(DATA_VISUALIZATION);
+		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__GRAPHS);
+		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__DIAGRAMS);
 
 		exportDataEClass = createEClass(EXPORT_DATA);
 		createEAttribute(exportDataEClass, EXPORT_DATA__FORMAT);
@@ -980,6 +1297,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEReference(dataFlowEClass, DATA_FLOW__TO_TASK);
 
 		conditionEClass = createEClass(CONDITION);
+		createEReference(conditionEClass, CONDITION__EXPRESSIONS);
 
 		notExEClass = createEClass(NOT_EX);
 
@@ -998,6 +1316,38 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		gtEClass = createEClass(GT);
 
 		gteEClass = createEClass(GTE);
+
+		logicalExpEClass = createEClass(LOGICAL_EXP);
+
+		categoryEClass = createEClass(CATEGORY);
+
+		descriptionEClass = createEClass(DESCRIPTION);
+
+		predictionEClass = createEClass(PREDICTION);
+
+		clusteringEClass = createEClass(CLUSTERING);
+
+		classificationEClass = createEClass(CLASSIFICATION);
+
+		graphEClass = createEClass(GRAPH);
+		createEReference(graphEClass, GRAPH__ELEMENTS);
+
+		graphElementEClass = createEClass(GRAPH_ELEMENT);
+
+		nodeEClass = createEClass(NODE);
+		createEAttribute(nodeEClass, NODE__WIDTH);
+		createEAttribute(nodeEClass, NODE__HEIGHT);
+		createEAttribute(nodeEClass, NODE__X);
+		createEAttribute(nodeEClass, NODE__Y);
+
+		edgeEClass = createEClass(EDGE);
+		createEReference(edgeEClass, EDGE__SOURCE);
+		createEReference(edgeEClass, EDGE__TARGET);
+		createEAttribute(edgeEClass, EDGE__WIDTH);
+
+		diagramEClass = createEClass(DIAGRAM);
+		createEAttribute(diagramEClass, DIAGRAM__XATTRIBUTE);
+		createEAttribute(diagramEClass, DIAGRAM__YATTRIBUTE);
 
 		// Create enums
 		categoryTypeEEnum = createEEnum(CATEGORY_TYPE);
@@ -1046,14 +1396,20 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		customEClass.getESuperTypes().add(this.getOperation());
 		dataVisualizationEClass.getESuperTypes().add(this.getTask());
 		exportDataEClass.getESuperTypes().add(this.getTask());
-		notExEClass.getESuperTypes().add(this.getCondition());
-		orExpEClass.getESuperTypes().add(this.getCondition());
-		andExpEClass.getESuperTypes().add(this.getCondition());
-		valueConditionEClass.getESuperTypes().add(this.getCondition());
+		notExEClass.getESuperTypes().add(this.getLogicalExp());
+		orExpEClass.getESuperTypes().add(this.getLogicalExp());
+		andExpEClass.getESuperTypes().add(this.getLogicalExp());
+		valueConditionEClass.getESuperTypes().add(this.getLogicalExp());
 		ltEClass.getESuperTypes().add(this.getValueCondition());
 		lteEClass.getESuperTypes().add(this.getValueCondition());
 		gtEClass.getESuperTypes().add(this.getValueCondition());
 		gteEClass.getESuperTypes().add(this.getValueCondition());
+		descriptionEClass.getESuperTypes().add(this.getCategory());
+		predictionEClass.getESuperTypes().add(this.getCategory());
+		clusteringEClass.getESuperTypes().add(this.getCategory());
+		classificationEClass.getESuperTypes().add(this.getCategory());
+		nodeEClass.getESuperTypes().add(this.getGraphElement());
+		edgeEClass.getESuperTypes().add(this.getGraphElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(pipelineEClass, Pipeline.class, "Pipeline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1081,6 +1437,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEReference(getDataCleaning_Operations(), this.getOperation(), null, "operations", null, 0, -1, DataCleaning.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataAnalysisEClass, DataAnalysis.class, "DataAnalysis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataAnalysis_Category(), this.getCategory(), null, "category", null, 0, 1, DataAnalysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(collectionSchemaEClass, CollectionSchema.class, "CollectionSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCollectionSchema_Attributes(), this.getAttributeSchema(), null, "attributes", null, 1, -1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1113,6 +1470,8 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getCustom_Action(), this.getCustomAction(), "action", null, 0, 1, Custom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataVisualizationEClass, DataVisualization.class, "DataVisualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataVisualization_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataVisualization_Diagrams(), this.getDiagram(), null, "diagrams", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportDataEClass, ExportData.class, "ExportData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExportData_Format(), this.getFormatType(), "format", null, 0, 1, ExportData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1122,6 +1481,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEReference(getDataFlow_ToTask(), this.getTask(), null, "toTask", null, 0, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCondition_Expressions(), this.getLogicalExp(), null, "expressions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notExEClass, NotEx.class, "NotEx", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1141,6 +1501,38 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		initEClass(gteEClass, Gte.class, "Gte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(logicalExpEClass, LogicalExp.class, "LogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(predictionEClass, Prediction.class, "Prediction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(clusteringEClass, Clustering.class, "Clustering", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGraph_Elements(), this.getGraphElement(), null, "elements", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(graphElementEClass, GraphElement.class, "GraphElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNode_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_X(), ecorePackage.getEInt(), "x", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEdge_Source(), this.getNode(), null, "source", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdge_Target(), this.getNode(), null, "target", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdge_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDiagram_XAttribute(), ecorePackage.getEShort(), "xAttribute", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiagram_YAttribute(), ecorePackage.getEString(), "yAttribute", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(categoryTypeEEnum, CategoryType.class, "CategoryType");
 		addEEnumLiteral(categoryTypeEEnum, CategoryType.DESCRIPTION);
@@ -1149,6 +1541,9 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEEnum(formatTypeEEnum, FormatType.class, "FormatType");
 		addEEnumLiteral(formatTypeEEnum, FormatType.JSON);
 		addEEnumLiteral(formatTypeEEnum, FormatType.CSV);
+		addEEnumLiteral(formatTypeEEnum, FormatType.XML);
+		addEEnumLiteral(formatTypeEEnum, FormatType.HTML);
+		addEEnumLiteral(formatTypeEEnum, FormatType.TXT);
 
 		initEEnum(attributeTypeEEnum, AttributeType.class, "AttributeType");
 		addEEnumLiteral(attributeTypeEEnum, AttributeType.INT);

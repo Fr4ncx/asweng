@@ -36,7 +36,31 @@ public enum FormatType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CSV(0, "CSV", "CSV");
+	CSV(0, "CSV", "CSV"), /**
+	 * The '<em><b>XML</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #XML_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	XML(0, "XML", "XML"), /**
+	 * The '<em><b>HTML</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HTML_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	HTML(0, "HTML", "HTML"), /**
+	 * The '<em><b>TXT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TXT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TXT(0, "TXT", "TXT");
 
 	/**
 	 * The '<em><b>JSON</b></em>' literal value.
@@ -69,6 +93,51 @@ public enum FormatType implements Enumerator {
 	public static final int CSV_VALUE = 0;
 
 	/**
+	 * The '<em><b>XML</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>XML</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #XML
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int XML_VALUE = 0;
+
+	/**
+	 * The '<em><b>HTML</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>HTML</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #HTML
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HTML_VALUE = 0;
+
+	/**
+	 * The '<em><b>TXT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>TXT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TXT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TXT_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Format Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +147,9 @@ public enum FormatType implements Enumerator {
 		new FormatType[] {
 			JSON,
 			CSV,
+			XML,
+			HTML,
+			TXT,
 		};
 
 	/**

@@ -13,5 +13,5 @@ package Data_Analysis;
  * @model
  * @generated
  */
-public interface OrExp extends Condition {
+public interface OrExp extends LogicalExp {
 } // OrExp

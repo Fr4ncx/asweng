@@ -13,5 +13,5 @@ package Data_Analysis;
  * @model
  * @generated
  */
-public interface AndExp extends Condition {
+public interface AndExp extends LogicalExp {
 } // AndExp

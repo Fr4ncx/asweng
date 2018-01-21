@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AndExpImpl extends ConditionImpl implements AndExp {
+public class AndExpImpl extends LogicalExpImpl implements AndExp {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -3,24 +3,24 @@
 package Data_Analysis.impl;
 
 import Data_Analysis.Data_AnalysisPackage;
-import Data_Analysis.NotEx;
+import Data_Analysis.Description;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Not Ex</b></em>'.
+ * An implementation of the model object '<em><b>Description</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class NotExImpl extends LogicalExpImpl implements NotEx {
+public class DescriptionImpl extends CategoryImpl implements Description {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NotExImpl() {
+	protected DescriptionImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class NotExImpl extends LogicalExpImpl implements NotEx {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.NOT_EX;
+		return Data_AnalysisPackage.Literals.DESCRIPTION;
 	}
 
-} //NotExImpl
+} //DescriptionImpl

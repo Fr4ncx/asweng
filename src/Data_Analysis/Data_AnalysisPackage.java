@@ -396,13 +396,22 @@ public interface Data_AnalysisPackage extends EPackage {
 	int DATA_ANALYSIS__IS_EXECUTED = TASK__IS_EXECUTED;
 
 	/**
+	 * The feature id for the '<em><b>Category</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_ANALYSIS__CATEGORY = TASK_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Data Analysis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ANALYSIS_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
+	int DATA_ANALYSIS_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.CollectionSchemaImpl <em>Collection Schema</em>}' class.
@@ -749,13 +758,31 @@ public interface Data_AnalysisPackage extends EPackage {
 	int DATA_VISUALIZATION__IS_EXECUTED = TASK__IS_EXECUTED;
 
 	/**
+	 * The feature id for the '<em><b>Graphs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_VISUALIZATION__GRAPHS = TASK_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Diagrams</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_VISUALIZATION__DIAGRAMS = TASK_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Visualization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_VISUALIZATION_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
+	int DATA_VISUALIZATION_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.ExportDataImpl <em>Export Data</em>}' class.
@@ -860,13 +887,41 @@ public interface Data_AnalysisPackage extends EPackage {
 	int CONDITION = 19;
 
 	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__EXPRESSIONS = 0;
+
+	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = 0;
+	int CONDITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.LogicalExpImpl <em>Logical Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.LogicalExpImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getLogicalExp()
+	 * @generated
+	 */
+	int LOGICAL_EXP = 28;
+
+	/**
+	 * The number of structural features of the '<em>Logical Exp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_EXP_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.NotExImpl <em>Not Ex</em>}' class.
@@ -885,7 +940,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_EX_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int NOT_EX_FEATURE_COUNT = LOGICAL_EXP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.OrExpImpl <em>Or Exp</em>}' class.
@@ -904,7 +959,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OR_EXP_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int OR_EXP_FEATURE_COUNT = LOGICAL_EXP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.AndExpImpl <em>And Exp</em>}' class.
@@ -923,7 +978,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AND_EXP_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int AND_EXP_FEATURE_COUNT = LOGICAL_EXP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.ValueConditionImpl <em>Value Condition</em>}' class.
@@ -942,7 +997,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_CONDITION__ATTRIBUTE = CONDITION_FEATURE_COUNT + 0;
+	int VALUE_CONDITION__ATTRIBUTE = LOGICAL_EXP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -951,7 +1006,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_CONDITION__VALUE = CONDITION_FEATURE_COUNT + 1;
+	int VALUE_CONDITION__VALUE = LOGICAL_EXP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Value Condition</em>' class.
@@ -960,7 +1015,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+	int VALUE_CONDITION_FEATURE_COUNT = LOGICAL_EXP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.LtImpl <em>Lt</em>}' class.
@@ -1111,6 +1166,286 @@ public interface Data_AnalysisPackage extends EPackage {
 	int GTE_FEATURE_COUNT = VALUE_CONDITION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.CategoryImpl <em>Category</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.CategoryImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCategory()
+	 * @generated
+	 */
+	int CATEGORY = 29;
+
+	/**
+	 * The number of structural features of the '<em>Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.DescriptionImpl <em>Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.DescriptionImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDescription()
+	 * @generated
+	 */
+	int DESCRIPTION = 30;
+
+	/**
+	 * The number of structural features of the '<em>Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.PredictionImpl <em>Prediction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.PredictionImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getPrediction()
+	 * @generated
+	 */
+	int PREDICTION = 31;
+
+	/**
+	 * The number of structural features of the '<em>Prediction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTION_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.ClusteringImpl <em>Clustering</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.ClusteringImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getClustering()
+	 * @generated
+	 */
+	int CLUSTERING = 32;
+
+	/**
+	 * The number of structural features of the '<em>Clustering</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.ClassificationImpl <em>Classification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.ClassificationImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getClassification()
+	 * @generated
+	 */
+	int CLASSIFICATION = 33;
+
+	/**
+	 * The number of structural features of the '<em>Classification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.GraphImpl <em>Graph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.GraphImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getGraph()
+	 * @generated
+	 */
+	int GRAPH = 34;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH__ELEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Graph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.GraphElementImpl <em>Graph Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.GraphElementImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getGraphElement()
+	 * @generated
+	 */
+	int GRAPH_ELEMENT = 35;
+
+	/**
+	 * The number of structural features of the '<em>Graph Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.NodeImpl <em>Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.NodeImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getNode()
+	 * @generated
+	 */
+	int NODE = 36;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__WIDTH = GRAPH_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__HEIGHT = GRAPH_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__X = GRAPH_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__Y = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.EdgeImpl <em>Edge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.EdgeImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getEdge()
+	 * @generated
+	 */
+	int EDGE = 37;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__SOURCE = GRAPH_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__TARGET = GRAPH_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__WIDTH = GRAPH_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.DiagramImpl <em>Diagram</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.DiagramImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDiagram()
+	 * @generated
+	 */
+	int DIAGRAM = 38;
+
+	/**
+	 * The feature id for the '<em><b>XAttribute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__XATTRIBUTE = 0;
+
+	/**
+	 * The feature id for the '<em><b>YAttribute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__YATTRIBUTE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Diagram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1118,7 +1453,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCategoryType()
 	 * @generated
 	 */
-	int CATEGORY_TYPE = 28;
+	int CATEGORY_TYPE = 39;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.FormatType <em>Format Type</em>}' enum.
@@ -1128,7 +1463,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatType()
 	 * @generated
 	 */
-	int FORMAT_TYPE = 29;
+	int FORMAT_TYPE = 40;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.AttributeType <em>Attribute Type</em>}' enum.
@@ -1138,7 +1473,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getAttributeType()
 	 * @generated
 	 */
-	int ATTRIBUTE_TYPE = 30;
+	int ATTRIBUTE_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.CustomAction <em>Custom Action</em>}' enum.
@@ -1148,7 +1483,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCustomAction()
 	 * @generated
 	 */
-	int CUSTOM_ACTION = 31;
+	int CUSTOM_ACTION = 42;
 
 
 	/**
@@ -1364,6 +1699,17 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataAnalysis();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link Data_Analysis.DataAnalysis#getCategory <em>Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Category</em>'.
+	 * @see Data_Analysis.DataAnalysis#getCategory()
+	 * @see #getDataAnalysis()
+	 * @generated
+	 */
+	EReference getDataAnalysis_Category();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.CollectionSchema <em>Collection Schema</em>}'.
@@ -1586,6 +1932,28 @@ public interface Data_AnalysisPackage extends EPackage {
 	EClass getDataVisualization();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.DataVisualization#getGraphs <em>Graphs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Graphs</em>'.
+	 * @see Data_Analysis.DataVisualization#getGraphs()
+	 * @see #getDataVisualization()
+	 * @generated
+	 */
+	EReference getDataVisualization_Graphs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.DataVisualization#getDiagrams <em>Diagrams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Diagrams</em>'.
+	 * @see Data_Analysis.DataVisualization#getDiagrams()
+	 * @see #getDataVisualization()
+	 * @generated
+	 */
+	EReference getDataVisualization_Diagrams();
+
+	/**
 	 * Returns the meta object for class '{@link Data_Analysis.ExportData <em>Export Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1647,6 +2015,17 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCondition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Condition#getExpressions <em>Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
+	 * @see Data_Analysis.Condition#getExpressions()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EReference getCondition_Expressions();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.NotEx <em>Not Ex</em>}'.
@@ -1749,6 +2128,226 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGte();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.LogicalExp <em>Logical Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logical Exp</em>'.
+	 * @see Data_Analysis.LogicalExp
+	 * @generated
+	 */
+	EClass getLogicalExp();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Category <em>Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Category</em>'.
+	 * @see Data_Analysis.Category
+	 * @generated
+	 */
+	EClass getCategory();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description</em>'.
+	 * @see Data_Analysis.Description
+	 * @generated
+	 */
+	EClass getDescription();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Prediction <em>Prediction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Prediction</em>'.
+	 * @see Data_Analysis.Prediction
+	 * @generated
+	 */
+	EClass getPrediction();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Clustering <em>Clustering</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Clustering</em>'.
+	 * @see Data_Analysis.Clustering
+	 * @generated
+	 */
+	EClass getClustering();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Classification <em>Classification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Classification</em>'.
+	 * @see Data_Analysis.Classification
+	 * @generated
+	 */
+	EClass getClassification();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Graph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Graph</em>'.
+	 * @see Data_Analysis.Graph
+	 * @generated
+	 */
+	EClass getGraph();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Graph#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see Data_Analysis.Graph#getElements()
+	 * @see #getGraph()
+	 * @generated
+	 */
+	EReference getGraph_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.GraphElement <em>Graph Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Graph Element</em>'.
+	 * @see Data_Analysis.GraphElement
+	 * @generated
+	 */
+	EClass getGraphElement();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Node <em>Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Node</em>'.
+	 * @see Data_Analysis.Node
+	 * @generated
+	 */
+	EClass getNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Node#getWidth <em>Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see Data_Analysis.Node#getWidth()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_Width();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Node#getHeight <em>Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Height</em>'.
+	 * @see Data_Analysis.Node#getHeight()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_Height();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Node#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see Data_Analysis.Node#getX()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Node#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see Data_Analysis.Node#getY()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_Y();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Edge <em>Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Edge</em>'.
+	 * @see Data_Analysis.Edge
+	 * @generated
+	 */
+	EClass getEdge();
+
+	/**
+	 * Returns the meta object for the reference '{@link Data_Analysis.Edge#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see Data_Analysis.Edge#getSource()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EReference getEdge_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link Data_Analysis.Edge#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see Data_Analysis.Edge#getTarget()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EReference getEdge_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Edge#getWidth <em>Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see Data_Analysis.Edge#getWidth()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EAttribute getEdge_Width();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Diagram <em>Diagram</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Diagram</em>'.
+	 * @see Data_Analysis.Diagram
+	 * @generated
+	 */
+	EClass getDiagram();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Diagram#getXAttribute <em>XAttribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>XAttribute</em>'.
+	 * @see Data_Analysis.Diagram#getXAttribute()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EAttribute getDiagram_XAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Diagram#getYAttribute <em>YAttribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>YAttribute</em>'.
+	 * @see Data_Analysis.Diagram#getYAttribute()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EAttribute getDiagram_YAttribute();
 
 	/**
 	 * Returns the meta object for enum '{@link Data_Analysis.CategoryType <em>Category Type</em>}'.
@@ -1985,6 +2584,14 @@ public interface Data_AnalysisPackage extends EPackage {
 		EClass DATA_ANALYSIS = eINSTANCE.getDataAnalysis();
 
 		/**
+		 * The meta object literal for the '<em><b>Category</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ANALYSIS__CATEGORY = eINSTANCE.getDataAnalysis_Category();
+
+		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.CollectionSchemaImpl <em>Collection Schema</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2175,6 +2782,22 @@ public interface Data_AnalysisPackage extends EPackage {
 		EClass DATA_VISUALIZATION = eINSTANCE.getDataVisualization();
 
 		/**
+		 * The meta object literal for the '<em><b>Graphs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_VISUALIZATION__GRAPHS = eINSTANCE.getDataVisualization_Graphs();
+
+		/**
+		 * The meta object literal for the '<em><b>Diagrams</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_VISUALIZATION__DIAGRAMS = eINSTANCE.getDataVisualization_Diagrams();
+
+		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.ExportDataImpl <em>Export Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2227,6 +2850,14 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONDITION = eINSTANCE.getCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITION__EXPRESSIONS = eINSTANCE.getCondition_Expressions();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.NotExImpl <em>Not Ex</em>}' class.
@@ -2323,6 +2954,196 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GTE = eINSTANCE.getGte();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.LogicalExpImpl <em>Logical Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.LogicalExpImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getLogicalExp()
+		 * @generated
+		 */
+		EClass LOGICAL_EXP = eINSTANCE.getLogicalExp();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.CategoryImpl <em>Category</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.CategoryImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCategory()
+		 * @generated
+		 */
+		EClass CATEGORY = eINSTANCE.getCategory();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.DescriptionImpl <em>Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.DescriptionImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDescription()
+		 * @generated
+		 */
+		EClass DESCRIPTION = eINSTANCE.getDescription();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.PredictionImpl <em>Prediction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.PredictionImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getPrediction()
+		 * @generated
+		 */
+		EClass PREDICTION = eINSTANCE.getPrediction();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.ClusteringImpl <em>Clustering</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.ClusteringImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getClustering()
+		 * @generated
+		 */
+		EClass CLUSTERING = eINSTANCE.getClustering();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.ClassificationImpl <em>Classification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.ClassificationImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getClassification()
+		 * @generated
+		 */
+		EClass CLASSIFICATION = eINSTANCE.getClassification();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.GraphImpl <em>Graph</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.GraphImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getGraph()
+		 * @generated
+		 */
+		EClass GRAPH = eINSTANCE.getGraph();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GRAPH__ELEMENTS = eINSTANCE.getGraph_Elements();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.GraphElementImpl <em>Graph Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.GraphElementImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getGraphElement()
+		 * @generated
+		 */
+		EClass GRAPH_ELEMENT = eINSTANCE.getGraphElement();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.NodeImpl <em>Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.NodeImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getNode()
+		 * @generated
+		 */
+		EClass NODE = eINSTANCE.getNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__WIDTH = eINSTANCE.getNode_Width();
+
+		/**
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__HEIGHT = eINSTANCE.getNode_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__X = eINSTANCE.getNode_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__Y = eINSTANCE.getNode_Y();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.EdgeImpl <em>Edge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.EdgeImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getEdge()
+		 * @generated
+		 */
+		EClass EDGE = eINSTANCE.getEdge();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE__SOURCE = eINSTANCE.getEdge_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE__TARGET = eINSTANCE.getEdge_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDGE__WIDTH = eINSTANCE.getEdge_Width();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.DiagramImpl <em>Diagram</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.DiagramImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDiagram()
+		 * @generated
+		 */
+		EClass DIAGRAM = eINSTANCE.getDiagram();
+
+		/**
+		 * The meta object literal for the '<em><b>XAttribute</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIAGRAM__XATTRIBUTE = eINSTANCE.getDiagram_XAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>YAttribute</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIAGRAM__YATTRIBUTE = eINSTANCE.getDiagram_YAttribute();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.

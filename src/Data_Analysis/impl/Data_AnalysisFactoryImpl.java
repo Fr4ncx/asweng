@@ -82,6 +82,17 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 			case Data_AnalysisPackage.LTE: return createLte();
 			case Data_AnalysisPackage.GT: return createGt();
 			case Data_AnalysisPackage.GTE: return createGte();
+			case Data_AnalysisPackage.LOGICAL_EXP: return createLogicalExp();
+			case Data_AnalysisPackage.CATEGORY: return createCategory();
+			case Data_AnalysisPackage.DESCRIPTION: return createDescription();
+			case Data_AnalysisPackage.PREDICTION: return createPrediction();
+			case Data_AnalysisPackage.CLUSTERING: return createClustering();
+			case Data_AnalysisPackage.CLASSIFICATION: return createClassification();
+			case Data_AnalysisPackage.GRAPH: return createGraph();
+			case Data_AnalysisPackage.GRAPH_ELEMENT: return createGraphElement();
+			case Data_AnalysisPackage.NODE: return createNode();
+			case Data_AnalysisPackage.EDGE: return createEdge();
+			case Data_AnalysisPackage.DIAGRAM: return createDiagram();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -377,6 +388,116 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public Gte createGte() {
 		GteImpl gte = new GteImpl();
 		return gte;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalExp createLogicalExp() {
+		LogicalExpImpl logicalExp = new LogicalExpImpl();
+		return logicalExp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Category createCategory() {
+		CategoryImpl category = new CategoryImpl();
+		return category;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Description createDescription() {
+		DescriptionImpl description = new DescriptionImpl();
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Prediction createPrediction() {
+		PredictionImpl prediction = new PredictionImpl();
+		return prediction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Clustering createClustering() {
+		ClusteringImpl clustering = new ClusteringImpl();
+		return clustering;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Classification createClassification() {
+		ClassificationImpl classification = new ClassificationImpl();
+		return classification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Graph createGraph() {
+		GraphImpl graph = new GraphImpl();
+		return graph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GraphElement createGraphElement() {
+		GraphElementImpl graphElement = new GraphElementImpl();
+		return graphElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Node createNode() {
+		NodeImpl node = new NodeImpl();
+		return node;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Edge createEdge() {
+		EdgeImpl edge = new EdgeImpl();
+		return edge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Diagram createDiagram() {
+		DiagramImpl diagram = new DiagramImpl();
+		return diagram;
 	}
 
 	/**

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class OrExpImpl extends ConditionImpl implements OrExp {
+public class OrExpImpl extends LogicalExpImpl implements OrExp {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

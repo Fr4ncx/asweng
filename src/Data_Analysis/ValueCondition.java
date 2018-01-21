@@ -20,7 +20,7 @@ package Data_Analysis;
  * @model
  * @generated
  */
-public interface ValueCondition extends Condition {
+public interface ValueCondition extends LogicalExp {
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' attribute.
 	 * <!-- begin-user-doc -->
