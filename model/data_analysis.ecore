@@ -109,7 +109,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NotEx" eSuperTypes="#//LogicalExp"/>
   <eClassifiers xsi:type="ecore:EClass" name="OrExp" eSuperTypes="#//LogicalExp"/>
   <eClassifiers xsi:type="ecore:EClass" name="AndExp" eSuperTypes="#//LogicalExp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueCondition" eSuperTypes="#//LogicalExp">
+  <eClassifiers xsi:type="ecore:EClass" name="ValueCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -117,7 +117,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Lte" eSuperTypes="#//ValueCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="Gt" eSuperTypes="#//ValueCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="Gte" eSuperTypes="#//ValueCondition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LogicalExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalExp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueconditions" lowerBound="1"
+        upperBound="-1" eType="#//ValueCondition" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Description" eSuperTypes="#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Prediction" eSuperTypes="#//Category"/>
