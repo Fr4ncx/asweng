@@ -92,7 +92,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="graphs" upperBound="-1"
         eType="#//Graph" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
-        eType="#//Diagram" containment="true"/>
+        eType="#//Table" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportData" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//FormatType"/>
@@ -144,8 +144,12 @@
         eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Diagram">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasx" lowerBound="1" upperBound="-1"
+        eType="#//XAxis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasy" eType="#//YAxis"
+        containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XAxis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="YAxis"/>
 </ecore:EPackage>
