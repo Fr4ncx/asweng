@@ -33,15 +33,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Source" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" eType="#//CollectionSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schema" eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataIntegration" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="joinAttributes" lowerBound="1"
-        eType="#//CollectionSchema"/>
+        eType="#//Schema"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outAttributes" lowerBound="1"
-        eType="#//CollectionSchema"/>
+        eType="#//Schema"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataCleaning" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
@@ -50,11 +50,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataAnalysis" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//Category"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Analysis" upperBound="-1"
+        eType="#//Analysis" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CollectionSchema">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
-        upperBound="-1" eType="#//AttributeSchema" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionSchema" eSuperTypes="#//Schema"/>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeSchema">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AttributeType"/>
@@ -89,18 +88,19 @@
     <eLiterals name="DELETE_ATTRIBUTE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataVisualization" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="graphs" upperBound="-1"
-        eType="#//Graph" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualElements" upperBound="-1"
+        eType="#//VisualElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExportData" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//FormatType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataFlow">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="#//FormatType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toTask" upperBound="-1"
         eType="#//Task"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="format" eType="#//Schema"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
@@ -126,7 +126,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Prediction" eSuperTypes="#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//Category"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+  <eClassifiers xsi:type="ecore:EClass" name="Graph" eSuperTypes="#//VisualElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//GraphElement" containment="true"/>
   </eClassifiers>
@@ -152,4 +152,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XAxis"/>
   <eClassifiers xsi:type="ecore:EClass" name="YAxis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Schema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//AttributeSchema" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceSchema" eSuperTypes="#//Schema"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralSchema" eSuperTypes="#//Schema"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//VisualElement"/>
 </ecore:EPackage>
