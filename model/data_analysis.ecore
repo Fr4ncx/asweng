@@ -89,7 +89,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataVisualization" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="visualElements" upperBound="-1"
-        eType="#//VisualElement" containment="true"/>
+        eType="#//GraphicElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
   </eClassifiers>
@@ -126,7 +126,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Prediction" eSuperTypes="#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clustering" eSuperTypes="#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classification" eSuperTypes="#//Category"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Graph" eSuperTypes="#//VisualElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Graph" eSuperTypes="#//GraphicElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//GraphElement" containment="true"/>
   </eClassifiers>
@@ -159,6 +159,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="SourceSchema" eSuperTypes="#//Schema"/>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralSchema" eSuperTypes="#//Schema"/>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VisualElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//VisualElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphicElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//GraphicElement"/>
 </ecore:EPackage>
