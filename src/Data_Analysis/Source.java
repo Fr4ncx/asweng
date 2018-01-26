@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see Data_Analysis.Data_AnalysisPackage#getSource()
  * @model abstract="true"
+ *        annotation="gmf.node label='url'"
  * @generated
  */
 public interface Source extends EObject {

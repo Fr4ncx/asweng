@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link Data_Analysis.Pipeline#getTasks <em>Tasks</em>}</li>
- *   <li>{@link Data_Analysis.Pipeline#getSchemas <em>Schemas</em>}</li>
  *   <li>{@link Data_Analysis.Pipeline#getFlows <em>Flows</em>}</li>
+ *   <li>{@link Data_Analysis.Pipeline#getSchemas <em>Schemas</em>}</li>
+ *   <li>{@link Data_Analysis.Pipeline#getConditions <em>Conditions</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getPipeline()
@@ -42,22 +43,6 @@ public interface Pipeline extends EObject {
 	EList<Task> getTasks();
 
 	/**
-	 * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
-	 * The list contents are of type {@link Data_Analysis.CollectionSchema}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Schemas</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schemas</em>' containment reference list.
-	 * @see Data_Analysis.Data_AnalysisPackage#getPipeline_Schemas()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<CollectionSchema> getSchemas();
-
-	/**
 	 * Returns the value of the '<em><b>Flows</b></em>' containment reference list.
 	 * The list contents are of type {@link Data_Analysis.DataFlow}.
 	 * <!-- begin-user-doc -->
@@ -72,5 +57,37 @@ public interface Pipeline extends EObject {
 	 * @generated
 	 */
 	EList<DataFlow> getFlows();
+
+	/**
+	 * Returns the value of the '<em><b>Schemas</b></em>' containment reference list.
+	 * The list contents are of type {@link Data_Analysis.DataSchema}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Schemas</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schemas</em>' containment reference list.
+	 * @see Data_Analysis.Data_AnalysisPackage#getPipeline_Schemas()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<DataSchema> getSchemas();
+
+	/**
+	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
+	 * The list contents are of type {@link Data_Analysis.Condition}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conditions</em>' containment reference list.
+	 * @see Data_Analysis.Data_AnalysisPackage#getPipeline_Conditions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Condition> getConditions();
 
 } // Pipeline

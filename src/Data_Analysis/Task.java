@@ -26,20 +26,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Task extends EObject {
 	/**
-	 * Returns the value of the '<em><b>To Flow</b></em>' reference list.
-	 * The list contents are of type {@link Data_Analysis.DataFlow}.
+	 * Returns the value of the '<em><b>To Flow</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Flow</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Flow</em>' reference list.
+	 * @return the value of the '<em>To Flow</em>' reference.
+	 * @see #setToFlow(DataFlow)
 	 * @see Data_Analysis.Data_AnalysisPackage#getTask_ToFlow()
 	 * @model
 	 * @generated
 	 */
-	EList<DataFlow> getToFlow();
+	DataFlow getToFlow();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.Task#getToFlow <em>To Flow</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Flow</em>' reference.
+	 * @see #getToFlow()
+	 * @generated
+	 */
+	void setToFlow(DataFlow value);
 
 	/**
 	 * Returns the value of the '<em><b>Execution Timestamp</b></em>' attribute.

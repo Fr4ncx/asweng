@@ -7,8 +7,11 @@ import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Diagram;
 import Data_Analysis.Graph;
 
+import Data_Analysis.GraphicElement;
+import Data_Analysis.Table;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -27,32 +31,53 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.DataVisualizationImpl#getGraphs <em>Graphs</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataVisualizationImpl#getDiagrams <em>Diagrams</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataVisualizationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataVisualizationImpl#getVisualElements <em>Visual Elements</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataVisualizationImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DataVisualizationImpl extends TaskImpl implements DataVisualization {
 	/**
-	 * The cached value of the '{@link #getGraphs() <em>Graphs</em>}' containment reference list.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGraphs()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Graph> graphs;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDiagrams() <em>Diagrams</em>}' containment reference list.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiagrams()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Diagram> diagrams;
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVisualElements() <em>Visual Elements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisualElements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<GraphicElement> visualElements;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Table> tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,11 +103,8 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Graph> getGraphs() {
-		if (graphs == null) {
-			graphs = new EObjectContainmentEList<Graph>(Graph.class, this, Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS);
-		}
-		return graphs;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -90,11 +112,35 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Diagram> getDiagrams() {
-		if (diagrams == null) {
-			diagrams = new EObjectContainmentEList<Diagram>(Diagram.class, this, Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS);
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_VISUALIZATION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<GraphicElement> getVisualElements() {
+		if (visualElements == null) {
+			visualElements = new EObjectContainmentEList<GraphicElement>(GraphicElement.class, this, Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS);
 		}
-		return diagrams;
+		return visualElements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Table> getTables() {
+		if (tables == null) {
+			tables = new EObjectContainmentEList<Table>(Table.class, this, Data_AnalysisPackage.DATA_VISUALIZATION__TABLES);
+		}
+		return tables;
 	}
 
 	/**
@@ -105,10 +151,10 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS:
-				return ((InternalEList<?>)getGraphs()).basicRemove(otherEnd, msgs);
-			case Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS:
-				return ((InternalEList<?>)getDiagrams()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS:
+				return ((InternalEList<?>)getVisualElements()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.DATA_VISUALIZATION__TABLES:
+				return ((InternalEList<?>)getTables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -121,10 +167,12 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS:
-				return getGraphs();
-			case Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS:
-				return getDiagrams();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__NAME:
+				return getName();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS:
+				return getVisualElements();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__TABLES:
+				return getTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,13 +186,16 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS:
-				getGraphs().clear();
-				getGraphs().addAll((Collection<? extends Graph>)newValue);
+			case Data_AnalysisPackage.DATA_VISUALIZATION__NAME:
+				setName((String)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS:
-				getDiagrams().clear();
-				getDiagrams().addAll((Collection<? extends Diagram>)newValue);
+			case Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS:
+				getVisualElements().clear();
+				getVisualElements().addAll((Collection<? extends GraphicElement>)newValue);
+				return;
+			case Data_AnalysisPackage.DATA_VISUALIZATION__TABLES:
+				getTables().clear();
+				getTables().addAll((Collection<? extends Table>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,11 +209,14 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS:
-				getGraphs().clear();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
-			case Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS:
-				getDiagrams().clear();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS:
+				getVisualElements().clear();
+				return;
+			case Data_AnalysisPackage.DATA_VISUALIZATION__TABLES:
+				getTables().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,12 +230,30 @@ public class DataVisualizationImpl extends TaskImpl implements DataVisualization
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_VISUALIZATION__GRAPHS:
-				return graphs != null && !graphs.isEmpty();
-			case Data_AnalysisPackage.DATA_VISUALIZATION__DIAGRAMS:
-				return diagrams != null && !diagrams.isEmpty();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Data_AnalysisPackage.DATA_VISUALIZATION__VISUAL_ELEMENTS:
+				return visualElements != null && !visualElements.isEmpty();
+			case Data_AnalysisPackage.DATA_VISUALIZATION__TABLES:
+				return tables != null && !tables.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataVisualizationImpl

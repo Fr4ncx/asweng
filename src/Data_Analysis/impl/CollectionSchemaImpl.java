@@ -2,12 +2,14 @@
  */
 package Data_Analysis.impl;
 
+import Data_Analysis.Attribute;
 import Data_Analysis.AttributeSchema;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.Data_AnalysisPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -28,12 +31,31 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link Data_Analysis.impl.CollectionSchemaImpl#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.impl.CollectionSchemaImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchema {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,7 +64,7 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttributeSchema> attributes;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,9 +90,30 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeSchema> getAttributes() {
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.COLLECTION_SCHEMA__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
-			attributes = new EObjectContainmentEList<AttributeSchema>(AttributeSchema.class, this, Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES);
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES);
 		}
 		return attributes;
 	}
@@ -97,6 +140,8 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+				return getName();
 			case Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES:
 				return getAttributes();
 		}
@@ -112,9 +157,12 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+				setName((String)newValue);
+				return;
 			case Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES:
 				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends AttributeSchema>)newValue);
+				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,6 +176,9 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES:
 				getAttributes().clear();
 				return;
@@ -143,10 +194,28 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Data_AnalysisPackage.COLLECTION_SCHEMA__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CollectionSchemaImpl

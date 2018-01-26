@@ -4,6 +4,7 @@ package Data_Analysis.impl;
 
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.DataIntegration;
+import Data_Analysis.DataSchema;
 import Data_Analysis.Data_AnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link Data_Analysis.impl.DataIntegrationImpl#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.impl.DataIntegrationImpl#getJoinAttributes <em>Join Attributes</em>}</li>
  *   <li>{@link Data_Analysis.impl.DataIntegrationImpl#getOutAttributes <em>Out Attributes</em>}</li>
  * </ul>
@@ -29,6 +31,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getJoinAttributes() <em>Join Attributes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,7 +58,7 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * @generated
 	 * @ordered
 	 */
-	protected CollectionSchema joinAttributes;
+	protected DataSchema joinAttributes;
 
 	/**
 	 * The cached value of the '{@link #getOutAttributes() <em>Out Attributes</em>}' reference.
@@ -46,7 +68,7 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * @generated
 	 * @ordered
 	 */
-	protected CollectionSchema outAttributes;
+	protected DataSchema outAttributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,10 +94,31 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema getJoinAttributes() {
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_INTEGRATION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSchema getJoinAttributes() {
 		if (joinAttributes != null && joinAttributes.eIsProxy()) {
 			InternalEObject oldJoinAttributes = (InternalEObject)joinAttributes;
-			joinAttributes = (CollectionSchema)eResolveProxy(oldJoinAttributes);
+			joinAttributes = (DataSchema)eResolveProxy(oldJoinAttributes);
 			if (joinAttributes != oldJoinAttributes) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES, oldJoinAttributes, joinAttributes));
@@ -89,7 +132,7 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema basicGetJoinAttributes() {
+	public DataSchema basicGetJoinAttributes() {
 		return joinAttributes;
 	}
 
@@ -98,8 +141,8 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setJoinAttributes(CollectionSchema newJoinAttributes) {
-		CollectionSchema oldJoinAttributes = joinAttributes;
+	public void setJoinAttributes(DataSchema newJoinAttributes) {
+		DataSchema oldJoinAttributes = joinAttributes;
 		joinAttributes = newJoinAttributes;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES, oldJoinAttributes, joinAttributes));
@@ -110,10 +153,10 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema getOutAttributes() {
+	public DataSchema getOutAttributes() {
 		if (outAttributes != null && outAttributes.eIsProxy()) {
 			InternalEObject oldOutAttributes = (InternalEObject)outAttributes;
-			outAttributes = (CollectionSchema)eResolveProxy(oldOutAttributes);
+			outAttributes = (DataSchema)eResolveProxy(oldOutAttributes);
 			if (outAttributes != oldOutAttributes) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_INTEGRATION__OUT_ATTRIBUTES, oldOutAttributes, outAttributes));
@@ -127,7 +170,7 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema basicGetOutAttributes() {
+	public DataSchema basicGetOutAttributes() {
 		return outAttributes;
 	}
 
@@ -136,8 +179,8 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOutAttributes(CollectionSchema newOutAttributes) {
-		CollectionSchema oldOutAttributes = outAttributes;
+	public void setOutAttributes(DataSchema newOutAttributes) {
+		DataSchema oldOutAttributes = outAttributes;
 		outAttributes = newOutAttributes;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_INTEGRATION__OUT_ATTRIBUTES, oldOutAttributes, outAttributes));
@@ -151,6 +194,8 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case Data_AnalysisPackage.DATA_INTEGRATION__NAME:
+				return getName();
 			case Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES:
 				if (resolve) return getJoinAttributes();
 				return basicGetJoinAttributes();
@@ -169,11 +214,14 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case Data_AnalysisPackage.DATA_INTEGRATION__NAME:
+				setName((String)newValue);
+				return;
 			case Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES:
-				setJoinAttributes((CollectionSchema)newValue);
+				setJoinAttributes((DataSchema)newValue);
 				return;
 			case Data_AnalysisPackage.DATA_INTEGRATION__OUT_ATTRIBUTES:
-				setOutAttributes((CollectionSchema)newValue);
+				setOutAttributes((DataSchema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +235,14 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.DATA_INTEGRATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES:
-				setJoinAttributes((CollectionSchema)null);
+				setJoinAttributes((DataSchema)null);
 				return;
 			case Data_AnalysisPackage.DATA_INTEGRATION__OUT_ATTRIBUTES:
-				setOutAttributes((CollectionSchema)null);
+				setOutAttributes((DataSchema)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,12 +256,30 @@ public class DataIntegrationImpl extends TaskImpl implements DataIntegration {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.DATA_INTEGRATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Data_AnalysisPackage.DATA_INTEGRATION__JOIN_ATTRIBUTES:
 				return joinAttributes != null;
 			case Data_AnalysisPackage.DATA_INTEGRATION__OUT_ATTRIBUTES:
 				return outAttributes != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataIntegrationImpl

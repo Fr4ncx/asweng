@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getAttributeSchema()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface AttributeSchema extends EObject {

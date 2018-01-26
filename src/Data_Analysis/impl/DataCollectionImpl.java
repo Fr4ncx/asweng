@@ -5,6 +5,7 @@ package Data_Analysis.impl;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.Condition;
 import Data_Analysis.DataCollection;
+import Data_Analysis.DataSchema;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.FormatType;
 import Data_Analysis.Source;
@@ -35,8 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getEndpoint <em>Endpoint</em>}</li>
  *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getSource <em>Source</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getSchema <em>Schema</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getConditions <em>Conditions</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getInputSchema <em>Input Schema</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +94,24 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	protected Source source;
 
 	/**
-	 * The cached value of the '{@link #getSchema() <em>Schema</em>}' reference.
+	 * The cached value of the '{@link #getInputSchema() <em>Input Schema</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSchema()
+	 * @see #getInputSchema()
 	 * @generated
 	 * @ordered
 	 */
-	protected CollectionSchema schema;
+	protected DataSchema inputSchema;
 
 	/**
-	 * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConditions()
+	 * @see #getCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Condition> conditions;
+	protected Condition condition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,16 +222,59 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema getSchema() {
-		if (schema != null && schema.eIsProxy()) {
-			InternalEObject oldSchema = (InternalEObject)schema;
-			schema = (CollectionSchema)eResolveProxy(oldSchema);
-			if (schema != oldSchema) {
+	public DataSchema getInputSchema() {
+		return inputSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInputSchema(DataSchema newInputSchema, NotificationChain msgs) {
+		DataSchema oldInputSchema = inputSchema;
+		inputSchema = newInputSchema;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, oldInputSchema, newInputSchema);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputSchema(DataSchema newInputSchema) {
+		if (newInputSchema != inputSchema) {
+			NotificationChain msgs = null;
+			if (inputSchema != null)
+				msgs = ((InternalEObject)inputSchema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, null, msgs);
+			if (newInputSchema != null)
+				msgs = ((InternalEObject)newInputSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, null, msgs);
+			msgs = basicSetInputSchema(newInputSchema, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, newInputSchema, newInputSchema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition getCondition() {
+		if (condition != null && condition.eIsProxy()) {
+			InternalEObject oldCondition = (InternalEObject)condition;
+			condition = (Condition)eResolveProxy(oldCondition);
+			if (condition != oldCondition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_COLLECTION__SCHEMA, oldSchema, schema));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_COLLECTION__CONDITION, oldCondition, condition));
 			}
 		}
-		return schema;
+		return condition;
 	}
 
 	/**
@@ -238,8 +282,8 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionSchema basicGetSchema() {
-		return schema;
+	public Condition basicGetCondition() {
+		return condition;
 	}
 
 	/**
@@ -247,23 +291,11 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSchema(CollectionSchema newSchema) {
-		CollectionSchema oldSchema = schema;
-		schema = newSchema;
+	public void setCondition(Condition newCondition) {
+		Condition oldCondition = condition;
+		condition = newCondition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__SCHEMA, oldSchema, schema));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Condition> getConditions() {
-		if (conditions == null) {
-			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS);
-		}
-		return conditions;
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__CONDITION, oldCondition, condition));
 	}
 
 	/**
@@ -276,8 +308,8 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
 				return basicSetSource(null, msgs);
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS:
-				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+				return basicSetInputSchema(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -296,11 +328,11 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 				return getEndpoint();
 			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
 				return getSource();
-			case Data_AnalysisPackage.DATA_COLLECTION__SCHEMA:
-				if (resolve) return getSchema();
-				return basicGetSchema();
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS:
-				return getConditions();
+			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+				return getInputSchema();
+			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+				if (resolve) return getCondition();
+				return basicGetCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,12 +355,11 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
 				setSource((Source)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__SCHEMA:
-				setSchema((CollectionSchema)newValue);
+			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+				setInputSchema((DataSchema)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS:
-				getConditions().clear();
-				getConditions().addAll((Collection<? extends Condition>)newValue);
+			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+				setCondition((Condition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -351,11 +382,11 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
 				setSource((Source)null);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__SCHEMA:
-				setSchema((CollectionSchema)null);
+			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+				setInputSchema((DataSchema)null);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS:
-				getConditions().clear();
+			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+				setCondition((Condition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -375,10 +406,10 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
 			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
 				return source != null;
-			case Data_AnalysisPackage.DATA_COLLECTION__SCHEMA:
-				return schema != null;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITIONS:
-				return conditions != null && !conditions.isEmpty();
+			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+				return inputSchema != null;
+			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+				return condition != null;
 		}
 		return super.eIsSet(featureID);
 	}

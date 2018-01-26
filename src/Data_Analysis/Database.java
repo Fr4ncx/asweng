@@ -18,7 +18,7 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getDatabase()
- * @model
+ * @model annotation="gmf.node label='port'"
  * @generated
  */
 public interface Database extends Source {

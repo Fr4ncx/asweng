@@ -15,58 +15,92 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.DataFlow#getFormat <em>Format</em>}</li>
+ *   <li>{@link Data_Analysis.DataFlow#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.DataFlow#getToTask <em>To Task</em>}</li>
+ *   <li>{@link Data_Analysis.DataFlow#getCollection <em>Collection</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getDataFlow()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface DataFlow extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Format</b></em>' attribute.
-	 * The literals are from the enumeration {@link Data_Analysis.FormatType}.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Format</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Format</em>' attribute.
-	 * @see Data_Analysis.FormatType
-	 * @see #setFormat(FormatType)
-	 * @see Data_Analysis.Data_AnalysisPackage#getDataFlow_Format()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataFlow_Name()
 	 * @model
 	 * @generated
 	 */
-	FormatType getFormat();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link Data_Analysis.DataFlow#getFormat <em>Format</em>}' attribute.
+	 * Sets the value of the '{@link Data_Analysis.DataFlow#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Format</em>' attribute.
-	 * @see Data_Analysis.FormatType
-	 * @see #getFormat()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setFormat(FormatType value);
+	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>To Task</b></em>' reference list.
-	 * The list contents are of type {@link Data_Analysis.Task}.
+	 * Returns the value of the '<em><b>To Task</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Task</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Task</em>' reference list.
+	 * @return the value of the '<em>To Task</em>' reference.
+	 * @see #setToTask(Task)
 	 * @see Data_Analysis.Data_AnalysisPackage#getDataFlow_ToTask()
 	 * @model
 	 * @generated
 	 */
-	EList<Task> getToTask();
+	Task getToTask();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.DataFlow#getToTask <em>To Task</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Task</em>' reference.
+	 * @see #getToTask()
+	 * @generated
+	 */
+	void setToTask(Task value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection</em>' containment reference.
+	 * @see #setCollection(CollectionSchema)
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataFlow_Collection()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	CollectionSchema getCollection();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.DataFlow#getCollection <em>Collection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection</em>' containment reference.
+	 * @see #getCollection()
+	 * @generated
+	 */
+	void setCollection(CollectionSchema value);
 
 } // DataFlow

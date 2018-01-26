@@ -17,7 +17,7 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getRestService()
- * @model
+ * @model annotation="gmf.node label='user'"
  * @generated
  */
 public interface RestService extends Source {

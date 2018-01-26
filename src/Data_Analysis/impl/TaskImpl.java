@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -36,14 +37,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class TaskImpl extends EObjectImpl implements Task {
 	/**
-	 * The cached value of the '{@link #getToFlow() <em>To Flow</em>}' reference list.
+	 * The cached value of the '{@link #getToFlow() <em>To Flow</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getToFlow()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataFlow> toFlow;
+	protected DataFlow toFlow;
 
 	/**
 	 * The default value of the '{@link #getExecutionTimestamp() <em>Execution Timestamp</em>}' attribute.
@@ -109,11 +110,37 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataFlow> getToFlow() {
-		if (toFlow == null) {
-			toFlow = new EObjectResolvingEList<DataFlow>(DataFlow.class, this, Data_AnalysisPackage.TASK__TO_FLOW);
+	public DataFlow getToFlow() {
+		if (toFlow != null && toFlow.eIsProxy()) {
+			InternalEObject oldToFlow = (InternalEObject)toFlow;
+			toFlow = (DataFlow)eResolveProxy(oldToFlow);
+			if (toFlow != oldToFlow) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.TASK__TO_FLOW, oldToFlow, toFlow));
+			}
 		}
 		return toFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataFlow basicGetToFlow() {
+		return toFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToFlow(DataFlow newToFlow) {
+		DataFlow oldToFlow = toFlow;
+		toFlow = newToFlow;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.TASK__TO_FLOW, oldToFlow, toFlow));
 	}
 
 	/**
@@ -167,7 +194,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Data_AnalysisPackage.TASK__TO_FLOW:
-				return getToFlow();
+				if (resolve) return getToFlow();
+				return basicGetToFlow();
 			case Data_AnalysisPackage.TASK__EXECUTION_TIMESTAMP:
 				return getExecutionTimestamp();
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:
@@ -186,8 +214,7 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Data_AnalysisPackage.TASK__TO_FLOW:
-				getToFlow().clear();
-				getToFlow().addAll((Collection<? extends DataFlow>)newValue);
+				setToFlow((DataFlow)newValue);
 				return;
 			case Data_AnalysisPackage.TASK__EXECUTION_TIMESTAMP:
 				setExecutionTimestamp((Long)newValue);
@@ -208,7 +235,7 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Data_AnalysisPackage.TASK__TO_FLOW:
-				getToFlow().clear();
+				setToFlow((DataFlow)null);
 				return;
 			case Data_AnalysisPackage.TASK__EXECUTION_TIMESTAMP:
 				setExecutionTimestamp(EXECUTION_TIMESTAMP_EDEFAULT);
@@ -229,7 +256,7 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Data_AnalysisPackage.TASK__TO_FLOW:
-				return toFlow != null && !toFlow.isEmpty();
+				return toFlow != null;
 			case Data_AnalysisPackage.TASK__EXECUTION_TIMESTAMP:
 				return executionTimestamp != EXECUTION_TIMESTAMP_EDEFAULT;
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:

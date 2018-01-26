@@ -62,7 +62,7 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 			case Data_AnalysisPackage.DATA_INTEGRATION: return createDataIntegration();
 			case Data_AnalysisPackage.DATA_CLEANING: return createDataCleaning();
 			case Data_AnalysisPackage.DATA_ANALYSIS: return createDataAnalysis();
-			case Data_AnalysisPackage.COLLECTION_SCHEMA: return createCollectionSchema();
+			case Data_AnalysisPackage.DATA_SCHEMA: return createDataSchema();
 			case Data_AnalysisPackage.ATTRIBUTE_SCHEMA: return createAttributeSchema();
 			case Data_AnalysisPackage.FILE: return createFile();
 			case Data_AnalysisPackage.DATABASE: return createDatabase();
@@ -92,7 +92,14 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 			case Data_AnalysisPackage.GRAPH_ELEMENT: return createGraphElement();
 			case Data_AnalysisPackage.NODE: return createNode();
 			case Data_AnalysisPackage.EDGE: return createEdge();
+			case Data_AnalysisPackage.TABLE: return createTable();
+			case Data_AnalysisPackage.ANALYSIS: return createAnalysis();
+			case Data_AnalysisPackage.GRAPHIC_ELEMENT: return createGraphicElement();
 			case Data_AnalysisPackage.DIAGRAM: return createDiagram();
+			case Data_AnalysisPackage.COLLECTION_SCHEMA: return createCollectionSchema();
+			case Data_AnalysisPackage.ATTRIBUTE: return createAttribute();
+			case Data_AnalysisPackage.ROW: return createRow();
+			case Data_AnalysisPackage.CELL: return createCell();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -195,9 +202,49 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataSchema createDataSchema() {
+		DataSchemaImpl dataSchema = new DataSchemaImpl();
+		return dataSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CollectionSchema createCollectionSchema() {
 		CollectionSchemaImpl collectionSchema = new CollectionSchemaImpl();
 		return collectionSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Row createRow() {
+		RowImpl row = new RowImpl();
+		return row;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cell createCell() {
+		CellImpl cell = new CellImpl();
+		return cell;
 	}
 
 	/**
@@ -488,6 +535,36 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public Edge createEdge() {
 		EdgeImpl edge = new EdgeImpl();
 		return edge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table createTable() {
+		TableImpl table = new TableImpl();
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Analysis createAnalysis() {
+		AnalysisImpl analysis = new AnalysisImpl();
+		return analysis;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GraphicElement createGraphicElement() {
+		GraphicElementImpl graphicElement = new GraphicElementImpl();
+		return graphicElement;
 	}
 
 	/**

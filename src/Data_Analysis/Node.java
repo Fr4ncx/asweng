@@ -19,7 +19,7 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getNode()
- * @model
+ * @model annotation="gmf.node label='width'"
  * @generated
  */
 public interface Node extends GraphElement {

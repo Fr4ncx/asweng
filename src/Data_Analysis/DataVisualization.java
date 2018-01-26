@@ -13,45 +13,72 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.DataVisualization#getGraphs <em>Graphs</em>}</li>
- *   <li>{@link Data_Analysis.DataVisualization#getDiagrams <em>Diagrams</em>}</li>
+ *   <li>{@link Data_Analysis.DataVisualization#getName <em>Name</em>}</li>
+ *   <li>{@link Data_Analysis.DataVisualization#getVisualElements <em>Visual Elements</em>}</li>
+ *   <li>{@link Data_Analysis.DataVisualization#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface DataVisualization extends Task {
 	/**
-	 * Returns the value of the '<em><b>Graphs</b></em>' containment reference list.
-	 * The list contents are of type {@link Data_Analysis.Graph}.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Graphs</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Graphs</em>' containment reference list.
-	 * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization_Graphs()
-	 * @model containment="true"
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization_Name()
+	 * @model
 	 * @generated
 	 */
-	EList<Graph> getGraphs();
+	String getName();
 
 	/**
-	 * Returns the value of the '<em><b>Diagrams</b></em>' containment reference list.
-	 * The list contents are of type {@link Data_Analysis.Diagram}.
+	 * Sets the value of the '{@link Data_Analysis.DataVisualization#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Visual Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link Data_Analysis.GraphicElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Diagrams</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Visual Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diagrams</em>' containment reference list.
-	 * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization_Diagrams()
+	 * @return the value of the '<em>Visual Elements</em>' containment reference list.
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization_VisualElements()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Diagram> getDiagrams();
+	EList<GraphicElement> getVisualElements();
+
+	/**
+	 * Returns the value of the '<em><b>Tables</b></em>' containment reference list.
+	 * The list contents are of type {@link Data_Analysis.Table}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tables</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tables</em>' containment reference list.
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataVisualization_Tables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Table> getTables();
 
 } // DataVisualization

@@ -67,6 +67,15 @@ public interface Data_AnalysisFactory extends EFactory {
 	DataAnalysis createDataAnalysis();
 
 	/**
+	 * Returns a new object of class '<em>Data Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Schema</em>'.
+	 * @generated
+	 */
+	DataSchema createDataSchema();
+
+	/**
 	 * Returns a new object of class '<em>Collection Schema</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +83,33 @@ public interface Data_AnalysisFactory extends EFactory {
 	 * @generated
 	 */
 	CollectionSchema createCollectionSchema();
+
+	/**
+	 * Returns a new object of class '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute</em>'.
+	 * @generated
+	 */
+	Attribute createAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Row</em>'.
+	 * @generated
+	 */
+	Row createRow();
+
+	/**
+	 * Returns a new object of class '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cell</em>'.
+	 * @generated
+	 */
+	Cell createCell();
 
 	/**
 	 * Returns a new object of class '<em>Attribute Schema</em>'.
@@ -335,6 +371,33 @@ public interface Data_AnalysisFactory extends EFactory {
 	 * @generated
 	 */
 	Edge createEdge();
+
+	/**
+	 * Returns a new object of class '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table</em>'.
+	 * @generated
+	 */
+	Table createTable();
+
+	/**
+	 * Returns a new object of class '<em>Analysis</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Analysis</em>'.
+	 * @generated
+	 */
+	Analysis createAnalysis();
+
+	/**
+	 * Returns a new object of class '<em>Graphic Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Graphic Element</em>'.
+	 * @generated
+	 */
+	GraphicElement createGraphicElement();
 
 	/**
 	 * Returns a new object of class '<em>Diagram</em>'.

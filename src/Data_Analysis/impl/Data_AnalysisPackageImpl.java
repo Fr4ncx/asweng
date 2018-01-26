@@ -2,11 +2,14 @@
  */
 package Data_Analysis.impl;
 
+import Data_Analysis.Analysis;
 import Data_Analysis.AndExp;
+import Data_Analysis.Attribute;
 import Data_Analysis.AttributeSchema;
 import Data_Analysis.AttributeType;
 import Data_Analysis.Category;
 import Data_Analysis.CategoryType;
+import Data_Analysis.Cell;
 import Data_Analysis.Classification;
 import Data_Analysis.Clustering;
 import Data_Analysis.CollectionSchema;
@@ -18,6 +21,7 @@ import Data_Analysis.DataCleaning;
 import Data_Analysis.DataCollection;
 import Data_Analysis.DataFlow;
 import Data_Analysis.DataIntegration;
+import Data_Analysis.DataSchema;
 import Data_Analysis.DataVisualization;
 import Data_Analysis.Data_AnalysisFactory;
 import Data_Analysis.Data_AnalysisPackage;
@@ -31,6 +35,7 @@ import Data_Analysis.FormatData;
 import Data_Analysis.FormatType;
 import Data_Analysis.Graph;
 import Data_Analysis.GraphElement;
+import Data_Analysis.GraphicElement;
 import Data_Analysis.Gt;
 import Data_Analysis.Gte;
 import Data_Analysis.LogicalExp;
@@ -44,10 +49,14 @@ import Data_Analysis.Pipeline;
 import Data_Analysis.Prediction;
 import Data_Analysis.RemoveNull;
 import Data_Analysis.RestService;
+import Data_Analysis.Row;
 import Data_Analysis.Source;
+import Data_Analysis.Table;
 import Data_Analysis.Task;
 import Data_Analysis.ValueCondition;
 
+import Data_Analysis.XAxis;
+import Data_Analysis.YAxis;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -110,7 +119,35 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dataSchemaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass collectionSchemaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cellEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,6 +371,27 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass analysisEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass graphicElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass diagramEClass = null;
 
 	/**
@@ -448,7 +506,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPipeline_Schemas() {
+	public EReference getPipeline_Flows() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -457,8 +515,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPipeline_Flows() {
+	public EReference getPipeline_Schemas() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPipeline_Conditions() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -538,7 +605,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataCollection_Schema() {
+	public EReference getDataCollection_InputSchema() {
 		return (EReference)dataCollectionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -547,7 +614,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataCollection_Conditions() {
+	public EReference getDataCollection_Condition() {
 		return (EReference)dataCollectionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -565,8 +632,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataIntegration_Name() {
+		return (EAttribute)dataIntegrationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDataIntegration_JoinAttributes() {
-		return (EReference)dataIntegrationEClass.getEStructuralFeatures().get(0);
+		return (EReference)dataIntegrationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -575,7 +651,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * @generated
 	 */
 	public EReference getDataIntegration_OutAttributes() {
-		return (EReference)dataIntegrationEClass.getEStructuralFeatures().get(1);
+		return (EReference)dataIntegrationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -592,8 +668,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataCleaning_Name() {
+		return (EAttribute)dataCleaningEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDataCleaning_Operations() {
-		return (EReference)dataCleaningEClass.getEStructuralFeatures().get(0);
+		return (EReference)dataCleaningEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -610,8 +695,53 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataAnalysis_Name() {
+		return (EAttribute)dataAnalysisEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDataAnalysis_Category() {
-		return (EReference)dataAnalysisEClass.getEStructuralFeatures().get(0);
+		return (EReference)dataAnalysisEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataAnalysis_Analysis() {
+		return (EReference)dataAnalysisEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataSchema() {
+		return dataSchemaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataSchema_Name() {
+		return (EAttribute)dataSchemaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataSchema_SchemaAttributes() {
+		return (EReference)dataSchemaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -628,8 +758,107 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCollectionSchema_Name() {
+		return (EAttribute)collectionSchemaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCollectionSchema_Attributes() {
-		return (EReference)collectionSchemaEClass.getEStructuralFeatures().get(0);
+		return (EReference)collectionSchemaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttribute() {
+		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_Name() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_Type() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_Value() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRow() {
+		return rowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRow_RowIndex() {
+		return (EAttribute)rowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRow_Cells() {
+		return (EReference)rowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCell() {
+		return cellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCell_CellIndex() {
+		return (EAttribute)cellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCell_Value() {
+		return (EAttribute)cellEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -763,6 +992,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOperation_Name() {
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRemoveNull() {
 		return removeNullEClass;
 	}
@@ -808,8 +1046,8 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataVisualization_Graphs() {
-		return (EReference)dataVisualizationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDataVisualization_Name() {
+		return (EAttribute)dataVisualizationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -817,8 +1055,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataVisualization_Diagrams() {
+	public EReference getDataVisualization_VisualElements() {
 		return (EReference)dataVisualizationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataVisualization_Tables() {
+		return (EReference)dataVisualizationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -853,7 +1100,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataFlow_Format() {
+	public EAttribute getDataFlow_Name() {
 		return (EAttribute)dataFlowEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -871,6 +1118,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataFlow_Collection() {
+		return (EReference)dataFlowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCondition() {
 		return conditionEClass;
 	}
@@ -880,8 +1136,26 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCondition_Name() {
+		return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCondition_Expressions() {
-		return (EReference)conditionEClass.getEStructuralFeatures().get(0);
+		return (EReference)conditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCondition_ValueConditions() {
+		return (EReference)conditionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -988,8 +1262,35 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLogicalExp_Name() {
+		return (EAttribute)logicalExpEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicalExp_Valueconditions() {
+		return (EReference)logicalExpEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCategory() {
 		return categoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCategory_Name() {
+		return (EAttribute)categoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1042,8 +1343,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGraph_Name() {
+		return (EAttribute)graphEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getGraph_Elements() {
-		return (EReference)graphEClass.getEStructuralFeatures().get(0);
+		return (EReference)graphEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1114,8 +1424,8 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdge_Source() {
-		return (EReference)edgeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getEdge_Name() {
+		return (EAttribute)edgeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1123,7 +1433,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdge_Target() {
+	public EReference getEdge_Source() {
 		return (EReference)edgeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1132,8 +1442,62 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEdge_Target() {
+		return (EReference)edgeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEdge_Width() {
-		return (EAttribute)edgeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)edgeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTable() {
+		return tableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTable_Name() {
+		return (EAttribute)tableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTable_Rows() {
+		return (EReference)tableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnalysis() {
+		return analysisEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGraphicElement() {
+		return graphicElementEClass;
 	}
 
 	/**
@@ -1143,24 +1507,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EClass getDiagram() {
 		return diagramEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiagram_XAttribute() {
-		return (EAttribute)diagramEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDiagram_YAttribute() {
-		return (EAttribute)diagramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1229,8 +1575,9 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		// Create classes and their features
 		pipelineEClass = createEClass(PIPELINE);
 		createEReference(pipelineEClass, PIPELINE__TASKS);
-		createEReference(pipelineEClass, PIPELINE__SCHEMAS);
 		createEReference(pipelineEClass, PIPELINE__FLOWS);
+		createEReference(pipelineEClass, PIPELINE__SCHEMAS);
+		createEReference(pipelineEClass, PIPELINE__CONDITIONS);
 
 		taskEClass = createEClass(TASK);
 		createEReference(taskEClass, TASK__TO_FLOW);
@@ -1241,21 +1588,26 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(dataCollectionEClass, DATA_COLLECTION__FORMAT);
 		createEAttribute(dataCollectionEClass, DATA_COLLECTION__ENDPOINT);
 		createEReference(dataCollectionEClass, DATA_COLLECTION__SOURCE);
-		createEReference(dataCollectionEClass, DATA_COLLECTION__SCHEMA);
-		createEReference(dataCollectionEClass, DATA_COLLECTION__CONDITIONS);
+		createEReference(dataCollectionEClass, DATA_COLLECTION__INPUT_SCHEMA);
+		createEReference(dataCollectionEClass, DATA_COLLECTION__CONDITION);
 
 		dataIntegrationEClass = createEClass(DATA_INTEGRATION);
+		createEAttribute(dataIntegrationEClass, DATA_INTEGRATION__NAME);
 		createEReference(dataIntegrationEClass, DATA_INTEGRATION__JOIN_ATTRIBUTES);
 		createEReference(dataIntegrationEClass, DATA_INTEGRATION__OUT_ATTRIBUTES);
 
 		dataCleaningEClass = createEClass(DATA_CLEANING);
+		createEAttribute(dataCleaningEClass, DATA_CLEANING__NAME);
 		createEReference(dataCleaningEClass, DATA_CLEANING__OPERATIONS);
 
 		dataAnalysisEClass = createEClass(DATA_ANALYSIS);
+		createEAttribute(dataAnalysisEClass, DATA_ANALYSIS__NAME);
 		createEReference(dataAnalysisEClass, DATA_ANALYSIS__CATEGORY);
+		createEReference(dataAnalysisEClass, DATA_ANALYSIS__ANALYSIS);
 
-		collectionSchemaEClass = createEClass(COLLECTION_SCHEMA);
-		createEReference(collectionSchemaEClass, COLLECTION_SCHEMA__ATTRIBUTES);
+		dataSchemaEClass = createEClass(DATA_SCHEMA);
+		createEAttribute(dataSchemaEClass, DATA_SCHEMA__NAME);
+		createEReference(dataSchemaEClass, DATA_SCHEMA__SCHEMA_ATTRIBUTES);
 
 		attributeSchemaEClass = createEClass(ATTRIBUTE_SCHEMA);
 		createEAttribute(attributeSchemaEClass, ATTRIBUTE_SCHEMA__NAME);
@@ -1276,6 +1628,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(restServiceEClass, REST_SERVICE__PWD);
 
 		operationEClass = createEClass(OPERATION);
+		createEAttribute(operationEClass, OPERATION__NAME);
 
 		removeNullEClass = createEClass(REMOVE_NULL);
 
@@ -1285,18 +1638,22 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(customEClass, CUSTOM__ACTION);
 
 		dataVisualizationEClass = createEClass(DATA_VISUALIZATION);
-		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__GRAPHS);
-		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__DIAGRAMS);
+		createEAttribute(dataVisualizationEClass, DATA_VISUALIZATION__NAME);
+		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__VISUAL_ELEMENTS);
+		createEReference(dataVisualizationEClass, DATA_VISUALIZATION__TABLES);
 
 		exportDataEClass = createEClass(EXPORT_DATA);
 		createEAttribute(exportDataEClass, EXPORT_DATA__FORMAT);
 
 		dataFlowEClass = createEClass(DATA_FLOW);
-		createEAttribute(dataFlowEClass, DATA_FLOW__FORMAT);
+		createEAttribute(dataFlowEClass, DATA_FLOW__NAME);
 		createEReference(dataFlowEClass, DATA_FLOW__TO_TASK);
+		createEReference(dataFlowEClass, DATA_FLOW__COLLECTION);
 
 		conditionEClass = createEClass(CONDITION);
+		createEAttribute(conditionEClass, CONDITION__NAME);
 		createEReference(conditionEClass, CONDITION__EXPRESSIONS);
+		createEReference(conditionEClass, CONDITION__VALUE_CONDITIONS);
 
 		notExEClass = createEClass(NOT_EX);
 
@@ -1317,8 +1674,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		gteEClass = createEClass(GTE);
 
 		logicalExpEClass = createEClass(LOGICAL_EXP);
+		createEAttribute(logicalExpEClass, LOGICAL_EXP__NAME);
+		createEReference(logicalExpEClass, LOGICAL_EXP__VALUECONDITIONS);
 
 		categoryEClass = createEClass(CATEGORY);
+		createEAttribute(categoryEClass, CATEGORY__NAME);
 
 		descriptionEClass = createEClass(DESCRIPTION);
 
@@ -1329,6 +1689,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		classificationEClass = createEClass(CLASSIFICATION);
 
 		graphEClass = createEClass(GRAPH);
+		createEAttribute(graphEClass, GRAPH__NAME);
 		createEReference(graphEClass, GRAPH__ELEMENTS);
 
 		graphElementEClass = createEClass(GRAPH_ELEMENT);
@@ -1340,13 +1701,37 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(nodeEClass, NODE__Y);
 
 		edgeEClass = createEClass(EDGE);
+		createEAttribute(edgeEClass, EDGE__NAME);
 		createEReference(edgeEClass, EDGE__SOURCE);
 		createEReference(edgeEClass, EDGE__TARGET);
 		createEAttribute(edgeEClass, EDGE__WIDTH);
 
+		tableEClass = createEClass(TABLE);
+		createEAttribute(tableEClass, TABLE__NAME);
+		createEReference(tableEClass, TABLE__ROWS);
+
+		analysisEClass = createEClass(ANALYSIS);
+
+		graphicElementEClass = createEClass(GRAPHIC_ELEMENT);
+
 		diagramEClass = createEClass(DIAGRAM);
-		createEAttribute(diagramEClass, DIAGRAM__XATTRIBUTE);
-		createEAttribute(diagramEClass, DIAGRAM__YATTRIBUTE);
+
+		collectionSchemaEClass = createEClass(COLLECTION_SCHEMA);
+		createEAttribute(collectionSchemaEClass, COLLECTION_SCHEMA__NAME);
+		createEReference(collectionSchemaEClass, COLLECTION_SCHEMA__ATTRIBUTES);
+
+		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
+		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
+
+		rowEClass = createEClass(ROW);
+		createEAttribute(rowEClass, ROW__ROW_INDEX);
+		createEReference(rowEClass, ROW__CELLS);
+
+		cellEClass = createEClass(CELL);
+		createEAttribute(cellEClass, CELL__CELL_INDEX);
+		createEAttribute(cellEClass, CELL__VALUE);
 
 		// Create enums
 		categoryTypeEEnum = createEEnum(CATEGORY_TYPE);
@@ -1398,7 +1783,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		notExEClass.getESuperTypes().add(this.getLogicalExp());
 		orExpEClass.getESuperTypes().add(this.getLogicalExp());
 		andExpEClass.getESuperTypes().add(this.getLogicalExp());
-		valueConditionEClass.getESuperTypes().add(this.getLogicalExp());
 		ltEClass.getESuperTypes().add(this.getValueCondition());
 		lteEClass.getESuperTypes().add(this.getValueCondition());
 		gtEClass.getESuperTypes().add(this.getValueCondition());
@@ -1407,17 +1791,20 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		predictionEClass.getESuperTypes().add(this.getCategory());
 		clusteringEClass.getESuperTypes().add(this.getCategory());
 		classificationEClass.getESuperTypes().add(this.getCategory());
+		graphEClass.getESuperTypes().add(this.getGraphicElement());
 		nodeEClass.getESuperTypes().add(this.getGraphElement());
 		edgeEClass.getESuperTypes().add(this.getGraphElement());
+		diagramEClass.getESuperTypes().add(this.getGraphicElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(pipelineEClass, Pipeline.class, "Pipeline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPipeline_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPipeline_Schemas(), this.getCollectionSchema(), null, "schemas", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_Flows(), this.getDataFlow(), null, "flows", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Schemas(), this.getDataSchema(), null, "schemas", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTask_ToFlow(), this.getDataFlow(), null, "toFlow", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_ToFlow(), this.getDataFlow(), null, "toFlow", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_ExecutionTimestamp(), ecorePackage.getELong(), "executionTimestamp", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_IsExecuted(), ecorePackage.getEBoolean(), "isExecuted", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1425,21 +1812,26 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getDataCollection_Format(), this.getFormatType(), "format", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataCollection_Endpoint(), ecorePackage.getEString(), "endpoint", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataCollection_Source(), this.getSource(), null, "source", null, 1, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataCollection_Schema(), this.getCollectionSchema(), null, "schema", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataCollection_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataCollection_InputSchema(), this.getDataSchema(), null, "inputSchema", null, 1, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataCollection_Condition(), this.getCondition(), null, "condition", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataIntegrationEClass, DataIntegration.class, "DataIntegration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataIntegration_JoinAttributes(), this.getCollectionSchema(), null, "joinAttributes", null, 1, 1, DataIntegration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataIntegration_OutAttributes(), this.getCollectionSchema(), null, "outAttributes", null, 1, 1, DataIntegration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataIntegration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataIntegration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataIntegration_JoinAttributes(), this.getDataSchema(), null, "joinAttributes", null, 1, 1, DataIntegration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataIntegration_OutAttributes(), this.getDataSchema(), null, "outAttributes", null, 1, 1, DataIntegration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataCleaningEClass, DataCleaning.class, "DataCleaning", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataCleaning_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataCleaning.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataCleaning_Operations(), this.getOperation(), null, "operations", null, 0, -1, DataCleaning.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataAnalysisEClass, DataAnalysis.class, "DataAnalysis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataAnalysis_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataAnalysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataAnalysis_Category(), this.getCategory(), null, "category", null, 0, 1, DataAnalysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataAnalysis_Analysis(), this.getAnalysis(), null, "Analysis", null, 0, -1, DataAnalysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(collectionSchemaEClass, CollectionSchema.class, "CollectionSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCollectionSchema_Attributes(), this.getAttributeSchema(), null, "attributes", null, 1, -1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataSchemaEClass, DataSchema.class, "DataSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSchema_SchemaAttributes(), this.getAttributeSchema(), null, "schemaAttributes", null, 1, -1, DataSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeSchemaEClass, AttributeSchema.class, "AttributeSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttributeSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1460,6 +1852,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getRestService_Pwd(), ecorePackage.getEString(), "pwd", null, 0, 1, RestService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(removeNullEClass, RemoveNull.class, "RemoveNull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1469,18 +1862,22 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getCustom_Action(), this.getCustomAction(), "action", null, 0, 1, Custom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataVisualizationEClass, DataVisualization.class, "DataVisualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataVisualization_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataVisualization_Diagrams(), this.getDiagram(), null, "diagrams", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataVisualization_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataVisualization_VisualElements(), this.getGraphicElement(), null, "visualElements", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataVisualization_Tables(), this.getTable(), null, "tables", null, 0, -1, DataVisualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exportDataEClass, ExportData.class, "ExportData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExportData_Format(), this.getFormatType(), "format", null, 0, 1, ExportData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataFlowEClass, DataFlow.class, "DataFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataFlow_Format(), this.getFormatType(), "format", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataFlow_ToTask(), this.getTask(), null, "toTask", null, 0, -1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataFlow_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlow_ToTask(), this.getTask(), null, "toTask", null, 0, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataFlow_Collection(), this.getCollectionSchema(), null, "collection", null, 1, 1, DataFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCondition_Expressions(), this.getLogicalExp(), null, "expressions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCondition_ValueConditions(), this.getValueCondition(), null, "valueConditions", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notExEClass, NotEx.class, "NotEx", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1501,8 +1898,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEClass(gteEClass, Gte.class, "Gte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(logicalExpEClass, LogicalExp.class, "LogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicalExp_Name(), ecorePackage.getEString(), "name", null, 0, 1, LogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogicalExp_Valueconditions(), this.getValueCondition(), null, "valueconditions", null, 0, -1, LogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1513,6 +1913,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGraph_Name(), ecorePackage.getEString(), "name", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraph_Elements(), this.getGraphElement(), null, "elements", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphElementEClass, GraphElement.class, "GraphElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1524,13 +1925,37 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getNode_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEdge_Name(), ecorePackage.getEString(), "name", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEdge_Source(), this.getNode(), null, "source", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEdge_Target(), this.getNode(), null, "target", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdge_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_Rows(), this.getRow(), null, "rows", null, 1, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(graphicElementEClass, GraphicElement.class, "GraphicElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiagram_XAttribute(), ecorePackage.getEShort(), "xAttribute", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDiagram_YAttribute(), ecorePackage.getEString(), "yAttribute", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(collectionSchemaEClass, CollectionSchema.class, "CollectionSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCollectionSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionSchema_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Type(), this.getAttributeType(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rowEClass, Row.class, "Row", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRow_RowIndex(), ecorePackage.getEString(), "rowIndex", null, 0, 1, Row.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRow_Cells(), this.getCell(), null, "cells", null, 1, -1, Row.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCell_CellIndex(), ecorePackage.getEString(), "cellIndex", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCell_Value(), ecorePackage.getEString(), "value", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(categoryTypeEEnum, CategoryType.class, "CategoryType");
@@ -1560,6 +1985,14 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		// Create annotations
 		// gmf.diagram
 		createGmfAnnotations();
+		// gmf.link
+		createGmf_1Annotations();
+		// gmf.node
+		createGmf_2Annotations();
+		// gmf.compartment
+		createGmf_3Annotations();
+		// null
+		createNullAnnotations();
 	}
 
 	/**
@@ -1572,6 +2005,322 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		String source = "gmf.diagram";	
 		addAnnotation
 		  (pipelineEClass, 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_1Annotations() {
+		String source = "gmf.link";	
+		addAnnotation
+		  (getTask_ToFlow(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataIntegration_JoinAttributes(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataIntegration_OutAttributes(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataFlow_ToTask(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEdge_Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEdge_Target(), 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.node</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.node";	
+		addAnnotation
+		  (dataCollectionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "format"
+		   });	
+		addAnnotation
+		  (dataIntegrationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (dataCleaningEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (dataAnalysisEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (dataSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (attributeSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (sourceEClass, 
+		   source, 
+		   new String[] {
+			 "label", "url"
+		   });	
+		addAnnotation
+		  (fileEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (databaseEClass, 
+		   source, 
+		   new String[] {
+			 "label", "port"
+		   });	
+		addAnnotation
+		  (restServiceEClass, 
+		   source, 
+		   new String[] {
+			 "label", "user"
+		   });	
+		addAnnotation
+		  (operationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (removeNullEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (formatDataEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (customEClass, 
+		   source, 
+		   new String[] {
+			 "label", "action"
+		   });	
+		addAnnotation
+		  (dataVisualizationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (exportDataEClass, 
+		   source, 
+		   new String[] {
+			 "label", "format"
+		   });	
+		addAnnotation
+		  (dataFlowEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (conditionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (valueConditionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "attribute"
+		   });	
+		addAnnotation
+		  (logicalExpEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (categoryEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (graphEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (nodeEClass, 
+		   source, 
+		   new String[] {
+			 "label", "width"
+		   });	
+		addAnnotation
+		  (edgeEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (tableEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (collectionSchemaEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (rowEClass, 
+		   source, 
+		   new String[] {
+			 "label", "rowIndex"
+		   });	
+		addAnnotation
+		  (cellEClass, 
+		   source, 
+		   new String[] {
+			 "label", "cellIndex"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.compartment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.compartment";	
+		addAnnotation
+		  (getDataCollection_Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataCollection_InputSchema(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataCleaning_Operations(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataAnalysis_Category(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataAnalysis_Analysis(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataSchema_SchemaAttributes(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataVisualization_VisualElements(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataVisualization_Tables(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataFlow_Collection(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getCondition_Expressions(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getGraph_Elements(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTable_Rows(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getCollectionSchema_Attributes(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getRow_Cells(), 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>null</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createNullAnnotations() {
+		String source = null;	
+		addAnnotation
+		  (lteEClass, 
 		   source, 
 		   new String[] {
 		   });

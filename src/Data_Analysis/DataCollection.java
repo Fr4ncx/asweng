@@ -16,12 +16,12 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link Data_Analysis.DataCollection#getFormat <em>Format</em>}</li>
  *   <li>{@link Data_Analysis.DataCollection#getEndpoint <em>Endpoint</em>}</li>
  *   <li>{@link Data_Analysis.DataCollection#getSource <em>Source</em>}</li>
- *   <li>{@link Data_Analysis.DataCollection#getSchema <em>Schema</em>}</li>
- *   <li>{@link Data_Analysis.DataCollection#getConditions <em>Conditions</em>}</li>
+ *   <li>{@link Data_Analysis.DataCollection#getInputSchema <em>Input Schema</em>}</li>
+ *   <li>{@link Data_Analysis.DataCollection#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getDataCollection()
- * @model
+ * @model annotation="gmf.node label='format'"
  * @generated
  */
 public interface DataCollection extends Task {
@@ -107,45 +107,55 @@ public interface DataCollection extends Task {
 	void setSource(Source value);
 
 	/**
-	 * Returns the value of the '<em><b>Schema</b></em>' reference.
+	 * Returns the value of the '<em><b>Input Schema</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Schema</em>' reference isn't clear,
+	 * If the meaning of the '<em>Input Schema</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schema</em>' reference.
-	 * @see #setSchema(CollectionSchema)
-	 * @see Data_Analysis.Data_AnalysisPackage#getDataCollection_Schema()
+	 * @return the value of the '<em>Input Schema</em>' containment reference.
+	 * @see #setInputSchema(DataSchema)
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataCollection_InputSchema()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	DataSchema getInputSchema();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.DataCollection#getInputSchema <em>Input Schema</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Schema</em>' containment reference.
+	 * @see #getInputSchema()
+	 * @generated
+	 */
+	void setInputSchema(DataSchema value);
+
+	/**
+	 * Returns the value of the '<em><b>Condition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Condition</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition</em>' reference.
+	 * @see #setCondition(Condition)
+	 * @see Data_Analysis.Data_AnalysisPackage#getDataCollection_Condition()
 	 * @model
 	 * @generated
 	 */
-	CollectionSchema getSchema();
+	Condition getCondition();
 
 	/**
-	 * Sets the value of the '{@link Data_Analysis.DataCollection#getSchema <em>Schema</em>}' reference.
+	 * Sets the value of the '{@link Data_Analysis.DataCollection#getCondition <em>Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schema</em>' reference.
-	 * @see #getSchema()
+	 * @param value the new value of the '<em>Condition</em>' reference.
+	 * @see #getCondition()
 	 * @generated
 	 */
-	void setSchema(CollectionSchema value);
-
-	/**
-	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link Data_Analysis.Condition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conditions</em>' containment reference list.
-	 * @see Data_Analysis.Data_AnalysisPackage#getDataCollection_Conditions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Condition> getConditions();
+	void setCondition(Condition value);
 
 } // DataCollection

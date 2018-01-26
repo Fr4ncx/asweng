@@ -2,6 +2,8 @@
  */
 package Data_Analysis;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +19,10 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getValueCondition()
- * @model
+ * @model annotation="gmf.node label='attribute'"
  * @generated
  */
-public interface ValueCondition extends LogicalExp {
+public interface ValueCondition extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -12,16 +12,43 @@ package Data_Analysis;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link Data_Analysis.Edge#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.Edge#getSource <em>Source</em>}</li>
  *   <li>{@link Data_Analysis.Edge#getTarget <em>Target</em>}</li>
  *   <li>{@link Data_Analysis.Edge#getWidth <em>Width</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getEdge()
- * @model
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface Edge extends GraphElement {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.Edge#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->

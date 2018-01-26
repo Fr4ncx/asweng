@@ -16,7 +16,7 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getExportData()
- * @model
+ * @model annotation="gmf.node label='format'"
  * @generated
  */
 public interface ExportData extends Task {

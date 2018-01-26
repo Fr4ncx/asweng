@@ -106,9 +106,9 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.COLLECTION_SCHEMA: {
-				CollectionSchema collectionSchema = (CollectionSchema)theEObject;
-				T result = caseCollectionSchema(collectionSchema);
+			case Data_AnalysisPackage.DATA_SCHEMA: {
+				DataSchema dataSchema = (DataSchema)theEObject;
+				T result = caseDataSchema(dataSchema);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,7 +222,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 			case Data_AnalysisPackage.VALUE_CONDITION: {
 				ValueCondition valueCondition = (ValueCondition)theEObject;
 				T result = caseValueCondition(valueCondition);
-				if (result == null) result = caseLogicalExp(valueCondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,7 +229,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				Lt lt = (Lt)theEObject;
 				T result = caseLt(lt);
 				if (result == null) result = caseValueCondition(lt);
-				if (result == null) result = caseLogicalExp(lt);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -238,7 +236,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				Lte lte = (Lte)theEObject;
 				T result = caseLte(lte);
 				if (result == null) result = caseValueCondition(lte);
-				if (result == null) result = caseLogicalExp(lte);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,7 +243,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				Gt gt = (Gt)theEObject;
 				T result = caseGt(gt);
 				if (result == null) result = caseValueCondition(gt);
-				if (result == null) result = caseLogicalExp(gt);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -254,7 +250,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				Gte gte = (Gte)theEObject;
 				T result = caseGte(gte);
 				if (result == null) result = caseValueCondition(gte);
-				if (result == null) result = caseLogicalExp(gte);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -301,6 +296,7 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 			case Data_AnalysisPackage.GRAPH: {
 				Graph graph = (Graph)theEObject;
 				T result = caseGraph(graph);
+				if (result == null) result = caseGraphicElement(graph);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -324,9 +320,52 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Data_AnalysisPackage.TABLE: {
+				Table table = (Table)theEObject;
+				T result = caseTable(table);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.ANALYSIS: {
+				Analysis analysis = (Analysis)theEObject;
+				T result = caseAnalysis(analysis);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.GRAPHIC_ELEMENT: {
+				GraphicElement graphicElement = (GraphicElement)theEObject;
+				T result = caseGraphicElement(graphicElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case Data_AnalysisPackage.DIAGRAM: {
 				Diagram diagram = (Diagram)theEObject;
 				T result = caseDiagram(diagram);
+				if (result == null) result = caseGraphicElement(diagram);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.COLLECTION_SCHEMA: {
+				CollectionSchema collectionSchema = (CollectionSchema)theEObject;
+				T result = caseCollectionSchema(collectionSchema);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.ATTRIBUTE: {
+				Attribute attribute = (Attribute)theEObject;
+				T result = caseAttribute(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.ROW: {
+				Row row = (Row)theEObject;
+				T result = caseRow(row);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.CELL: {
+				Cell cell = (Cell)theEObject;
+				T result = caseCell(cell);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -425,6 +464,21 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Schema</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSchema(DataSchema object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Collection Schema</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -436,6 +490,51 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCollectionSchema(CollectionSchema object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRow(Row object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCell(Cell object) {
 		return null;
 	}
 
@@ -901,6 +1000,51 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEdge(Edge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTable(Table object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnalysis(Analysis object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Graphic Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Graphic Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGraphicElement(GraphicElement object) {
 		return null;
 	}
 
