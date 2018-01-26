@@ -2,47 +2,39 @@
  */
 package Data_Analysis.impl;
 
-import Data_Analysis.CollectionSchema;
 import Data_Analysis.Condition;
-import Data_Analysis.DataCollection;
+import Data_Analysis.DataCollectionTask;
 import Data_Analysis.DataSchema;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.FormatType;
 import Data_Analysis.Source;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Collection</b></em>'.
+ * An implementation of the model object '<em><b>Data Collection Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getEndpoint <em>Endpoint</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getSource <em>Source</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getInputSchema <em>Input Schema</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataCollectionImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionTaskImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionTaskImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionTaskImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionTaskImpl#getInputSchema <em>Input Schema</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataCollectionTaskImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DataCollectionImpl extends TaskImpl implements DataCollection {
+public class DataCollectionTaskImpl extends TaskImpl implements DataCollectionTask {
 	/**
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -118,7 +110,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataCollectionImpl() {
+	protected DataCollectionTaskImpl() {
 		super();
 	}
 
@@ -129,7 +121,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.DATA_COLLECTION;
+		return Data_AnalysisPackage.Literals.DATA_COLLECTION_TASK;
 	}
 
 	/**
@@ -150,7 +142,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		FormatType oldFormat = format;
 		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -171,7 +163,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		String oldEndpoint = endpoint;
 		endpoint = newEndpoint;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__ENDPOINT, oldEndpoint, endpoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__ENDPOINT, oldEndpoint, endpoint));
 	}
 
 	/**
@@ -192,7 +184,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		Source oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__SOURCE, oldSource, newSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE, oldSource, newSource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -207,14 +199,14 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__SOURCE, null, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE, null, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__SOURCE, null, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE, null, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__SOURCE, newSource, newSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -235,7 +227,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		DataSchema oldInputSchema = inputSchema;
 		inputSchema = newInputSchema;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, oldInputSchema, newInputSchema);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA, oldInputSchema, newInputSchema);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -250,14 +242,14 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		if (newInputSchema != inputSchema) {
 			NotificationChain msgs = null;
 			if (inputSchema != null)
-				msgs = ((InternalEObject)inputSchema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, null, msgs);
+				msgs = ((InternalEObject)inputSchema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA, null, msgs);
 			if (newInputSchema != null)
-				msgs = ((InternalEObject)newInputSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, null, msgs);
+				msgs = ((InternalEObject)newInputSchema).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA, null, msgs);
 			msgs = basicSetInputSchema(newInputSchema, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA, newInputSchema, newInputSchema));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA, newInputSchema, newInputSchema));
 	}
 
 	/**
@@ -271,7 +263,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 			condition = (Condition)eResolveProxy(oldCondition);
 			if (condition != oldCondition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_COLLECTION__CONDITION, oldCondition, condition));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION, oldCondition, condition));
 			}
 		}
 		return condition;
@@ -295,7 +287,7 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		Condition oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION__CONDITION, oldCondition, condition));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION, oldCondition, condition));
 	}
 
 	/**
@@ -306,9 +298,9 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE:
 				return basicSetSource(null, msgs);
-			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA:
 				return basicSetInputSchema(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -322,15 +314,15 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_COLLECTION__FORMAT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__FORMAT:
 				return getFormat();
-			case Data_AnalysisPackage.DATA_COLLECTION__ENDPOINT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__ENDPOINT:
 				return getEndpoint();
-			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE:
 				return getSource();
-			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA:
 				return getInputSchema();
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION:
 				if (resolve) return getCondition();
 				return basicGetCondition();
 		}
@@ -342,23 +334,22 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_COLLECTION__FORMAT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__FORMAT:
 				setFormat((FormatType)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__ENDPOINT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__ENDPOINT:
 				setEndpoint((String)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE:
 				setSource((Source)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA:
 				setInputSchema((DataSchema)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION:
 				setCondition((Condition)newValue);
 				return;
 		}
@@ -373,19 +364,19 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_COLLECTION__FORMAT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__ENDPOINT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__ENDPOINT:
 				setEndpoint(ENDPOINT_EDEFAULT);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE:
 				setSource((Source)null);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA:
 				setInputSchema((DataSchema)null);
 				return;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION:
 				setCondition((Condition)null);
 				return;
 		}
@@ -400,15 +391,15 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_COLLECTION__FORMAT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__FORMAT:
 				return format != FORMAT_EDEFAULT;
-			case Data_AnalysisPackage.DATA_COLLECTION__ENDPOINT:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__ENDPOINT:
 				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
-			case Data_AnalysisPackage.DATA_COLLECTION__SOURCE:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__SOURCE:
 				return source != null;
-			case Data_AnalysisPackage.DATA_COLLECTION__INPUT_SCHEMA:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__INPUT_SCHEMA:
 				return inputSchema != null;
-			case Data_AnalysisPackage.DATA_COLLECTION__CONDITION:
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK__CONDITION:
 				return condition != null;
 		}
 		return super.eIsSet(featureID);
@@ -432,4 +423,4 @@ public class DataCollectionImpl extends TaskImpl implements DataCollection {
 		return result.toString();
 	}
 
-} //DataCollectionImpl
+} //DataCollectionTaskImpl

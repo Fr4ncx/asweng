@@ -5,21 +5,21 @@ package Data_Analysis;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Export Data</b></em>'.
+ * A representation of the model object '<em><b>Export Data Task</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.ExportData#getFormat <em>Format</em>}</li>
+ *   <li>{@link Data_Analysis.ExportDataTask#getFormat <em>Format</em>}</li>
  * </ul>
  *
- * @see Data_Analysis.Data_AnalysisPackage#getExportData()
- * @model annotation="gmf.node label='format'"
+ * @see Data_Analysis.Data_AnalysisPackage#getExportDataTask()
+ * @model
  * @generated
  */
-public interface ExportData extends Task {
+public interface ExportDataTask extends Task {
 	/**
 	 * Returns the value of the '<em><b>Format</b></em>' attribute.
 	 * The literals are from the enumeration {@link Data_Analysis.FormatType}.
@@ -32,14 +32,14 @@ public interface ExportData extends Task {
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see Data_Analysis.FormatType
 	 * @see #setFormat(FormatType)
-	 * @see Data_Analysis.Data_AnalysisPackage#getExportData_Format()
+	 * @see Data_Analysis.Data_AnalysisPackage#getExportDataTask_Format()
 	 * @model
 	 * @generated
 	 */
 	FormatType getFormat();
 
 	/**
-	 * Sets the value of the '{@link Data_Analysis.ExportData#getFormat <em>Format</em>}' attribute.
+	 * Sets the value of the '{@link Data_Analysis.ExportDataTask#getFormat <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Format</em>' attribute.
@@ -49,4 +49,4 @@ public interface ExportData extends Task {
 	 */
 	void setFormat(FormatType value);
 
-} // ExportData
+} // ExportDataTask

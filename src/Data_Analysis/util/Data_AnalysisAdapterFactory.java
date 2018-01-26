@@ -76,20 +76,20 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createTaskAdapter();
 			}
 			@Override
-			public Adapter caseDataCollection(DataCollection object) {
-				return createDataCollectionAdapter();
+			public Adapter caseDataCollectionTask(DataCollectionTask object) {
+				return createDataCollectionTaskAdapter();
 			}
 			@Override
-			public Adapter caseDataIntegration(DataIntegration object) {
-				return createDataIntegrationAdapter();
+			public Adapter caseDataIntegrationTask(DataIntegrationTask object) {
+				return createDataIntegrationTaskAdapter();
 			}
 			@Override
 			public Adapter caseDataCleaning(DataCleaning object) {
 				return createDataCleaningAdapter();
 			}
 			@Override
-			public Adapter caseDataAnalysis(DataAnalysis object) {
-				return createDataAnalysisAdapter();
+			public Adapter caseDataAnalysisTask(DataAnalysisTask object) {
+				return createDataAnalysisTaskAdapter();
 			}
 			@Override
 			public Adapter caseDataSchema(DataSchema object) {
@@ -132,12 +132,12 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createCustomAdapter();
 			}
 			@Override
-			public Adapter caseDataVisualization(DataVisualization object) {
-				return createDataVisualizationAdapter();
+			public Adapter caseDataVisualizationTask(DataVisualizationTask object) {
+				return createDataVisualizationTaskAdapter();
 			}
 			@Override
-			public Adapter caseExportData(ExportData object) {
-				return createExportDataAdapter();
+			public Adapter caseExportDataTask(ExportDataTask object) {
+				return createExportDataTaskAdapter();
 			}
 			@Override
 			public Adapter caseDataFlow(DataFlow object) {
@@ -300,30 +300,30 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataCollection <em>Data Collection</em>}'.
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataCollectionTask <em>Data Collection Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Data_Analysis.DataCollection
+	 * @see Data_Analysis.DataCollectionTask
 	 * @generated
 	 */
-	public Adapter createDataCollectionAdapter() {
+	public Adapter createDataCollectionTaskAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataIntegration <em>Data Integration</em>}'.
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataIntegrationTask <em>Data Integration Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Data_Analysis.DataIntegration
+	 * @see Data_Analysis.DataIntegrationTask
 	 * @generated
 	 */
-	public Adapter createDataIntegrationAdapter() {
+	public Adapter createDataIntegrationTaskAdapter() {
 		return null;
 	}
 
@@ -342,16 +342,16 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataAnalysis <em>Data Analysis</em>}'.
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataAnalysisTask <em>Data Analysis Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Data_Analysis.DataAnalysis
+	 * @see Data_Analysis.DataAnalysisTask
 	 * @generated
 	 */
-	public Adapter createDataAnalysisAdapter() {
+	public Adapter createDataAnalysisTaskAdapter() {
 		return null;
 	}
 
@@ -366,62 +366,6 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataSchemaAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.CollectionSchema <em>Collection Schema</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Data_Analysis.CollectionSchema
-	 * @generated
-	 */
-	public Adapter createCollectionSchemaAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.Attribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Data_Analysis.Attribute
-	 * @generated
-	 */
-	public Adapter createAttributeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.Row <em>Row</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Data_Analysis.Row
-	 * @generated
-	 */
-	public Adapter createRowAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.Cell <em>Cell</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Data_Analysis.Cell
-	 * @generated
-	 */
-	public Adapter createCellAdapter() {
 		return null;
 	}
 
@@ -552,30 +496,30 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataVisualization <em>Data Visualization</em>}'.
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataVisualizationTask <em>Data Visualization Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Data_Analysis.DataVisualization
+	 * @see Data_Analysis.DataVisualizationTask
 	 * @generated
 	 */
-	public Adapter createDataVisualizationAdapter() {
+	public Adapter createDataVisualizationTaskAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Data_Analysis.ExportData <em>Export Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.ExportDataTask <em>Export Data Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Data_Analysis.ExportData
+	 * @see Data_Analysis.ExportDataTask
 	 * @generated
 	 */
-	public Adapter createExportDataAdapter() {
+	public Adapter createExportDataTaskAdapter() {
 		return null;
 	}
 
@@ -912,6 +856,62 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiagramAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.CollectionSchema <em>Collection Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.CollectionSchema
+	 * @generated
+	 */
+	public Adapter createCollectionSchemaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.Attribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.Attribute
+	 * @generated
+	 */
+	public Adapter createAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.Row <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.Row
+	 * @generated
+	 */
+	public Adapter createRowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.Cell <em>Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.Cell
+	 * @generated
+	 */
+	public Adapter createCellAdapter() {
 		return null;
 	}
 

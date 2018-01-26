@@ -1,57 +1,61 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="Data_Analysis">
   <figures name="Default">
-    <descriptors name="DataCollectionFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataCollectionFigure">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="TaskToFlowFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="DataCollectionTaskConditionFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="DataIntegrationTaskJoinAttributesFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="DataIntegrationTaskOutAttributesFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="DataFlowToTaskFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="LogicalExpValueconditionsFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EdgeSourceFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EdgeTargetFigureTargetDecoration"/>
+    <descriptors name="DataCollectionTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataCollectionTaskFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DataCollectionLabelFigure" text="DataCollection">
+        <children xsi:type="gmfgraph:Label" name="DataCollectionTaskLabelFigure" text="DataCollectionTask">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="DataCollectionSourceCompartmentFigure" outline="false"/>
-        <children xsi:type="gmfgraph:Rectangle" name="DataCollectionInputSchemaCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataCollectionTaskSourceCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataCollectionTaskInputSchemaCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureDataCollectionLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors accessor="getDataCollectionSourceCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors accessor="getDataCollectionInputSchemaCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureDataCollectionTaskLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getDataCollectionTaskSourceCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getDataCollectionTaskInputSchemaCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors name="DataIntegrationFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataIntegrationFigure">
+    <descriptors name="DataIntegrationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataIntegrationTaskFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DataIntegrationLabelFigure" text="DataIntegration"/>
+        <children xsi:type="gmfgraph:Label" name="DataIntegrationTaskLabelFigure" text="DataIntegrationTask"/>
       </actualFigure>
-      <accessors accessor="getFigureDataIntegrationLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureDataIntegrationTaskLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="DataCleaningFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataCleaningFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DataCleaningLabelFigure" text="DataCleaning">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="DataCleaningOperationsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="DataCleaningLabelFigure" text="DataCleaning"/>
       </actualFigure>
       <accessors accessor="getFigureDataCleaningLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors accessor="getDataCleaningOperationsCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors name="DataAnalysisFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataAnalysisFigure">
+    <descriptors name="DataAnalysisTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataAnalysisTaskFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DataAnalysisLabelFigure" text="DataAnalysis">
+        <children xsi:type="gmfgraph:Label" name="DataAnalysisTaskLabelFigure" text="DataAnalysisTask">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="DataAnalysisCategoryCompartmentFigure" outline="false"/>
-        <children xsi:type="gmfgraph:Rectangle" name="DataAnalysisAnalysisCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataAnalysisTaskCategoryCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataAnalysisTaskAnalysisCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureDataAnalysisLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-      <accessors accessor="getDataAnalysisCategoryCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-      <accessors accessor="getDataAnalysisAnalysisCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureDataAnalysisTaskLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getDataAnalysisTaskCategoryCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors accessor="getDataAnalysisTaskAnalysisCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors name="DataSchemaFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataSchemaFigure">
@@ -129,29 +133,29 @@
       </actualFigure>
       <accessors accessor="getFigureCustomLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="DataVisualizationFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataVisualizationFigure">
+    <descriptors name="DataVisualizationTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataVisualizationTaskFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DataVisualizationLabelFigure" text="DataVisualization">
+        <children xsi:type="gmfgraph:Label" name="DataVisualizationTaskLabelFigure" text="DataVisualizationTask">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="DataVisualizationVisualElementsCompartmentFigure" outline="false"/>
-        <children xsi:type="gmfgraph:Rectangle" name="DataVisualizationTablesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataVisualizationTaskVisualElementsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="DataVisualizationTaskTablesCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureDataVisualizationLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
-      <accessors accessor="getDataVisualizationVisualElementsCompartmentFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
-      <accessors accessor="getDataVisualizationTablesCompartmentFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureDataVisualizationTaskLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      <accessors accessor="getDataVisualizationTaskVisualElementsCompartmentFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+      <accessors accessor="getDataVisualizationTaskTablesCompartmentFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors name="ExportDataFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportDataFigure">
+    <descriptors name="ExportDataTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExportDataTaskFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ExportDataLabelFigure" text="ExportData"/>
+        <children xsi:type="gmfgraph:Label" name="ExportDataTaskLabelFigure" text="ExportDataTask"/>
       </actualFigure>
-      <accessors accessor="getFigureExportDataLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureExportDataTaskLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="DataFlowFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataFlowFigure">
@@ -175,9 +179,11 @@
           <maximumSize dx="10000" dy="50"/>
         </children>
         <children xsi:type="gmfgraph:Rectangle" name="ConditionExpressionsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ConditionValueConditionsCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigureConditionLabelFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
       <accessors accessor="getConditionExpressionsCompartmentFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.1"/>
+      <accessors accessor="getConditionValueConditionsCompartmentFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors name="NotExFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="NotExFigure">
@@ -349,6 +355,33 @@
       <accessors accessor="getFigureTableLabelFigure" figure="//@figures.0/@descriptors.33/@actualFigure/@children.0"/>
       <accessors accessor="getTableRowsCompartmentFigure" figure="//@figures.0/@descriptors.33/@actualFigure/@children.1"/>
     </descriptors>
+    <descriptors name="AnalysisFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AnalysisFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AnalysisLabelFigure" text="Analysis"/>
+      </actualFigure>
+      <accessors accessor="getFigureAnalysisLabelFigure" figure="//@figures.0/@descriptors.34/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="GraphicElementFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="GraphicElementFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="GraphicElementLabelFigure" text="GraphicElement"/>
+      </actualFigure>
+      <accessors accessor="getFigureGraphicElementLabelFigure" figure="//@figures.0/@descriptors.35/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="DiagramFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DiagramFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="DiagramLabelFigure" text="Diagram"/>
+      </actualFigure>
+      <accessors accessor="getFigureDiagramLabelFigure" figure="//@figures.0/@descriptors.36/@actualFigure/@children.0"/>
+    </descriptors>
     <descriptors name="CollectionSchemaFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CollectionSchemaFigure">
         <border xsi:type="gmfgraph:MarginBorder">
@@ -359,8 +392,8 @@
         </children>
         <children xsi:type="gmfgraph:Rectangle" name="CollectionSchemaAttributesCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureCollectionSchemaLabelFigure" figure="//@figures.0/@descriptors.34/@actualFigure/@children.0"/>
-      <accessors accessor="getCollectionSchemaAttributesCompartmentFigure" figure="//@figures.0/@descriptors.34/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureCollectionSchemaLabelFigure" figure="//@figures.0/@descriptors.37/@actualFigure/@children.0"/>
+      <accessors accessor="getCollectionSchemaAttributesCompartmentFigure" figure="//@figures.0/@descriptors.37/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="AttributeFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AttributeFigure">
@@ -369,7 +402,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="AttributeLabelFigure" text="Attribute"/>
       </actualFigure>
-      <accessors accessor="getFigureAttributeLabelFigure" figure="//@figures.0/@descriptors.35/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureAttributeLabelFigure" figure="//@figures.0/@descriptors.38/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="RowFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RowFigure">
@@ -381,8 +414,8 @@
         </children>
         <children xsi:type="gmfgraph:Rectangle" name="RowCellsCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureRowLabelFigure" figure="//@figures.0/@descriptors.36/@actualFigure/@children.0"/>
-      <accessors accessor="getRowCellsCompartmentFigure" figure="//@figures.0/@descriptors.36/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureRowLabelFigure" figure="//@figures.0/@descriptors.39/@actualFigure/@children.0"/>
+      <accessors accessor="getRowCellsCompartmentFigure" figure="//@figures.0/@descriptors.39/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="CellFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CellFigure">
@@ -391,49 +424,77 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="CellLabelFigure" text="Cell"/>
       </actualFigure>
-      <accessors accessor="getFigureCellLabelFigure" figure="//@figures.0/@descriptors.37/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureCellLabelFigure" figure="//@figures.0/@descriptors.40/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="TaskToFlowFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TaskToFlowFigure"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TaskToFlowFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
     <descriptors name="TaskToFlowExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="TaskToFlowExternalLabel"/>
     </descriptors>
-    <descriptors name="DataIntegrationJoinAttributesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataIntegrationJoinAttributesFigure"/>
+    <descriptors name="DataCollectionTaskConditionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataCollectionTaskConditionFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
-    <descriptors name="DataIntegrationJoinAttributesExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="DataIntegrationJoinAttributesExternalLabel"/>
+    <descriptors name="DataCollectionTaskConditionExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="DataCollectionTaskConditionExternalLabel"/>
     </descriptors>
-    <descriptors name="DataIntegrationOutAttributesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataIntegrationOutAttributesFigure"/>
+    <descriptors name="DataIntegrationTaskJoinAttributesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataIntegrationTaskJoinAttributesFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
-    <descriptors name="DataIntegrationOutAttributesExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="DataIntegrationOutAttributesExternalLabel"/>
+    <descriptors name="DataIntegrationTaskJoinAttributesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="DataIntegrationTaskJoinAttributesExternalLabel"/>
+    </descriptors>
+    <descriptors name="DataIntegrationTaskOutAttributesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataIntegrationTaskOutAttributesFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="DataIntegrationTaskOutAttributesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="DataIntegrationTaskOutAttributesExternalLabel"/>
     </descriptors>
     <descriptors name="DataFlowToTaskFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowToTaskFigure"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DataFlowToTaskFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
     <descriptors name="DataFlowToTaskExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="DataFlowToTaskExternalLabel"/>
     </descriptors>
+    <descriptors name="LogicalExpValueconditionsFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="LogicalExpValueconditionsFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.5">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="LogicalExpValueconditionsExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="LogicalExpValueconditionsExternalLabel"/>
+    </descriptors>
     <descriptors name="EdgeSourceFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EdgeSourceFigure"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EdgeSourceFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
     <descriptors name="EdgeSourceExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="EdgeSourceExternalLabel"/>
     </descriptors>
     <descriptors name="EdgeTargetFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EdgeTargetFigure"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EdgeTargetFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.7">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="127" green="127" blue="127"/>
+      </actualFigure>
     </descriptors>
     <descriptors name="EdgeTargetExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="EdgeTargetExternalLabel"/>
     </descriptors>
   </figures>
-  <nodes name="DataCollection" figure="DataCollectionFigure"/>
-  <nodes name="DataIntegration" figure="DataIntegrationFigure"/>
+  <nodes name="DataCollectionTask" figure="DataCollectionTaskFigure"/>
+  <nodes name="DataIntegrationTask" figure="DataIntegrationTaskFigure"/>
   <nodes name="DataCleaning" figure="DataCleaningFigure"/>
-  <nodes name="DataAnalysis" figure="DataAnalysisFigure"/>
+  <nodes name="DataAnalysisTask" figure="DataAnalysisTaskFigure"/>
   <nodes name="DataSchema" figure="DataSchemaFigure"/>
   <nodes name="AttributeSchema" figure="AttributeSchemaFigure"/>
   <nodes name="File" figure="FileFigure"/>
@@ -442,8 +503,8 @@
   <nodes name="RemoveNull" figure="RemoveNullFigure"/>
   <nodes name="FormatData" figure="FormatDataFigure"/>
   <nodes name="Custom" figure="CustomFigure"/>
-  <nodes name="DataVisualization" figure="DataVisualizationFigure"/>
-  <nodes name="ExportData" figure="ExportDataFigure"/>
+  <nodes name="DataVisualizationTask" figure="DataVisualizationTaskFigure"/>
+  <nodes name="ExportDataTask" figure="ExportDataTaskFigure"/>
   <nodes name="DataFlow" figure="DataFlowFigure"/>
   <nodes name="Condition" figure="ConditionFigure"/>
   <nodes name="NotEx" figure="NotExFigure"/>
@@ -464,34 +525,39 @@
   <nodes name="Node" figure="NodeFigure"/>
   <nodes name="Edge" figure="EdgeFigure"/>
   <nodes name="Table" figure="TableFigure"/>
+  <nodes name="Analysis" figure="AnalysisFigure"/>
+  <nodes name="GraphicElement" figure="GraphicElementFigure"/>
+  <nodes name="Diagram" figure="DiagramFigure"/>
   <nodes name="CollectionSchema" figure="CollectionSchemaFigure"/>
   <nodes name="Attribute" figure="AttributeFigure"/>
   <nodes name="Row" figure="RowFigure"/>
   <nodes name="Cell" figure="CellFigure"/>
   <connections name="TaskToFlow" figure="TaskToFlowFigure"/>
-  <connections name="DataIntegrationJoinAttributes" figure="DataIntegrationJoinAttributesFigure"/>
-  <connections name="DataIntegrationOutAttributes" figure="DataIntegrationOutAttributesFigure"/>
+  <connections name="DataCollectionTaskCondition" figure="DataCollectionTaskConditionFigure"/>
+  <connections name="DataIntegrationTaskJoinAttributes" figure="DataIntegrationTaskJoinAttributesFigure"/>
+  <connections name="DataIntegrationTaskOutAttributes" figure="DataIntegrationTaskOutAttributesFigure"/>
   <connections name="DataFlowToTask" figure="DataFlowToTaskFigure"/>
+  <connections name="LogicalExpValueconditions" figure="LogicalExpValueconditionsFigure"/>
   <connections name="EdgeSource" figure="EdgeSourceFigure"/>
   <connections name="EdgeTarget" figure="EdgeTargetFigure"/>
-  <compartments name="DataCollectionSourceCompartment" figure="DataCollectionFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <compartments name="DataCollectionInputSchemaCompartment" figure="DataCollectionFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
-  <compartments name="DataCleaningOperationsCompartment" figure="DataCleaningFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments name="DataAnalysisCategoryCompartment" figure="DataAnalysisFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <compartments name="DataAnalysisAnalysisCompartment" figure="DataAnalysisFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.2"/>
+  <compartments name="DataCollectionTaskSourceCompartment" figure="DataCollectionTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="DataCollectionTaskInputSchemaCompartment" figure="DataCollectionTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments name="DataAnalysisTaskCategoryCompartment" figure="DataAnalysisTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments name="DataAnalysisTaskAnalysisCompartment" figure="DataAnalysisTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.2"/>
   <compartments name="DataSchemaSchemaAttributesCompartment" figure="DataSchemaFigure" collapsible="true" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
-  <compartments name="DataVisualizationVisualElementsCompartment" figure="DataVisualizationFigure" collapsible="true" accessor="//@figures.0/@descriptors.12/@accessors.1"/>
-  <compartments name="DataVisualizationTablesCompartment" figure="DataVisualizationFigure" collapsible="true" accessor="//@figures.0/@descriptors.12/@accessors.2"/>
+  <compartments name="DataVisualizationTaskVisualElementsCompartment" figure="DataVisualizationTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+  <compartments name="DataVisualizationTaskTablesCompartment" figure="DataVisualizationTaskFigure" collapsible="true" accessor="//@figures.0/@descriptors.12/@accessors.2"/>
   <compartments name="DataFlowCollectionCompartment" figure="DataFlowFigure" collapsible="true" accessor="//@figures.0/@descriptors.14/@accessors.1"/>
   <compartments name="ConditionExpressionsCompartment" figure="ConditionFigure" collapsible="true" accessor="//@figures.0/@descriptors.15/@accessors.1"/>
+  <compartments name="ConditionValueConditionsCompartment" figure="ConditionFigure" collapsible="true" accessor="//@figures.0/@descriptors.15/@accessors.2"/>
   <compartments name="GraphElementsCompartment" figure="GraphFigure" collapsible="true" accessor="//@figures.0/@descriptors.30/@accessors.1"/>
   <compartments name="TableRowsCompartment" figure="TableFigure" collapsible="true" accessor="//@figures.0/@descriptors.33/@accessors.1"/>
-  <compartments name="CollectionSchemaAttributesCompartment" figure="CollectionSchemaFigure" collapsible="true" accessor="//@figures.0/@descriptors.34/@accessors.1"/>
-  <compartments name="RowCellsCompartment" figure="RowFigure" collapsible="true" accessor="//@figures.0/@descriptors.36/@accessors.1"/>
-  <labels name="DataCollectionLabel" figure="DataCollectionFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="DataIntegrationLabel" figure="DataIntegrationFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <compartments name="CollectionSchemaAttributesCompartment" figure="CollectionSchemaFigure" collapsible="true" accessor="//@figures.0/@descriptors.37/@accessors.1"/>
+  <compartments name="RowCellsCompartment" figure="RowFigure" collapsible="true" accessor="//@figures.0/@descriptors.39/@accessors.1"/>
+  <labels name="DataCollectionTaskLabel" figure="DataCollectionTaskFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="DataIntegrationTaskLabel" figure="DataIntegrationTaskFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="DataCleaningLabel" figure="DataCleaningFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="DataAnalysisLabel" figure="DataAnalysisFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="DataAnalysisTaskLabel" figure="DataAnalysisTaskFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels name="DataSchemaLabel" figure="DataSchemaFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels name="AttributeSchemaLabel" figure="AttributeSchemaFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels name="FileLabel" figure="FileFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
@@ -500,8 +566,8 @@
   <labels name="RemoveNullLabel" figure="RemoveNullFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels name="FormatDataLabel" figure="FormatDataFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels name="CustomLabel" figure="CustomFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
-  <labels name="DataVisualizationLabel" figure="DataVisualizationFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
-  <labels name="ExportDataLabel" figure="ExportDataFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels name="DataVisualizationTaskLabel" figure="DataVisualizationTaskFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="ExportDataTaskLabel" figure="ExportDataTaskFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <labels name="DataFlowLabel" figure="DataFlowFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels name="ConditionLabel" figure="ConditionFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
   <labels name="NotExLabel" figure="NotExFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
@@ -522,14 +588,19 @@
   <labels name="NodeLabel" figure="NodeFigure" accessor="//@figures.0/@descriptors.31/@accessors.0"/>
   <labels name="EdgeLabel" figure="EdgeFigure" accessor="//@figures.0/@descriptors.32/@accessors.0"/>
   <labels name="TableLabel" figure="TableFigure" accessor="//@figures.0/@descriptors.33/@accessors.0"/>
-  <labels name="CollectionSchemaLabel" figure="CollectionSchemaFigure" accessor="//@figures.0/@descriptors.34/@accessors.0"/>
-  <labels name="AttributeLabel" figure="AttributeFigure" accessor="//@figures.0/@descriptors.35/@accessors.0"/>
-  <labels name="RowLabel" figure="RowFigure" accessor="//@figures.0/@descriptors.36/@accessors.0"/>
-  <labels name="CellLabel" figure="CellFigure" accessor="//@figures.0/@descriptors.37/@accessors.0"/>
+  <labels name="AnalysisLabel" figure="AnalysisFigure" accessor="//@figures.0/@descriptors.34/@accessors.0"/>
+  <labels name="GraphicElementLabel" figure="GraphicElementFigure" accessor="//@figures.0/@descriptors.35/@accessors.0"/>
+  <labels name="DiagramLabel" figure="DiagramFigure" accessor="//@figures.0/@descriptors.36/@accessors.0"/>
+  <labels name="CollectionSchemaLabel" figure="CollectionSchemaFigure" accessor="//@figures.0/@descriptors.37/@accessors.0"/>
+  <labels name="AttributeLabel" figure="AttributeFigure" accessor="//@figures.0/@descriptors.38/@accessors.0"/>
+  <labels name="RowLabel" figure="RowFigure" accessor="//@figures.0/@descriptors.39/@accessors.0"/>
+  <labels name="CellLabel" figure="CellFigure" accessor="//@figures.0/@descriptors.40/@accessors.0"/>
   <labels name="TaskToFlowExternalLabel" figure="TaskToFlowExternalLabelFigure" elementIcon="false"/>
-  <labels name="DataIntegrationJoinAttributesExternalLabel" figure="DataIntegrationJoinAttributesExternalLabelFigure" elementIcon="false"/>
-  <labels name="DataIntegrationOutAttributesExternalLabel" figure="DataIntegrationOutAttributesExternalLabelFigure" elementIcon="false"/>
+  <labels name="DataCollectionTaskConditionExternalLabel" figure="DataCollectionTaskConditionExternalLabelFigure" elementIcon="false"/>
+  <labels name="DataIntegrationTaskJoinAttributesExternalLabel" figure="DataIntegrationTaskJoinAttributesExternalLabelFigure" elementIcon="false"/>
+  <labels name="DataIntegrationTaskOutAttributesExternalLabel" figure="DataIntegrationTaskOutAttributesExternalLabelFigure" elementIcon="false"/>
   <labels name="DataFlowToTaskExternalLabel" figure="DataFlowToTaskExternalLabelFigure" elementIcon="false"/>
+  <labels name="LogicalExpValueconditionsExternalLabel" figure="LogicalExpValueconditionsExternalLabelFigure" elementIcon="false"/>
   <labels name="EdgeSourceExternalLabel" figure="EdgeSourceExternalLabelFigure" elementIcon="false"/>
   <labels name="EdgeTargetExternalLabel" figure="EdgeTargetExternalLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

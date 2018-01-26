@@ -78,17 +78,17 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.DATA_COLLECTION: {
-				DataCollection dataCollection = (DataCollection)theEObject;
-				T result = caseDataCollection(dataCollection);
-				if (result == null) result = caseTask(dataCollection);
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK: {
+				DataCollectionTask dataCollectionTask = (DataCollectionTask)theEObject;
+				T result = caseDataCollectionTask(dataCollectionTask);
+				if (result == null) result = caseTask(dataCollectionTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.DATA_INTEGRATION: {
-				DataIntegration dataIntegration = (DataIntegration)theEObject;
-				T result = caseDataIntegration(dataIntegration);
-				if (result == null) result = caseTask(dataIntegration);
+			case Data_AnalysisPackage.DATA_INTEGRATION_TASK: {
+				DataIntegrationTask dataIntegrationTask = (DataIntegrationTask)theEObject;
+				T result = caseDataIntegrationTask(dataIntegrationTask);
+				if (result == null) result = caseTask(dataIntegrationTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -99,10 +99,10 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.DATA_ANALYSIS: {
-				DataAnalysis dataAnalysis = (DataAnalysis)theEObject;
-				T result = caseDataAnalysis(dataAnalysis);
-				if (result == null) result = caseTask(dataAnalysis);
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK: {
+				DataAnalysisTask dataAnalysisTask = (DataAnalysisTask)theEObject;
+				T result = caseDataAnalysisTask(dataAnalysisTask);
+				if (result == null) result = caseTask(dataAnalysisTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,17 +172,17 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.DATA_VISUALIZATION: {
-				DataVisualization dataVisualization = (DataVisualization)theEObject;
-				T result = caseDataVisualization(dataVisualization);
-				if (result == null) result = caseTask(dataVisualization);
+			case Data_AnalysisPackage.DATA_VISUALIZATION_TASK: {
+				DataVisualizationTask dataVisualizationTask = (DataVisualizationTask)theEObject;
+				T result = caseDataVisualizationTask(dataVisualizationTask);
+				if (result == null) result = caseTask(dataVisualizationTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Data_AnalysisPackage.EXPORT_DATA: {
-				ExportData exportData = (ExportData)theEObject;
-				T result = caseExportData(exportData);
-				if (result == null) result = caseTask(exportData);
+			case Data_AnalysisPackage.EXPORT_DATA_TASK: {
+				ExportDataTask exportDataTask = (ExportDataTask)theEObject;
+				T result = caseExportDataTask(exportDataTask);
+				if (result == null) result = caseTask(exportDataTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -404,32 +404,32 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Collection</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Collection Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Collection</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Collection Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataCollection(DataCollection object) {
+	public T caseDataCollectionTask(DataCollectionTask object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Integration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Integration Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Integration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Integration Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataIntegration(DataIntegration object) {
+	public T caseDataIntegrationTask(DataIntegrationTask object) {
 		return null;
 	}
 
@@ -449,17 +449,17 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Analysis</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Analysis Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Analysis</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Analysis Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataAnalysis(DataAnalysis object) {
+	public T caseDataAnalysisTask(DataAnalysisTask object) {
 		return null;
 	}
 
@@ -475,66 +475,6 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataSchema(DataSchema object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Collection Schema</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Collection Schema</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCollectionSchema(CollectionSchema object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAttribute(Attribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Row</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Row</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRow(Row object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cell</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCell(Cell object) {
 		return null;
 	}
 
@@ -674,32 +614,32 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Visualization</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Visualization Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Visualization</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Visualization Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataVisualization(DataVisualization object) {
+	public T caseDataVisualizationTask(DataVisualizationTask object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Export Data</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Export Data Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Export Data</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Export Data Task</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExportData(ExportData object) {
+	public T caseExportDataTask(ExportDataTask object) {
 		return null;
 	}
 
@@ -1060,6 +1000,66 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiagram(Diagram object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Collection Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Collection Schema</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCollectionSchema(CollectionSchema object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRow(Row object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCell(Cell object) {
 		return null;
 	}
 

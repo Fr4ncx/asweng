@@ -16,7 +16,7 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getCustom()
- * @model annotation="gmf.node label='action'"
+ * @model
  * @generated
  */
 public interface Custom extends Operation {

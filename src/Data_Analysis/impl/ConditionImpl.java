@@ -5,8 +5,8 @@ package Data_Analysis.impl;
 import Data_Analysis.Condition;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.LogicalExp;
-
 import Data_Analysis.ValueCondition;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -48,6 +48,7 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,6 +58,7 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

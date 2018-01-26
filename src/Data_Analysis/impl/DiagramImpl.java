@@ -5,12 +5,7 @@ package Data_Analysis.impl;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Diagram;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

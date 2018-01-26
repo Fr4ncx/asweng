@@ -5,23 +5,16 @@ package Data_Analysis.impl;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.DataFlow;
 import Data_Analysis.Data_AnalysisPackage;
-import Data_Analysis.FormatType;
 import Data_Analysis.Task;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,20 +117,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Data_AnalysisPackage.DATA_FLOW__COLLECTION:
-				return basicSetCollection(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Task getToTask() {
 		if (toTask != null && toTask.eIsProxy()) {
 			InternalEObject oldToTask = (InternalEObject)toTask;
@@ -220,6 +199,20 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Data_AnalysisPackage.DATA_FLOW__COLLECTION:
+				return basicSetCollection(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_FLOW__NAME:
@@ -238,7 +231,6 @@ public class DataFlowImpl extends EObjectImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

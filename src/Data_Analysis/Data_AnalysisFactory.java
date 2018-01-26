@@ -31,22 +31,22 @@ public interface Data_AnalysisFactory extends EFactory {
 	Pipeline createPipeline();
 
 	/**
-	 * Returns a new object of class '<em>Data Collection</em>'.
+	 * Returns a new object of class '<em>Data Collection Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Collection</em>'.
+	 * @return a new object of class '<em>Data Collection Task</em>'.
 	 * @generated
 	 */
-	DataCollection createDataCollection();
+	DataCollectionTask createDataCollectionTask();
 
 	/**
-	 * Returns a new object of class '<em>Data Integration</em>'.
+	 * Returns a new object of class '<em>Data Integration Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Integration</em>'.
+	 * @return a new object of class '<em>Data Integration Task</em>'.
 	 * @generated
 	 */
-	DataIntegration createDataIntegration();
+	DataIntegrationTask createDataIntegrationTask();
 
 	/**
 	 * Returns a new object of class '<em>Data Cleaning</em>'.
@@ -58,13 +58,13 @@ public interface Data_AnalysisFactory extends EFactory {
 	DataCleaning createDataCleaning();
 
 	/**
-	 * Returns a new object of class '<em>Data Analysis</em>'.
+	 * Returns a new object of class '<em>Data Analysis Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Analysis</em>'.
+	 * @return a new object of class '<em>Data Analysis Task</em>'.
 	 * @generated
 	 */
-	DataAnalysis createDataAnalysis();
+	DataAnalysisTask createDataAnalysisTask();
 
 	/**
 	 * Returns a new object of class '<em>Data Schema</em>'.
@@ -74,42 +74,6 @@ public interface Data_AnalysisFactory extends EFactory {
 	 * @generated
 	 */
 	DataSchema createDataSchema();
-
-	/**
-	 * Returns a new object of class '<em>Collection Schema</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Collection Schema</em>'.
-	 * @generated
-	 */
-	CollectionSchema createCollectionSchema();
-
-	/**
-	 * Returns a new object of class '<em>Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute</em>'.
-	 * @generated
-	 */
-	Attribute createAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Row</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Row</em>'.
-	 * @generated
-	 */
-	Row createRow();
-
-	/**
-	 * Returns a new object of class '<em>Cell</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cell</em>'.
-	 * @generated
-	 */
-	Cell createCell();
 
 	/**
 	 * Returns a new object of class '<em>Attribute Schema</em>'.
@@ -175,22 +139,22 @@ public interface Data_AnalysisFactory extends EFactory {
 	Custom createCustom();
 
 	/**
-	 * Returns a new object of class '<em>Data Visualization</em>'.
+	 * Returns a new object of class '<em>Data Visualization Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Visualization</em>'.
+	 * @return a new object of class '<em>Data Visualization Task</em>'.
 	 * @generated
 	 */
-	DataVisualization createDataVisualization();
+	DataVisualizationTask createDataVisualizationTask();
 
 	/**
-	 * Returns a new object of class '<em>Export Data</em>'.
+	 * Returns a new object of class '<em>Export Data Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Export Data</em>'.
+	 * @return a new object of class '<em>Export Data Task</em>'.
 	 * @generated
 	 */
-	ExportData createExportData();
+	ExportDataTask createExportDataTask();
 
 	/**
 	 * Returns a new object of class '<em>Data Flow</em>'.
@@ -407,6 +371,42 @@ public interface Data_AnalysisFactory extends EFactory {
 	 * @generated
 	 */
 	Diagram createDiagram();
+
+	/**
+	 * Returns a new object of class '<em>Collection Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Collection Schema</em>'.
+	 * @generated
+	 */
+	CollectionSchema createCollectionSchema();
+
+	/**
+	 * Returns a new object of class '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute</em>'.
+	 * @generated
+	 */
+	Attribute createAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Row</em>'.
+	 * @generated
+	 */
+	Row createRow();
+
+	/**
+	 * Returns a new object of class '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cell</em>'.
+	 * @generated
+	 */
+	Cell createCell();
 
 	/**
 	 * Returns the package supported by this factory.

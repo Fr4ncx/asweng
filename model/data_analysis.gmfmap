@@ -12,23 +12,23 @@
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="data_analysis.ecore#//DataCollection"/>
+          href="data_analysis.ecore#//DataCollectionTask"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="data_analysis.gmfgraph#DataCollectionLabel"/>
+            href="data_analysis.gmfgraph#DataCollectionTaskLabel"/>
         <features
-            href="data_analysis.ecore#//DataCollection/format"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.12"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.13"/>
       <diagramNode
-          href="data_analysis.gmfgraph#DataCollection"/>
+          href="data_analysis.gmfgraph#DataCollectionTask"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataCollection/source"/>
+            href="data_analysis.ecore#//DataCollectionTask/source"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//File"/>
@@ -41,7 +41,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.21"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.23"/>
           <diagramNode
               href="data_analysis.gmfgraph#File"/>
         </ownedChild>
@@ -49,7 +49,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataCollection/source"/>
+            href="data_analysis.ecore#//DataCollectionTask/source"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Database"/>
@@ -58,11 +58,11 @@
             <diagramLabel
                 href="data_analysis.gmfgraph#DatabaseLabel"/>
             <features
-                href="data_analysis.ecore#//Database/port"/>
+                href="data_analysis.ecore#//Source/url"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.17"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.18"/>
           <diagramNode
               href="data_analysis.gmfgraph#Database"/>
         </ownedChild>
@@ -70,7 +70,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataCollection/source"/>
+            href="data_analysis.ecore#//DataCollectionTask/source"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//RestService"/>
@@ -79,11 +79,11 @@
             <diagramLabel
                 href="data_analysis.gmfgraph#RestServiceLabel"/>
             <features
-                href="data_analysis.ecore#//RestService/user"/>
+                href="data_analysis.ecore#//Source/url"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.34"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.37"/>
           <diagramNode
               href="data_analysis.gmfgraph#RestService"/>
         </ownedChild>
@@ -92,17 +92,17 @@
           compartment="//@nodes.0/@ownedChild/@compartments.1"
           referencedChild="//@nodes.7/@ownedChild">
         <containmentFeature
-            href="data_analysis.ecore#//DataCollection/inputSchema"/>
+            href="data_analysis.ecore#//DataCollectionTask/inputSchema"/>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
         <compartment
-            href="data_analysis.gmfgraph#DataCollectionSourceCompartment"/>
+            href="data_analysis.gmfgraph#DataCollectionTaskSourceCompartment"/>
       </compartments>
       <compartments
           children="//@nodes.0/@ownedChild/@children.3">
         <compartment
-            href="data_analysis.gmfgraph#DataCollectionInputSchemaCompartment"/>
+            href="data_analysis.gmfgraph#DataCollectionTaskInputSchemaCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -111,26 +111,25 @@
         href="data_analysis.ecore#//Pipeline/tasks"/>
     <ownedChild>
       <domainMetaElement
-          href="data_analysis.ecore#//DataIntegration"/>
+          href="data_analysis.ecore#//DataIntegrationTask"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="data_analysis.gmfgraph#DataIntegrationLabel"/>
+            href="data_analysis.gmfgraph#DataIntegrationTaskLabel"/>
         <features
-            href="data_analysis.ecore#//DataIntegration/name"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.14"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.15"/>
       <diagramNode
-          href="data_analysis.gmfgraph#DataIntegration"/>
+          href="data_analysis.gmfgraph#DataIntegrationTask"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
         href="data_analysis.ecore#//Pipeline/tasks"/>
-    <ownedChild
-        relatedDiagrams="//@diagram">
+    <ownedChild>
       <domainMetaElement
           href="data_analysis.ecore#//DataCleaning"/>
       <labelMappings
@@ -138,81 +137,13 @@
         <diagramLabel
             href="data_analysis.gmfgraph#DataCleaningLabel"/>
         <features
-            href="data_analysis.ecore#//DataCleaning/name"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.11"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.12"/>
       <diagramNode
           href="data_analysis.gmfgraph#DataCleaning"/>
-      <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="data_analysis.ecore#//DataCleaning/operations"/>
-        <ownedChild>
-          <domainMetaElement
-              href="data_analysis.ecore#//RemoveNull"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="data_analysis.gmfgraph#RemoveNullLabel"/>
-            <features
-                href="data_analysis.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.33"/>
-          <diagramNode
-              href="data_analysis.gmfgraph#RemoveNull"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="data_analysis.ecore#//DataCleaning/operations"/>
-        <ownedChild>
-          <domainMetaElement
-              href="data_analysis.ecore#//FormatData"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="data_analysis.gmfgraph#FormatDataLabel"/>
-            <features
-                href="data_analysis.ecore#//Operation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.22"/>
-          <diagramNode
-              href="data_analysis.gmfgraph#FormatData"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="data_analysis.ecore#//DataCleaning/operations"/>
-        <ownedChild>
-          <domainMetaElement
-              href="data_analysis.ecore#//Custom"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="data_analysis.gmfgraph#CustomLabel"/>
-            <features
-                href="data_analysis.ecore#//Custom/action"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.9"/>
-          <diagramNode
-              href="data_analysis.gmfgraph#Custom"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.2/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.1 //@nodes.2/@ownedChild/@children.2">
-        <compartment
-            href="data_analysis.gmfgraph#DataCleaningOperationsCompartment"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
@@ -221,23 +152,23 @@
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="data_analysis.ecore#//DataAnalysis"/>
+          href="data_analysis.ecore#//DataAnalysisTask"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="data_analysis.gmfgraph#DataAnalysisLabel"/>
+            href="data_analysis.gmfgraph#DataAnalysisTaskLabel"/>
         <features
-            href="data_analysis.ecore#//DataAnalysis/name"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.10"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.11"/>
       <diagramNode
-          href="data_analysis.gmfgraph#DataAnalysis"/>
+          href="data_analysis.gmfgraph#DataAnalysisTask"/>
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataAnalysis/category"/>
+            href="data_analysis.ecore#//DataAnalysisTask/category"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Description"/>
@@ -250,7 +181,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.18"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.19"/>
           <diagramNode
               href="data_analysis.gmfgraph#Description"/>
         </ownedChild>
@@ -258,7 +189,7 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataAnalysis/category"/>
+            href="data_analysis.ecore#//DataAnalysisTask/category"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Prediction"/>
@@ -271,7 +202,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.32"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.35"/>
           <diagramNode
               href="data_analysis.gmfgraph#Prediction"/>
         </ownedChild>
@@ -279,7 +210,7 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataAnalysis/category"/>
+            href="data_analysis.ecore#//DataAnalysisTask/category"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Clustering"/>
@@ -292,7 +223,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.7"/>
           <diagramNode
               href="data_analysis.gmfgraph#Clustering"/>
         </ownedChild>
@@ -300,7 +231,7 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataAnalysis/category"/>
+            href="data_analysis.ecore#//DataAnalysisTask/category"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Classification"/>
@@ -313,7 +244,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="data_analysis.gmfgraph#Classification"/>
         </ownedChild>
@@ -321,7 +252,7 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataAnalysis/category"/>
+            href="data_analysis.ecore#//DataAnalysisTask/category"/>
         <ownedChild>
           <domainMetaElement
               href="data_analysis.ecore#//Category"/>
@@ -334,19 +265,41 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.3"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="data_analysis.gmfgraph#Category"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.3/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//DataAnalysisTask/Analysis"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Analysis"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#AnalysisLabel"/>
+            <features
+                href="data_analysis.ecore#//Analysis/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.0"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Analysis"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.3/@ownedChild/@children.0 //@nodes.3/@ownedChild/@children.1 //@nodes.3/@ownedChild/@children.2 //@nodes.3/@ownedChild/@children.3 //@nodes.3/@ownedChild/@children.4">
         <compartment
-            href="data_analysis.gmfgraph#DataAnalysisCategoryCompartment"/>
+            href="data_analysis.gmfgraph#DataAnalysisTaskCategoryCompartment"/>
       </compartments>
-      <compartments>
+      <compartments
+          children="//@nodes.3/@ownedChild/@children.5">
         <compartment
-            href="data_analysis.gmfgraph#DataAnalysisAnalysisCompartment"/>
+            href="data_analysis.gmfgraph#DataAnalysisTaskAnalysisCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -356,23 +309,23 @@
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="data_analysis.ecore#//DataVisualization"/>
+          href="data_analysis.ecore#//DataVisualizationTask"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="data_analysis.gmfgraph#DataVisualizationLabel"/>
+            href="data_analysis.gmfgraph#DataVisualizationTaskLabel"/>
         <features
-            href="data_analysis.ecore#//DataVisualization/name"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.16"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.17"/>
       <diagramNode
-          href="data_analysis.gmfgraph#DataVisualization"/>
+          href="data_analysis.gmfgraph#DataVisualizationTask"/>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="data_analysis.ecore#//DataVisualization/visualElements"/>
+            href="data_analysis.ecore#//DataVisualizationTask/visualElements"/>
         <ownedChild
             relatedDiagrams="//@diagram">
           <domainMetaElement
@@ -382,11 +335,11 @@
             <diagramLabel
                 href="data_analysis.gmfgraph#GraphLabel"/>
             <features
-                href="data_analysis.ecore#//Graph/name"/>
+                href="data_analysis.ecore#//GraphicElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.23"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.25"/>
           <diagramNode
               href="data_analysis.gmfgraph#Graph"/>
           <children
@@ -401,11 +354,11 @@
                 <diagramLabel
                     href="data_analysis.gmfgraph#NodeLabel"/>
                 <features
-                    href="data_analysis.ecore#//Node/width"/>
+                    href="data_analysis.ecore#//Node/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.29"/>
+                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.32"/>
               <diagramNode
                   href="data_analysis.gmfgraph#Node"/>
             </ownedChild>
@@ -426,7 +379,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.19"/>
+                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.21"/>
               <diagramNode
                   href="data_analysis.gmfgraph#Edge"/>
             </ownedChild>
@@ -439,9 +392,51 @@
         </ownedChild>
       </children>
       <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="data_analysis.ecore#//DataVisualizationTask/visualElements"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Diagram"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#DiagramLabel"/>
+            <features
+                href="data_analysis.ecore#//GraphicElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.20"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Diagram"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="data_analysis.ecore#//DataVisualizationTask/visualElements"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//GraphicElement"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#GraphicElementLabel"/>
+            <features
+                href="data_analysis.ecore#//GraphicElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.26"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#GraphicElement"/>
+        </ownedChild>
+      </children>
+      <children
           compartment="//@nodes.4/@ownedChild/@compartments.1">
         <containmentFeature
-            href="data_analysis.ecore#//DataVisualization/tables"/>
+            href="data_analysis.ecore#//DataVisualizationTask/tables"/>
         <ownedChild
             relatedDiagrams="//@diagram">
           <domainMetaElement
@@ -455,11 +450,11 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.36"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.39"/>
           <diagramNode
               href="data_analysis.gmfgraph#Table"/>
           <children
-              compartment="//@nodes.4/@ownedChild/@children.1/@ownedChild/@compartments.0">
+              compartment="//@nodes.4/@ownedChild/@children.3/@ownedChild/@compartments.0">
             <containmentFeature
                 href="data_analysis.ecore#//Table/rows"/>
             <ownedChild
@@ -475,11 +470,11 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.35"/>
+                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.38"/>
               <diagramNode
                   href="data_analysis.gmfgraph#Row"/>
               <children
-                  compartment="//@nodes.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                  compartment="//@nodes.4/@ownedChild/@children.3/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="data_analysis.ecore#//Row/cells"/>
                 <ownedChild>
@@ -494,34 +489,34 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="data_analysis.gmftool#//@palette/@tools.0/@tools.4"/>
+                      href="data_analysis.gmftool#//@palette/@tools.0/@tools.5"/>
                   <diagramNode
                       href="data_analysis.gmfgraph#Cell"/>
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                  children="//@nodes.4/@ownedChild/@children.3/@ownedChild/@children.0/@ownedChild/@children.0">
                 <compartment
                     href="data_analysis.gmfgraph#RowCellsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.4/@ownedChild/@children.1/@ownedChild/@children.0">
+              children="//@nodes.4/@ownedChild/@children.3/@ownedChild/@children.0">
             <compartment
                 href="data_analysis.gmfgraph#TableRowsCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.0">
+          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.2">
         <compartment
-            href="data_analysis.gmfgraph#DataVisualizationVisualElementsCompartment"/>
+            href="data_analysis.gmfgraph#DataVisualizationTaskVisualElementsCompartment"/>
       </compartments>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.1">
+          children="//@nodes.4/@ownedChild/@children.3">
         <compartment
-            href="data_analysis.gmfgraph#DataVisualizationTablesCompartment"/>
+            href="data_analysis.gmfgraph#DataVisualizationTaskTablesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -530,19 +525,19 @@
         href="data_analysis.ecore#//Pipeline/tasks"/>
     <ownedChild>
       <domainMetaElement
-          href="data_analysis.ecore#//ExportData"/>
+          href="data_analysis.ecore#//ExportDataTask"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="data_analysis.gmfgraph#ExportDataLabel"/>
+            href="data_analysis.gmfgraph#ExportDataTaskLabel"/>
         <features
-            href="data_analysis.ecore#//ExportData/format"/>
+            href="data_analysis.ecore#//Task/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.20"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.22"/>
       <diagramNode
-          href="data_analysis.gmfgraph#ExportData"/>
+          href="data_analysis.gmfgraph#ExportDataTask"/>
     </ownedChild>
   </nodes>
   <nodes>
@@ -561,7 +556,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.13"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.14"/>
       <diagramNode
           href="data_analysis.gmfgraph#DataFlow"/>
       <children
@@ -581,7 +576,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.8"/>
           <diagramNode
               href="data_analysis.gmfgraph#CollectionSchema"/>
           <children
@@ -600,7 +595,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.1"/>
+                  href="data_analysis.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
                   href="data_analysis.gmfgraph#Attribute"/>
             </ownedChild>
@@ -635,7 +630,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.15"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.16"/>
       <diagramNode
           href="data_analysis.gmfgraph#DataSchema"/>
       <children
@@ -654,7 +649,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.2"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.3"/>
           <diagramNode
               href="data_analysis.gmfgraph#AttributeSchema"/>
         </ownedChild>
@@ -682,7 +677,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="data_analysis.gmftool#//@palette/@tools.0/@tools.8"/>
+          href="data_analysis.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="data_analysis.gmfgraph#Condition"/>
       <children
@@ -701,7 +696,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.30"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.33"/>
           <diagramNode
               href="data_analysis.gmfgraph#NotEx"/>
         </ownedChild>
@@ -722,7 +717,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.31"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.34"/>
           <diagramNode
               href="data_analysis.gmfgraph#OrExp"/>
         </ownedChild>
@@ -743,9 +738,93 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.0"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="data_analysis.gmfgraph#AndExp"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//Condition/valueConditions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Lt"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#LtLabel"/>
+            <features
+                href="data_analysis.ecore#//ValueCondition/attribute"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.30"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Lt"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//Condition/valueConditions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Lte"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#LteLabel"/>
+            <features
+                href="data_analysis.ecore#//ValueCondition/attribute"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.31"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Lte"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//Condition/valueConditions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Gt"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#GtLabel"/>
+            <features
+                href="data_analysis.ecore#//ValueCondition/attribute"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.27"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Gt"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//Condition/valueConditions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//Gte"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#GteLabel"/>
+            <features
+                href="data_analysis.ecore#//ValueCondition/attribute"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.28"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#Gte"/>
         </ownedChild>
       </children>
       <children
@@ -764,15 +843,41 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="data_analysis.gmftool#//@palette/@tools.0/@tools.26"/>
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.29"/>
           <diagramNode
               href="data_analysis.gmfgraph#LogicalExp"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="data_analysis.ecore#//Condition/valueConditions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="data_analysis.ecore#//ValueCondition"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="data_analysis.gmfgraph#ValueConditionLabel"/>
+            <features
+                href="data_analysis.ecore#//ValueCondition/attribute"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="data_analysis.gmftool#//@palette/@tools.0/@tools.40"/>
+          <diagramNode
+              href="data_analysis.gmfgraph#ValueCondition"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1 //@nodes.8/@ownedChild/@children.2 //@nodes.8/@ownedChild/@children.3">
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1 //@nodes.8/@ownedChild/@children.2 //@nodes.8/@ownedChild/@children.7">
         <compartment
             href="data_analysis.gmfgraph#ConditionExpressionsCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.3 //@nodes.8/@ownedChild/@children.4 //@nodes.8/@ownedChild/@children.5 //@nodes.8/@ownedChild/@children.6 //@nodes.8/@ownedChild/@children.8">
+        <compartment
+            href="data_analysis.gmfgraph#ConditionValueConditionsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -785,7 +890,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="data_analysis.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="data_analysis.gmfgraph#TaskToFlow"/>
     <linkMetaFeature
@@ -797,32 +902,48 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="data_analysis.gmfgraph#DataIntegrationJoinAttributesExternalLabel"/>
+          href="data_analysis.gmfgraph#DataCollectionTaskConditionExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="data_analysis.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
-        href="data_analysis.gmfgraph#DataIntegrationJoinAttributes"/>
+        href="data_analysis.gmfgraph#DataCollectionTaskCondition"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="data_analysis.ecore#//DataIntegration/joinAttributes"/>
+        href="data_analysis.ecore#//DataCollectionTask/condition"/>
   </links>
   <links>
     <labelMappings
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="data_analysis.gmfgraph#DataIntegrationOutAttributesExternalLabel"/>
+          href="data_analysis.gmfgraph#DataIntegrationTaskJoinAttributesExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="data_analysis.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
-        href="data_analysis.gmfgraph#DataIntegrationOutAttributes"/>
+        href="data_analysis.gmfgraph#DataIntegrationTaskJoinAttributes"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="data_analysis.ecore#//DataIntegration/outAttributes"/>
+        href="data_analysis.ecore#//DataIntegrationTask/joinAttributes"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="data_analysis.gmfgraph#DataIntegrationTaskOutAttributesExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="data_analysis.gmfgraph#DataIntegrationTaskOutAttributes"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="data_analysis.ecore#//DataIntegrationTask/outAttributes"/>
   </links>
   <links>
     <labelMappings
@@ -833,7 +954,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="data_analysis.gmftool#//@palette/@tools.1/@tools.5"/>
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.6"/>
     <diagramLink
         href="data_analysis.gmfgraph#DataFlowToTask"/>
     <linkMetaFeature
@@ -845,11 +966,27 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
+          href="data_analysis.gmfgraph#LogicalExpValueconditionsExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.7"/>
+    <diagramLink
+        href="data_analysis.gmfgraph#LogicalExpValueconditions"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="data_analysis.ecore#//LogicalExp/valueconditions"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
           href="data_analysis.gmfgraph#EdgeSourceExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="data_analysis.gmftool#//@palette/@tools.1/@tools.2"/>
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
         href="data_analysis.gmfgraph#EdgeSource"/>
     <linkMetaFeature
@@ -865,7 +1002,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="data_analysis.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="data_analysis.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="data_analysis.gmfgraph#EdgeTarget"/>
     <linkMetaFeature

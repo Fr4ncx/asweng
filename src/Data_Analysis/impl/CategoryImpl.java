@@ -6,6 +6,7 @@ import Data_Analysis.Category;
 import Data_Analysis.Data_AnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -34,6 +35,7 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

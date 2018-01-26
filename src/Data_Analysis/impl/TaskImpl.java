@@ -6,19 +6,13 @@ import Data_Analysis.DataFlow;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Task;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +25,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link Data_Analysis.impl.TaskImpl#getToFlow <em>To Flow</em>}</li>
  *   <li>{@link Data_Analysis.impl.TaskImpl#getExecutionTimestamp <em>Execution Timestamp</em>}</li>
  *   <li>{@link Data_Analysis.impl.TaskImpl#isIsExecuted <em>Is Executed</em>}</li>
+ *   <li>{@link Data_Analysis.impl.TaskImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,6 +80,26 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * @ordered
 	 */
 	protected boolean isExecuted = IS_EXECUTED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +205,27 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.TASK__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -200,6 +236,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return getExecutionTimestamp();
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:
 				return isIsExecuted();
+			case Data_AnalysisPackage.TASK__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,7 +247,6 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -221,6 +258,9 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return;
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:
 				setIsExecuted((Boolean)newValue);
+				return;
+			case Data_AnalysisPackage.TASK__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +283,9 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:
 				setIsExecuted(IS_EXECUTED_EDEFAULT);
 				return;
+			case Data_AnalysisPackage.TASK__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,6 +304,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 				return executionTimestamp != EXECUTION_TIMESTAMP_EDEFAULT;
 			case Data_AnalysisPackage.TASK__IS_EXECUTED:
 				return isExecuted != IS_EXECUTED_EDEFAULT;
+			case Data_AnalysisPackage.TASK__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,6 +324,8 @@ public abstract class TaskImpl extends EObjectImpl implements Task {
 		result.append(executionTimestamp);
 		result.append(", isExecuted: ");
 		result.append(isExecuted);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

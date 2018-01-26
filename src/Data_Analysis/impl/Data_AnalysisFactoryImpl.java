@@ -58,10 +58,10 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case Data_AnalysisPackage.PIPELINE: return createPipeline();
-			case Data_AnalysisPackage.DATA_COLLECTION: return createDataCollection();
-			case Data_AnalysisPackage.DATA_INTEGRATION: return createDataIntegration();
+			case Data_AnalysisPackage.DATA_COLLECTION_TASK: return createDataCollectionTask();
+			case Data_AnalysisPackage.DATA_INTEGRATION_TASK: return createDataIntegrationTask();
 			case Data_AnalysisPackage.DATA_CLEANING: return createDataCleaning();
-			case Data_AnalysisPackage.DATA_ANALYSIS: return createDataAnalysis();
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK: return createDataAnalysisTask();
 			case Data_AnalysisPackage.DATA_SCHEMA: return createDataSchema();
 			case Data_AnalysisPackage.ATTRIBUTE_SCHEMA: return createAttributeSchema();
 			case Data_AnalysisPackage.FILE: return createFile();
@@ -70,8 +70,8 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 			case Data_AnalysisPackage.REMOVE_NULL: return createRemoveNull();
 			case Data_AnalysisPackage.FORMAT_DATA: return createFormatData();
 			case Data_AnalysisPackage.CUSTOM: return createCustom();
-			case Data_AnalysisPackage.DATA_VISUALIZATION: return createDataVisualization();
-			case Data_AnalysisPackage.EXPORT_DATA: return createExportData();
+			case Data_AnalysisPackage.DATA_VISUALIZATION_TASK: return createDataVisualizationTask();
+			case Data_AnalysisPackage.EXPORT_DATA_TASK: return createExportDataTask();
 			case Data_AnalysisPackage.DATA_FLOW: return createDataFlow();
 			case Data_AnalysisPackage.CONDITION: return createCondition();
 			case Data_AnalysisPackage.NOT_EX: return createNotEx();
@@ -162,9 +162,9 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataCollection createDataCollection() {
-		DataCollectionImpl dataCollection = new DataCollectionImpl();
-		return dataCollection;
+	public DataCollectionTask createDataCollectionTask() {
+		DataCollectionTaskImpl dataCollectionTask = new DataCollectionTaskImpl();
+		return dataCollectionTask;
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataIntegration createDataIntegration() {
-		DataIntegrationImpl dataIntegration = new DataIntegrationImpl();
-		return dataIntegration;
+	public DataIntegrationTask createDataIntegrationTask() {
+		DataIntegrationTaskImpl dataIntegrationTask = new DataIntegrationTaskImpl();
+		return dataIntegrationTask;
 	}
 
 	/**
@@ -192,9 +192,9 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataAnalysis createDataAnalysis() {
-		DataAnalysisImpl dataAnalysis = new DataAnalysisImpl();
-		return dataAnalysis;
+	public DataAnalysisTask createDataAnalysisTask() {
+		DataAnalysisTaskImpl dataAnalysisTask = new DataAnalysisTaskImpl();
+		return dataAnalysisTask;
 	}
 
 	/**
@@ -205,46 +205,6 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public DataSchema createDataSchema() {
 		DataSchemaImpl dataSchema = new DataSchemaImpl();
 		return dataSchema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CollectionSchema createCollectionSchema() {
-		CollectionSchemaImpl collectionSchema = new CollectionSchemaImpl();
-		return collectionSchema;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Row createRow() {
-		RowImpl row = new RowImpl();
-		return row;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cell createCell() {
-		CellImpl cell = new CellImpl();
-		return cell;
 	}
 
 	/**
@@ -322,9 +282,9 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataVisualization createDataVisualization() {
-		DataVisualizationImpl dataVisualization = new DataVisualizationImpl();
-		return dataVisualization;
+	public DataVisualizationTask createDataVisualizationTask() {
+		DataVisualizationTaskImpl dataVisualizationTask = new DataVisualizationTaskImpl();
+		return dataVisualizationTask;
 	}
 
 	/**
@@ -332,9 +292,9 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExportData createExportData() {
-		ExportDataImpl exportData = new ExportDataImpl();
-		return exportData;
+	public ExportDataTask createExportDataTask() {
+		ExportDataTaskImpl exportDataTask = new ExportDataTaskImpl();
+		return exportDataTask;
 	}
 
 	/**
@@ -575,6 +535,46 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public Diagram createDiagram() {
 		DiagramImpl diagram = new DiagramImpl();
 		return diagram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionSchema createCollectionSchema() {
+		CollectionSchemaImpl collectionSchema = new CollectionSchemaImpl();
+		return collectionSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Row createRow() {
+		RowImpl row = new RowImpl();
+		return row;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cell createCell() {
+		CellImpl cell = new CellImpl();
+		return cell;
 	}
 
 	/**

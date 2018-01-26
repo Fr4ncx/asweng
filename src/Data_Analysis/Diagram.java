@@ -2,7 +2,6 @@
  */
 package Data_Analysis;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +14,4 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Diagram extends GraphicElement {
-
 } // Diagram

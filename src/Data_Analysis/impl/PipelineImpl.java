@@ -2,7 +2,6 @@
  */
 package Data_Analysis.impl;
 
-import Data_Analysis.CollectionSchema;
 import Data_Analysis.Condition;
 import Data_Analysis.DataFlow;
 import Data_Analysis.DataSchema;

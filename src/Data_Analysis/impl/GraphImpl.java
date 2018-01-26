@@ -8,16 +8,12 @@ import Data_Analysis.GraphElement;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,31 +26,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.GraphImpl#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.impl.GraphImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GraphImpl extends GraphicElementImpl implements Graph {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -82,27 +59,6 @@ public class GraphImpl extends GraphicElementImpl implements Graph {
 	@Override
 	protected EClass eStaticClass() {
 		return Data_AnalysisPackage.Literals.GRAPH;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.GRAPH__NAME, oldName, name));
 	}
 
 	/**
@@ -139,8 +95,6 @@ public class GraphImpl extends GraphicElementImpl implements Graph {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.GRAPH__NAME:
-				return getName();
 			case Data_AnalysisPackage.GRAPH__ELEMENTS:
 				return getElements();
 		}
@@ -156,9 +110,6 @@ public class GraphImpl extends GraphicElementImpl implements Graph {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.GRAPH__NAME:
-				setName((String)newValue);
-				return;
 			case Data_AnalysisPackage.GRAPH__ELEMENTS:
 				getElements().clear();
 				getElements().addAll((Collection<? extends GraphElement>)newValue);
@@ -175,9 +126,6 @@ public class GraphImpl extends GraphicElementImpl implements Graph {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.GRAPH__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case Data_AnalysisPackage.GRAPH__ELEMENTS:
 				getElements().clear();
 				return;
@@ -193,28 +141,10 @@ public class GraphImpl extends GraphicElementImpl implements Graph {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.GRAPH__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Data_AnalysisPackage.GRAPH__ELEMENTS:
 				return elements != null && !elements.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GraphImpl

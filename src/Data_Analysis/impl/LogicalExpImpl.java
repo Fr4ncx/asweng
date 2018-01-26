@@ -4,20 +4,20 @@ package Data_Analysis.impl;
 
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.LogicalExp;
-
 import Data_Analysis.ValueCondition;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +43,7 @@ public class LogicalExpImpl extends EObjectImpl implements LogicalExp {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,6 +53,7 @@ public class LogicalExpImpl extends EObjectImpl implements LogicalExp {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getValueconditions() <em>Valueconditions</em>}' reference list.
 	 * <!-- begin-user-doc -->

@@ -3,7 +3,6 @@
 package Data_Analysis.impl;
 
 import Data_Analysis.Attribute;
-import Data_Analysis.AttributeSchema;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.Data_AnalysisPackage;
 
@@ -47,6 +46,7 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

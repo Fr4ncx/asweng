@@ -4,55 +4,39 @@ package Data_Analysis.impl;
 
 import Data_Analysis.Analysis;
 import Data_Analysis.Category;
-import Data_Analysis.DataAnalysis;
+import Data_Analysis.DataAnalysisTask;
 import Data_Analysis.Data_AnalysisPackage;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Analysis</b></em>'.
+ * An implementation of the model object '<em><b>Data Analysis Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.DataAnalysisImpl#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataAnalysisImpl#getCategory <em>Category</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataAnalysisImpl#getAnalysis <em>Analysis</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataAnalysisTaskImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DataAnalysisTaskImpl#getAnalysis <em>Analysis</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 	/**
 	 * The cached value of the '{@link #getCategory() <em>Category</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -78,7 +62,7 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataAnalysisImpl() {
+	protected DataAnalysisTaskImpl() {
 		super();
 	}
 
@@ -89,28 +73,7 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.DATA_ANALYSIS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_ANALYSIS__NAME, oldName, name));
+		return Data_AnalysisPackage.Literals.DATA_ANALYSIS_TASK;
 	}
 
 	/**
@@ -131,7 +94,7 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 		Category oldCategory = category;
 		category = newCategory;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY, oldCategory, newCategory);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY, oldCategory, newCategory);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -146,14 +109,14 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 		if (newCategory != category) {
 			NotificationChain msgs = null;
 			if (category != null)
-				msgs = ((InternalEObject)category).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY, null, msgs);
+				msgs = ((InternalEObject)category).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY, null, msgs);
 			if (newCategory != null)
-				msgs = ((InternalEObject)newCategory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY, null, msgs);
+				msgs = ((InternalEObject)newCategory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY, null, msgs);
 			msgs = basicSetCategory(newCategory, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY, newCategory, newCategory));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY, newCategory, newCategory));
 	}
 
 	/**
@@ -163,7 +126,7 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	 */
 	public EList<Analysis> getAnalysis() {
 		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS);
+			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS);
 		}
 		return analysis;
 	}
@@ -176,9 +139,9 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return basicSetCategory(null, msgs);
-			case Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
 				return ((InternalEList<?>)getAnalysis()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -192,11 +155,9 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_ANALYSIS__NAME:
-				return getName();
-			case Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return getCategory();
-			case Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
 				return getAnalysis();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -211,13 +172,10 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_ANALYSIS__NAME:
-				setName((String)newValue);
-				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				setCategory((Category)newValue);
 				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
 				getAnalysis().clear();
 				getAnalysis().addAll((Collection<? extends Analysis>)newValue);
 				return;
@@ -233,13 +191,10 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_ANALYSIS__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				setCategory((Category)null);
 				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
 				getAnalysis().clear();
 				return;
 		}
@@ -254,30 +209,12 @@ public class DataAnalysisImpl extends TaskImpl implements DataAnalysis {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.DATA_ANALYSIS__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Data_AnalysisPackage.DATA_ANALYSIS__CATEGORY:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return category != null;
-			case Data_AnalysisPackage.DATA_ANALYSIS__ANALYSIS:
+			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
 				return analysis != null && !analysis.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
-	}
-
-} //DataAnalysisImpl
+} //DataAnalysisTaskImpl

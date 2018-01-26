@@ -12,6 +12,7 @@ package Data_Analysis;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link Data_Analysis.Node#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.Node#getWidth <em>Width</em>}</li>
  *   <li>{@link Data_Analysis.Node#getHeight <em>Height</em>}</li>
  *   <li>{@link Data_Analysis.Node#getX <em>X</em>}</li>
@@ -19,10 +20,36 @@ package Data_Analysis;
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getNode()
- * @model annotation="gmf.node label='width'"
+ * @model annotation="gmf.node label='name'"
  * @generated
  */
 public interface Node extends GraphElement {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Data_Analysis.Data_AnalysisPackage#getNode_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.Node#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->

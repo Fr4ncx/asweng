@@ -1,0 +1,298 @@
+@namespace(uri="http://www.example.org/data_Analysis", prefix="Data_Analysis")
+package Data_Analysis;
+
+@gmf.diagram
+class Pipeline {
+  val Task[*] tasks;
+  val DataFlow[*] flows;
+  val DataSchema[*] schemas;
+  val Condition[*] conditions;
+}
+
+@gmf.node(label="name")
+abstract class Task {
+
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref DataFlow toFlow;
+  
+  attr long executionTimestamp;
+  attr boolean isExecuted;
+  attr String name;
+}
+
+enum CategoryType {
+  DESCRIPTION = 0;
+  CLASSIFICATION = 0;
+}
+
+enum FormatType {
+  JSON = 0;
+  CSV = 0;
+  XML = 0;
+  HTML = 0;
+  TXT = 0;
+}
+
+class DataCollectionTask extends Task {
+  attr FormatType format;
+  attr String endpoint;
+  
+  @gmf.compartment
+  val Source[1] source;
+  
+  @gmf.compartment
+  val DataSchema[1] inputSchema;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Condition condition;
+}
+
+class DataIntegrationTask extends Task {
+
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref DataSchema[1] joinAttributes;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref DataSchema[1] outAttributes;
+}
+
+class DataCleaning extends Task {
+  val Operation[*] operations;
+}
+
+class DataAnalysisTask extends Task {
+
+  @gmf.compartment
+  val Category category;
+  
+  @gmf.compartment
+  val Analysis[*] Analysis;
+}
+
+@gmf.node(label="name")
+class DataSchema {
+  attr String name;
+  
+  @gmf.compartment
+  val AttributeSchema[+] schemaAttributes;
+}
+
+@gmf.node(label="name")
+class AttributeSchema {
+  attr String name;
+  attr AttributeType type;
+}
+
+enum AttributeType {
+  INT = 0;
+  STRING = 0;
+  DATE = 0;
+}
+
+@gmf.node(label="url")
+abstract class Source {
+  attr String url;
+}
+
+class File extends Source {
+}
+
+class Database extends Source {
+  attr int port;
+  attr String user;
+  attr String pwd;
+}
+
+class RestService extends Source {
+  attr String user;
+  attr String pwd;
+}
+
+@gmf.node(label="name")
+abstract class Operation {
+  attr String name;
+}
+
+class RemoveNull extends Operation {
+}
+
+class FormatData extends Operation {
+}
+
+class Custom extends Operation {
+  attr CustomAction action;
+}
+
+enum CustomAction {
+  MODIFY = 0;
+  DELETE_SCHEMA = 0;
+  DELETE_ATTRIBUTE = 0;
+}
+
+class DataVisualizationTask extends Task {
+
+  @gmf.compartment
+  val GraphicElement[*] visualElements;
+  
+  @gmf.compartment
+  val Table[*] tables;
+}
+
+class ExportDataTask extends Task {
+  attr FormatType format;
+}
+
+@gmf.node(label="name")
+class DataFlow {
+  attr String name;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Task toTask;
+  
+  @gmf.compartment
+  val CollectionSchema[1] collection;
+}
+
+@gmf.node(label="name")
+class Condition {
+  attr String name;
+  
+  @gmf.compartment
+  val LogicalExp[*] expressions;
+  
+  @gmf.compartment
+  val ValueCondition[*] valueConditions;
+}
+
+class NotEx extends LogicalExp {
+}
+
+class OrExp extends LogicalExp {
+}
+
+class AndExp extends LogicalExp {
+}
+
+@gmf.node(label="attribute")
+class ValueCondition {
+  attr String attribute;
+  attr String value;
+}
+
+class Lt extends ValueCondition {
+}
+
+class Lte extends ValueCondition {
+}
+
+class Gt extends ValueCondition {
+}
+
+class Gte extends ValueCondition {
+}
+
+@gmf.node(label="name")
+class LogicalExp {
+  attr String name;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref ValueCondition[*] valueconditions;
+}
+
+@gmf.node(label="name")
+class Category {
+  attr String name;
+}
+
+class Description extends Category {
+}
+
+class Prediction extends Category {
+}
+
+class Clustering extends Category {
+}
+
+class Classification extends Category {
+}
+
+class Graph extends GraphicElement {
+
+  @gmf.compartment
+  val GraphElement[*] elements;
+}
+
+class GraphElement {
+}
+
+@gmf.node(label="name")
+class Node extends GraphElement {
+  attr String name;
+  attr int width;
+  attr int height;
+  attr int x;
+  attr int y;
+}
+
+@gmf.node(label="name")
+class Edge extends GraphElement {
+  attr String name;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Node[1] source;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Node[1] target;
+  attr int width;
+}
+
+@gmf.node(label="name")
+class Table {
+  attr String name;
+  
+  @gmf.compartment
+  val Row[+] rows;
+}
+
+@gmf.node(label="name")
+class Analysis {
+  attr String name;
+}
+
+@gmf.node(label="name")
+class GraphicElement {
+  attr String name;
+}
+
+class Diagram extends GraphicElement {
+}
+
+@gmf.node(label="name")
+class CollectionSchema {
+  attr String name;
+  
+  @gmf.compartment
+  val Attribute[*] attributes;
+}
+
+@gmf.node(label="name")
+class Attribute {
+  attr String name;
+  attr AttributeType type;
+  attr String value;
+}
+
+@gmf.node(label="rowIndex")
+class Row {
+  attr String rowIndex;
+  
+  @gmf.compartment
+  val Cell[+] cells;
+}
+
+@gmf.node(label="cellIndex")
+class Cell {
+  attr String cellIndex;
+  attr String value;
+}
+

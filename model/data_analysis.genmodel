@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/asweng/src" modelPluginID="asweng"
     modelName="Data_Analysis" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>data_analysis.ecore</foreignModel>
+  <foreignModel>data_analysis.emf</foreignModel>
   <genPackages prefix="Data_Analysis" disposableProviderFactory="true" ecorePackage="data_analysis.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="data_analysis.ecore#//CategoryType">
       <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//CategoryType/DESCRIPTION"/>
@@ -36,27 +36,25 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Task/toFlow"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Task/executionTimestamp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Task/isExecuted"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Task/name"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//DataCollection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataCollection/format"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataCollection/endpoint"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollection/source"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollection/inputSchema"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollection/condition"/>
+    <genClasses ecoreClass="data_analysis.ecore#//DataCollectionTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataCollectionTask/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataCollectionTask/endpoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollectionTask/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollectionTask/inputSchema"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCollectionTask/condition"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//DataIntegration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataIntegration/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataIntegration/joinAttributes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataIntegration/outAttributes"/>
+    <genClasses ecoreClass="data_analysis.ecore#//DataIntegrationTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataIntegrationTask/joinAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataIntegrationTask/outAttributes"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//DataCleaning">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataCleaning/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataCleaning/operations"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//DataAnalysis">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataAnalysis/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysis/category"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysis/Analysis"/>
+    <genClasses ecoreClass="data_analysis.ecore#//DataAnalysisTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysisTask/category"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysisTask/Analysis"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//DataSchema">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataSchema/name"/>
@@ -87,13 +85,12 @@
     <genClasses ecoreClass="data_analysis.ecore#//Custom">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Custom/action"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//DataVisualization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataVisualization/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataVisualization/visualElements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataVisualization/tables"/>
+    <genClasses ecoreClass="data_analysis.ecore#//DataVisualizationTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataVisualizationTask/visualElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataVisualizationTask/tables"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//ExportData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//ExportData/format"/>
+    <genClasses ecoreClass="data_analysis.ecore#//ExportDataTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//ExportDataTask/format"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//DataFlow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataFlow/name"/>
@@ -128,11 +125,11 @@
     <genClasses ecoreClass="data_analysis.ecore#//Clustering"/>
     <genClasses ecoreClass="data_analysis.ecore#//Classification"/>
     <genClasses ecoreClass="data_analysis.ecore#//Graph">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Graph/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Graph/elements"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//GraphElement"/>
     <genClasses ecoreClass="data_analysis.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/width"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/height"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/x"/>
@@ -148,8 +145,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Table/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Table/rows"/>
     </genClasses>
-    <genClasses ecoreClass="data_analysis.ecore#//Analysis"/>
-    <genClasses ecoreClass="data_analysis.ecore#//GraphicElement"/>
+    <genClasses ecoreClass="data_analysis.ecore#//Analysis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Analysis/name"/>
+    </genClasses>
+    <genClasses ecoreClass="data_analysis.ecore#//GraphicElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//GraphicElement/name"/>
+    </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Diagram"/>
     <genClasses ecoreClass="data_analysis.ecore#//CollectionSchema">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//CollectionSchema/name"/>

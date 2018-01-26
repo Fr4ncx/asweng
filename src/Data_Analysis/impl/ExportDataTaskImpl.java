@@ -3,7 +3,7 @@
 package Data_Analysis.impl;
 
 import Data_Analysis.Data_AnalysisPackage;
-import Data_Analysis.ExportData;
+import Data_Analysis.ExportDataTask;
 import Data_Analysis.FormatType;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Export Data</b></em>'.
+ * An implementation of the model object '<em><b>Export Data Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.ExportDataImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link Data_Analysis.impl.ExportDataTaskImpl#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExportDataImpl extends TaskImpl implements ExportData {
+public class ExportDataTaskImpl extends TaskImpl implements ExportDataTask {
 	/**
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExportDataImpl() {
+	protected ExportDataTaskImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.EXPORT_DATA;
+		return Data_AnalysisPackage.Literals.EXPORT_DATA_TASK;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 		FormatType oldFormat = format;
 		format = newFormat == null ? FORMAT_EDEFAULT : newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.EXPORT_DATA__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.EXPORT_DATA_TASK__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.EXPORT_DATA__FORMAT:
+			case Data_AnalysisPackage.EXPORT_DATA_TASK__FORMAT:
 				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.EXPORT_DATA__FORMAT:
+			case Data_AnalysisPackage.EXPORT_DATA_TASK__FORMAT:
 				setFormat((FormatType)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.EXPORT_DATA__FORMAT:
+			case Data_AnalysisPackage.EXPORT_DATA_TASK__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.EXPORT_DATA__FORMAT:
+			case Data_AnalysisPackage.EXPORT_DATA_TASK__FORMAT:
 				return format != FORMAT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public class ExportDataImpl extends TaskImpl implements ExportData {
 		return result.toString();
 	}
 
-} //ExportDataImpl
+} //ExportDataTaskImpl

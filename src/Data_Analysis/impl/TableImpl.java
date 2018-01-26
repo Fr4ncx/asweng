@@ -5,8 +5,6 @@ package Data_Analysis.impl;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Row;
 import Data_Analysis.Table;
-import Data_Analysis.XAxis;
-import Data_Analysis.YAxis;
 
 import java.util.Collection;
 

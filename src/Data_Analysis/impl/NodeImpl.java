@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link Data_Analysis.impl.NodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link Data_Analysis.impl.NodeImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link Data_Analysis.impl.NodeImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link Data_Analysis.impl.NodeImpl#getX <em>X</em>}</li>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class NodeImpl extends GraphElementImpl implements Node {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -132,6 +153,27 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.NODE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getWidth() {
 		return width;
 	}
@@ -219,6 +261,8 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case Data_AnalysisPackage.NODE__NAME:
+				return getName();
 			case Data_AnalysisPackage.NODE__WIDTH:
 				return getWidth();
 			case Data_AnalysisPackage.NODE__HEIGHT:
@@ -239,6 +283,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case Data_AnalysisPackage.NODE__NAME:
+				setName((String)newValue);
+				return;
 			case Data_AnalysisPackage.NODE__WIDTH:
 				setWidth((Integer)newValue);
 				return;
@@ -263,6 +310,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.NODE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case Data_AnalysisPackage.NODE__WIDTH:
 				setWidth(WIDTH_EDEFAULT);
 				return;
@@ -287,6 +337,8 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case Data_AnalysisPackage.NODE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Data_AnalysisPackage.NODE__WIDTH:
 				return width != WIDTH_EDEFAULT;
 			case Data_AnalysisPackage.NODE__HEIGHT:
@@ -309,7 +361,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (width: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", width: ");
 		result.append(width);
 		result.append(", height: ");
 		result.append(height);

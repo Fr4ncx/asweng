@@ -3,6 +3,7 @@
 package Data_Analysis;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface LogicalExp extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,14 +55,15 @@ public interface LogicalExp extends EObject {
 	 * The list contents are of type {@link Data_Analysis.ValueCondition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Valueconditions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Valueconditions</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Valueconditions</em>' reference list.
 	 * @see Data_Analysis.Data_AnalysisPackage#getLogicalExp_Valueconditions()
-	 * @model
+	 * @model annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
 	 * @generated
 	 */
 	EList<ValueCondition> getValueconditions();
+
 } // LogicalExp

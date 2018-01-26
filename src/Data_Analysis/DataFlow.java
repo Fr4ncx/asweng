@@ -2,8 +2,6 @@
  */
 package Data_Analysis;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -55,14 +53,14 @@ public interface DataFlow extends EObject {
 	 * Returns the value of the '<em><b>To Task</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Task</em>' reference list isn't clear,
+	 * If the meaning of the '<em>To Task</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To Task</em>' reference.
 	 * @see #setToTask(Task)
 	 * @see Data_Analysis.Data_AnalysisPackage#getDataFlow_ToTask()
-	 * @model
+	 * @model annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
 	 * @generated
 	 */
 	Task getToTask();

@@ -61,6 +61,7 @@ public interface Edge extends GraphElement {
 	 * @see #setSource(Node)
 	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Source()
 	 * @model required="true"
+	 *        annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
 	 * @generated
 	 */
 	Node getSource();
@@ -87,6 +88,7 @@ public interface Edge extends GraphElement {
 	 * @see #setTarget(Node)
 	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Target()
 	 * @model required="true"
+	 *        annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
 	 * @generated
 	 */
 	Node getTarget();
