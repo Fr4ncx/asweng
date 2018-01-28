@@ -2,7 +2,7 @@
  */
 package Data_Analysis.impl;
 
-import Data_Analysis.CollectionSchema;
+import Data_Analysis.Attribute;
 import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Document;
 
@@ -24,19 +24,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Collection Schema</b></em>'.
+ * An implementation of the model object '<em><b>Document</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.CollectionSchemaImpl#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.impl.CollectionSchemaImpl#getDocuments <em>Documents</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DocumentImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link Data_Analysis.impl.DocumentImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchema {
+public class DocumentImpl extends EObjectImpl implements Document {
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Attribute> attributes;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,21 +68,11 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDocuments() <em>Documents</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocuments()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Document> documents;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CollectionSchemaImpl() {
+	protected DocumentImpl() {
 		super();
 	}
 
@@ -83,7 +83,19 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.COLLECTION_SCHEMA;
+		return Data_AnalysisPackage.Literals.DOCUMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Attribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, Data_AnalysisPackage.DOCUMENT__ATTRIBUTES);
+		}
+		return attributes;
 	}
 
 	/**
@@ -104,19 +116,7 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.COLLECTION_SCHEMA__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Document> getDocuments() {
-		if (documents == null) {
-			documents = new EObjectContainmentEList<Document>(Document.class, this, Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS);
-		}
-		return documents;
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.DOCUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS:
-				return ((InternalEList<?>)getDocuments()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.DOCUMENT__ATTRIBUTES:
+				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,10 +141,10 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+			case Data_AnalysisPackage.DOCUMENT__ATTRIBUTES:
+				return getAttributes();
+			case Data_AnalysisPackage.DOCUMENT__NAME:
 				return getName();
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS:
-				return getDocuments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,12 +158,12 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
-				setName((String)newValue);
+			case Data_AnalysisPackage.DOCUMENT__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS:
-				getDocuments().clear();
-				getDocuments().addAll((Collection<? extends Document>)newValue);
+			case Data_AnalysisPackage.DOCUMENT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,11 +177,11 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
-				setName(NAME_EDEFAULT);
+			case Data_AnalysisPackage.DOCUMENT__ATTRIBUTES:
+				getAttributes().clear();
 				return;
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS:
-				getDocuments().clear();
+			case Data_AnalysisPackage.DOCUMENT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -195,10 +195,10 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__NAME:
+			case Data_AnalysisPackage.DOCUMENT__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
+			case Data_AnalysisPackage.DOCUMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Data_AnalysisPackage.COLLECTION_SCHEMA__DOCUMENTS:
-				return documents != null && !documents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,4 +219,4 @@ public class CollectionSchemaImpl extends EObjectImpl implements CollectionSchem
 		return result.toString();
 	}
 
-} //CollectionSchemaImpl
+} //DocumentImpl

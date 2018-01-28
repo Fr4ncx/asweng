@@ -22,8 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link Data_Analysis.impl.EdgeImpl#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.impl.EdgeImpl#getSource <em>Source</em>}</li>
- *   <li>{@link Data_Analysis.impl.EdgeImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link Data_Analysis.impl.EdgeImpl#getToNode <em>To Node</em>}</li>
  *   <li>{@link Data_Analysis.impl.EdgeImpl#getWidth <em>Width</em>}</li>
  * </ul>
  *
@@ -51,24 +50,14 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getToNode() <em>To Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSource()
+	 * @see #getToNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected Node source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected Node target;
+	protected Node toNode;
 
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -135,16 +124,16 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Node)eResolveProxy(oldSource);
-			if (source != oldSource) {
+	public Node getToNode() {
+		if (toNode != null && toNode.eIsProxy()) {
+			InternalEObject oldToNode = (InternalEObject)toNode;
+			toNode = (Node)eResolveProxy(oldToNode);
+			if (toNode != oldToNode) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.EDGE__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.EDGE__TO_NODE, oldToNode, toNode));
 			}
 		}
-		return source;
+		return toNode;
 	}
 
 	/**
@@ -152,8 +141,8 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node basicGetSource() {
-		return source;
+	public Node basicGetToNode() {
+		return toNode;
 	}
 
 	/**
@@ -161,49 +150,11 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(Node newSource) {
-		Node oldSource = source;
-		source = newSource;
+	public void setToNode(Node newToNode) {
+		Node oldToNode = toNode;
+		toNode = newToNode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.EDGE__SOURCE, oldSource, source));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Node getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Node)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.EDGE__TARGET, oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Node basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(Node newTarget) {
-		Node oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.EDGE__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.EDGE__TO_NODE, oldToNode, toNode));
 	}
 
 	/**
@@ -237,12 +188,9 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 		switch (featureID) {
 			case Data_AnalysisPackage.EDGE__NAME:
 				return getName();
-			case Data_AnalysisPackage.EDGE__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case Data_AnalysisPackage.EDGE__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+			case Data_AnalysisPackage.EDGE__TO_NODE:
+				if (resolve) return getToNode();
+				return basicGetToNode();
 			case Data_AnalysisPackage.EDGE__WIDTH:
 				return getWidth();
 		}
@@ -260,11 +208,8 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 			case Data_AnalysisPackage.EDGE__NAME:
 				setName((String)newValue);
 				return;
-			case Data_AnalysisPackage.EDGE__SOURCE:
-				setSource((Node)newValue);
-				return;
-			case Data_AnalysisPackage.EDGE__TARGET:
-				setTarget((Node)newValue);
+			case Data_AnalysisPackage.EDGE__TO_NODE:
+				setToNode((Node)newValue);
 				return;
 			case Data_AnalysisPackage.EDGE__WIDTH:
 				setWidth((Integer)newValue);
@@ -284,11 +229,8 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 			case Data_AnalysisPackage.EDGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Data_AnalysisPackage.EDGE__SOURCE:
-				setSource((Node)null);
-				return;
-			case Data_AnalysisPackage.EDGE__TARGET:
-				setTarget((Node)null);
+			case Data_AnalysisPackage.EDGE__TO_NODE:
+				setToNode((Node)null);
 				return;
 			case Data_AnalysisPackage.EDGE__WIDTH:
 				setWidth(WIDTH_EDEFAULT);
@@ -307,10 +249,8 @@ public class EdgeImpl extends GraphElementImpl implements Edge {
 		switch (featureID) {
 			case Data_AnalysisPackage.EDGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Data_AnalysisPackage.EDGE__SOURCE:
-				return source != null;
-			case Data_AnalysisPackage.EDGE__TARGET:
-				return target != null;
+			case Data_AnalysisPackage.EDGE__TO_NODE:
+				return toNode != null;
 			case Data_AnalysisPackage.EDGE__WIDTH:
 				return width != WIDTH_EDEFAULT;
 		}

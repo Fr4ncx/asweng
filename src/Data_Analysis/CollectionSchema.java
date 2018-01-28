@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link Data_Analysis.CollectionSchema#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.CollectionSchema#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link Data_Analysis.CollectionSchema#getDocuments <em>Documents</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getCollectionSchema()
@@ -51,19 +51,19 @@ public interface CollectionSchema extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link Data_Analysis.Attribute}.
+	 * Returns the value of the '<em><b>Documents</b></em>' containment reference list.
+	 * The list contents are of type {@link Data_Analysis.Document}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Documents</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference list.
-	 * @see Data_Analysis.Data_AnalysisPackage#getCollectionSchema_Attributes()
+	 * @return the value of the '<em>Documents</em>' containment reference list.
+	 * @see Data_Analysis.Data_AnalysisPackage#getCollectionSchema_Documents()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttributes();
+	EList<Document> getDocuments();
 
 } // CollectionSchema

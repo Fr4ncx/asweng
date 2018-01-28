@@ -14,7 +14,6 @@ abstract class Task {
 
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref DataFlow toFlow;
-  
   attr long executionTimestamp;
   attr boolean isExecuted;
   attr String name;
@@ -36,13 +35,13 @@ enum FormatType {
 class DataCollectionTask extends Task {
   attr FormatType format;
   attr String endpoint;
-  
+
   @gmf.compartment
   val Source[1] source;
-  
+
   @gmf.compartment
   val DataSchema[1] inputSchema;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref Condition condition;
 }
@@ -51,7 +50,7 @@ class DataIntegrationTask extends Task {
 
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref DataSchema[1] joinAttributes;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref DataSchema[1] outAttributes;
 }
@@ -64,7 +63,7 @@ class DataAnalysisTask extends Task {
 
   @gmf.compartment
   val Category category;
-  
+
   @gmf.compartment
   val Analysis[*] Analysis;
 }
@@ -72,7 +71,7 @@ class DataAnalysisTask extends Task {
 @gmf.node(label="name")
 class DataSchema {
   attr String name;
-  
+
   @gmf.compartment
   val AttributeSchema[+] schemaAttributes;
 }
@@ -133,7 +132,7 @@ class DataVisualizationTask extends Task {
 
   @gmf.compartment
   val GraphicElement[*] visualElements;
-  
+
   @gmf.compartment
   val Table[*] tables;
 }
@@ -145,10 +144,10 @@ class ExportDataTask extends Task {
 @gmf.node(label="name")
 class DataFlow {
   attr String name;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref Task toTask;
-  
+
   @gmf.compartment
   val CollectionSchema[1] collection;
 }
@@ -156,10 +155,10 @@ class DataFlow {
 @gmf.node(label="name")
 class Condition {
   attr String name;
-  
+
   @gmf.compartment
   val LogicalExp[*] expressions;
-  
+
   @gmf.compartment
   val ValueCondition[*] valueConditions;
 }
@@ -194,7 +193,7 @@ class Gte extends ValueCondition {
 @gmf.node(label="name")
 class LogicalExp {
   attr String name;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref ValueCondition[*] valueconditions;
 }
@@ -232,24 +231,24 @@ class Node extends GraphElement {
   attr int height;
   attr int x;
   attr int y;
+  
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Edge[1] toEdge;
 }
 
 @gmf.node(label="name")
 class Edge extends GraphElement {
   attr String name;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
-  ref Node[1] source;
-  
-  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
-  ref Node[1] target;
+  ref Node[1] toNode;
   attr int width;
 }
 
 @gmf.node(label="name")
 class Table {
   attr String name;
-  
+
   @gmf.compartment
   val Row[+] rows;
 }
@@ -272,7 +271,7 @@ class CollectionSchema {
   attr String name;
   
   @gmf.compartment
-  val Attribute[*] attributes;
+  val Document[*] documents;
 }
 
 @gmf.node(label="name")
@@ -285,7 +284,7 @@ class Attribute {
 @gmf.node(label="rowIndex")
 class Row {
   attr String rowIndex;
-  
+
   @gmf.compartment
   val Cell[+] cells;
 }
@@ -294,5 +293,13 @@ class Row {
 class Cell {
   attr String cellIndex;
   attr String value;
+}
+
+@gmf.node(label="name")
+class Document {
+
+  @gmf.compartment
+  val Attribute[*] attributes;
+  attr String name;
 }
 

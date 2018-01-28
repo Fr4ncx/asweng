@@ -1670,13 +1670,22 @@ public interface Data_AnalysisPackage extends EPackage {
 	int NODE__Y = GRAPH_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>To Edge</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__TO_EDGE = GRAPH_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 5;
+	int NODE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.EdgeImpl <em>Edge</em>}' class.
@@ -1698,22 +1707,13 @@ public interface Data_AnalysisPackage extends EPackage {
 	int EDGE__NAME = GRAPH_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>To Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__SOURCE = GRAPH_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE__TARGET = GRAPH_ELEMENT_FEATURE_COUNT + 2;
+	int EDGE__TO_NODE = GRAPH_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -1722,7 +1722,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__WIDTH = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+	int EDGE__WIDTH = GRAPH_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Edge</em>' class.
@@ -1731,7 +1731,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 4;
+	int EDGE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.TableImpl <em>Table</em>}' class.
@@ -1846,13 +1846,13 @@ public interface Data_AnalysisPackage extends EPackage {
 	int COLLECTION_SCHEMA__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Documents</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SCHEMA__ATTRIBUTES = 1;
+	int COLLECTION_SCHEMA__DOCUMENTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Collection Schema</em>' class.
@@ -1984,6 +1984,43 @@ public interface Data_AnalysisPackage extends EPackage {
 	int CELL_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.DocumentImpl <em>Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.DocumentImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDocument()
+	 * @generated
+	 */
+	int DOCUMENT = 46;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__ATTRIBUTES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1991,7 +2028,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCategoryType()
 	 * @generated
 	 */
-	int CATEGORY_TYPE = 46;
+	int CATEGORY_TYPE = 47;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.FormatType <em>Format Type</em>}' enum.
@@ -2001,7 +2038,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatType()
 	 * @generated
 	 */
-	int FORMAT_TYPE = 47;
+	int FORMAT_TYPE = 48;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.AttributeType <em>Attribute Type</em>}' enum.
@@ -2011,7 +2048,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getAttributeType()
 	 * @generated
 	 */
-	int ATTRIBUTE_TYPE = 48;
+	int ATTRIBUTE_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.CustomAction <em>Custom Action</em>}' enum.
@@ -2021,7 +2058,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCustomAction()
 	 * @generated
 	 */
-	int CUSTOM_ACTION = 49;
+	int CUSTOM_ACTION = 50;
 
 
 	/**
@@ -2945,6 +2982,17 @@ public interface Data_AnalysisPackage extends EPackage {
 	EAttribute getNode_Y();
 
 	/**
+	 * Returns the meta object for the reference '{@link Data_Analysis.Node#getToEdge <em>To Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Edge</em>'.
+	 * @see Data_Analysis.Node#getToEdge()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_ToEdge();
+
+	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2966,26 +3014,15 @@ public interface Data_AnalysisPackage extends EPackage {
 	EAttribute getEdge_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link Data_Analysis.Edge#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link Data_Analysis.Edge#getToNode <em>To Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see Data_Analysis.Edge#getSource()
+	 * @return the meta object for the reference '<em>To Node</em>'.
+	 * @see Data_Analysis.Edge#getToNode()
 	 * @see #getEdge()
 	 * @generated
 	 */
-	EReference getEdge_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link Data_Analysis.Edge#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see Data_Analysis.Edge#getTarget()
-	 * @see #getEdge()
-	 * @generated
-	 */
-	EReference getEdge_Target();
+	EReference getEdge_ToNode();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Data_Analysis.Edge#getWidth <em>Width</em>}'.
@@ -3104,15 +3141,15 @@ public interface Data_AnalysisPackage extends EPackage {
 	EAttribute getCollectionSchema_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link Data_Analysis.CollectionSchema#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.CollectionSchema#getDocuments <em>Documents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see Data_Analysis.CollectionSchema#getAttributes()
+	 * @return the meta object for the containment reference list '<em>Documents</em>'.
+	 * @see Data_Analysis.CollectionSchema#getDocuments()
 	 * @see #getCollectionSchema()
 	 * @generated
 	 */
-	EReference getCollectionSchema_Attributes();
+	EReference getCollectionSchema_Documents();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Attribute <em>Attribute</em>}'.
@@ -3220,6 +3257,38 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCell_Value();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Document <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Document</em>'.
+	 * @see Data_Analysis.Document
+	 * @generated
+	 */
+	EClass getDocument();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Document#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see Data_Analysis.Document#getAttributes()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EReference getDocument_Attributes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Document#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Data_Analysis.Document#getName()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EAttribute getDocument_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link Data_Analysis.CategoryType <em>Category Type</em>}'.
@@ -4054,6 +4123,14 @@ public interface Data_AnalysisPackage extends EPackage {
 		EAttribute NODE__Y = eINSTANCE.getNode_Y();
 
 		/**
+		 * The meta object literal for the '<em><b>To Edge</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__TO_EDGE = eINSTANCE.getNode_ToEdge();
+
+		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4072,20 +4149,12 @@ public interface Data_AnalysisPackage extends EPackage {
 		EAttribute EDGE__NAME = eINSTANCE.getEdge_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To Node</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDGE__SOURCE = eINSTANCE.getEdge_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EDGE__TARGET = eINSTANCE.getEdge_Target();
+		EReference EDGE__TO_NODE = eINSTANCE.getEdge_ToNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
@@ -4186,12 +4255,12 @@ public interface Data_AnalysisPackage extends EPackage {
 		EAttribute COLLECTION_SCHEMA__NAME = eINSTANCE.getCollectionSchema_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Documents</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_SCHEMA__ATTRIBUTES = eINSTANCE.getCollectionSchema_Attributes();
+		EReference COLLECTION_SCHEMA__DOCUMENTS = eINSTANCE.getCollectionSchema_Documents();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -4278,6 +4347,32 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CELL__VALUE = eINSTANCE.getCell_Value();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.DocumentImpl <em>Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.DocumentImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDocument()
+		 * @generated
+		 */
+		EClass DOCUMENT = eINSTANCE.getDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT__ATTRIBUTES = eINSTANCE.getDocument_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.

@@ -13,8 +13,7 @@ package Data_Analysis;
  * </p>
  * <ul>
  *   <li>{@link Data_Analysis.Edge#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.Edge#getSource <em>Source</em>}</li>
- *   <li>{@link Data_Analysis.Edge#getTarget <em>Target</em>}</li>
+ *   <li>{@link Data_Analysis.Edge#getToNode <em>To Node</em>}</li>
  *   <li>{@link Data_Analysis.Edge#getWidth <em>Width</em>}</li>
  * </ul>
  *
@@ -50,58 +49,31 @@ public interface Edge extends GraphElement {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>To Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>To Node</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(Node)
-	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Source()
+	 * @return the value of the '<em>To Node</em>' reference.
+	 * @see #setToNode(Node)
+	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_ToNode()
 	 * @model required="true"
 	 *        annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
 	 * @generated
 	 */
-	Node getSource();
+	Node getToNode();
 
 	/**
-	 * Sets the value of the '{@link Data_Analysis.Edge#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link Data_Analysis.Edge#getToNode <em>To Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
-	 * @see #getSource()
+	 * @param value the new value of the '<em>To Node</em>' reference.
+	 * @see #getToNode()
 	 * @generated
 	 */
-	void setSource(Node value);
-
-	/**
-	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(Node)
-	 * @see Data_Analysis.Data_AnalysisPackage#getEdge_Target()
-	 * @model required="true"
-	 *        annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
-	 * @generated
-	 */
-	Node getTarget();
-
-	/**
-	 * Sets the value of the '{@link Data_Analysis.Edge#getTarget <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' reference.
-	 * @see #getTarget()
-	 * @generated
-	 */
-	void setTarget(Node value);
+	void setToNode(Node value);
 
 	/**
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.

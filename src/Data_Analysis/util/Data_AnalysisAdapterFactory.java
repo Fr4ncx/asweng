@@ -252,6 +252,10 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createCellAdapter();
 			}
 			@Override
+			public Adapter caseDocument(Document object) {
+				return createDocumentAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -912,6 +916,20 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.Document <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.Document
+	 * @generated
+	 */
+	public Adapter createDocumentAdapter() {
 		return null;
 	}
 

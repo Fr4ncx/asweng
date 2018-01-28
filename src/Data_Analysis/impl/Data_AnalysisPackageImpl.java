@@ -28,6 +28,7 @@ import Data_Analysis.Data_AnalysisPackage;
 import Data_Analysis.Database;
 import Data_Analysis.Description;
 import Data_Analysis.Diagram;
+import Data_Analysis.Document;
 import Data_Analysis.Edge;
 import Data_Analysis.ExportDataTask;
 import Data_Analysis.File;
@@ -391,6 +392,13 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * @generated
 	 */
 	private EClass cellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass documentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1269,6 +1277,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getNode_ToEdge() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -1287,7 +1304,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdge_Source() {
+	public EReference getEdge_ToNode() {
 		return (EReference)edgeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1296,17 +1313,8 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdge_Target() {
-		return (EReference)edgeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getEdge_Width() {
-		return (EAttribute)edgeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)edgeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1404,7 +1412,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionSchema_Attributes() {
+	public EReference getCollectionSchema_Documents() {
 		return (EReference)collectionSchemaEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1496,6 +1504,33 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EAttribute getCell_Value() {
 		return (EAttribute)cellEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDocument() {
+		return documentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocument_Attributes() {
+		return (EReference)documentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocument_Name() {
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1685,11 +1720,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		createEAttribute(nodeEClass, NODE__HEIGHT);
 		createEAttribute(nodeEClass, NODE__X);
 		createEAttribute(nodeEClass, NODE__Y);
+		createEReference(nodeEClass, NODE__TO_EDGE);
 
 		edgeEClass = createEClass(EDGE);
 		createEAttribute(edgeEClass, EDGE__NAME);
-		createEReference(edgeEClass, EDGE__SOURCE);
-		createEReference(edgeEClass, EDGE__TARGET);
+		createEReference(edgeEClass, EDGE__TO_NODE);
 		createEAttribute(edgeEClass, EDGE__WIDTH);
 
 		tableEClass = createEClass(TABLE);
@@ -1706,7 +1741,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		collectionSchemaEClass = createEClass(COLLECTION_SCHEMA);
 		createEAttribute(collectionSchemaEClass, COLLECTION_SCHEMA__NAME);
-		createEReference(collectionSchemaEClass, COLLECTION_SCHEMA__ATTRIBUTES);
+		createEReference(collectionSchemaEClass, COLLECTION_SCHEMA__DOCUMENTS);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -1720,6 +1755,10 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		cellEClass = createEClass(CELL);
 		createEAttribute(cellEClass, CELL__CELL_INDEX);
 		createEAttribute(cellEClass, CELL__VALUE);
+
+		documentEClass = createEClass(DOCUMENT);
+		createEReference(documentEClass, DOCUMENT__ATTRIBUTES);
+		createEAttribute(documentEClass, DOCUMENT__NAME);
 
 		// Create enums
 		categoryTypeEEnum = createEEnum(CATEGORY_TYPE);
@@ -1908,11 +1947,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEAttribute(getNode_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_X(), ecorePackage.getEInt(), "x", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_ToEdge(), this.getEdge(), null, "toEdge", null, 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEdge_Name(), ecorePackage.getEString(), "name", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEdge_Source(), this.getNode(), null, "source", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEdge_Target(), this.getNode(), null, "target", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdge_ToNode(), this.getNode(), null, "toNode", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdge_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1929,7 +1968,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		initEClass(collectionSchemaEClass, CollectionSchema.class, "CollectionSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCollectionSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionSchema_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionSchema_Documents(), this.getDocument(), null, "documents", null, 0, -1, CollectionSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1943,6 +1982,10 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCell_CellIndex(), ecorePackage.getEString(), "cellIndex", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCell_Value(), ecorePackage.getEString(), "value", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDocument_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(categoryTypeEEnum, CategoryType.class, "CategoryType");
@@ -2116,6 +2159,12 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   source, 
 		   new String[] {
 			 "label", "cellIndex"
+		   });	
+		addAnnotation
+		  (documentEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
 		   });
 	}
 
@@ -2176,7 +2225,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 			 "color", "127,127,127"
 		   });	
 		addAnnotation
-		  (getEdge_Source(), 
+		  (getNode_ToEdge(), 
 		   source, 
 		   new String[] {
 			 "target.decoration", "arrow",
@@ -2184,7 +2233,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 			 "color", "127,127,127"
 		   });	
 		addAnnotation
-		  (getEdge_Target(), 
+		  (getEdge_ToNode(), 
 		   source, 
 		   new String[] {
 			 "target.decoration", "arrow",
@@ -2262,12 +2311,17 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getCollectionSchema_Attributes(), 
+		  (getCollectionSchema_Documents(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (getRow_Cells(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDocument_Attributes(), 
 		   source, 
 		   new String[] {
 		   });

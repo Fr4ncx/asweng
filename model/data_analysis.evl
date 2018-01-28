@@ -1,11 +1,11 @@
 context Pipeline {
 
-         /*constraint dataCollectionAsFirstTask{
+         constraint dataCollectionAsFirstTask{
                 check: self.firstElementAsDataCollection()
                 message: "The first task must be a task of type Data Collection."
         }
         
-        constraint timestamp{
+        /*constraint timestamp{
                 check: self.growingTaskTimestamps()
                 message: "Growing timestamp."
         }

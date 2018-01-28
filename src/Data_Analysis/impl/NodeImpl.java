@@ -3,11 +3,13 @@
 package Data_Analysis.impl;
 
 import Data_Analysis.Data_AnalysisPackage;
+import Data_Analysis.Edge;
 import Data_Analysis.Node;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link Data_Analysis.impl.NodeImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link Data_Analysis.impl.NodeImpl#getX <em>X</em>}</li>
  *   <li>{@link Data_Analysis.impl.NodeImpl#getY <em>Y</em>}</li>
+ *   <li>{@link Data_Analysis.impl.NodeImpl#getToEdge <em>To Edge</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,6 +131,16 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	 * @ordered
 	 */
 	protected int y = Y_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getToEdge() <em>To Edge</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToEdge()
+	 * @generated
+	 * @ordered
+	 */
+	protected Edge toEdge;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,6 +271,44 @@ public class NodeImpl extends GraphElementImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Edge getToEdge() {
+		if (toEdge != null && toEdge.eIsProxy()) {
+			InternalEObject oldToEdge = (InternalEObject)toEdge;
+			toEdge = (Edge)eResolveProxy(oldToEdge);
+			if (toEdge != oldToEdge) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Data_AnalysisPackage.NODE__TO_EDGE, oldToEdge, toEdge));
+			}
+		}
+		return toEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Edge basicGetToEdge() {
+		return toEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setToEdge(Edge newToEdge) {
+		Edge oldToEdge = toEdge;
+		toEdge = newToEdge;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.NODE__TO_EDGE, oldToEdge, toEdge));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -271,6 +322,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 				return getX();
 			case Data_AnalysisPackage.NODE__Y:
 				return getY();
+			case Data_AnalysisPackage.NODE__TO_EDGE:
+				if (resolve) return getToEdge();
+				return basicGetToEdge();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,6 +351,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 				return;
 			case Data_AnalysisPackage.NODE__Y:
 				setY((Integer)newValue);
+				return;
+			case Data_AnalysisPackage.NODE__TO_EDGE:
+				setToEdge((Edge)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,6 +382,9 @@ public class NodeImpl extends GraphElementImpl implements Node {
 			case Data_AnalysisPackage.NODE__Y:
 				setY(Y_EDEFAULT);
 				return;
+			case Data_AnalysisPackage.NODE__TO_EDGE:
+				setToEdge((Edge)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,6 +407,8 @@ public class NodeImpl extends GraphElementImpl implements Node {
 				return x != X_EDEFAULT;
 			case Data_AnalysisPackage.NODE__Y:
 				return y != Y_EDEFAULT;
+			case Data_AnalysisPackage.NODE__TO_EDGE:
+				return toEdge != null;
 		}
 		return super.eIsSet(featureID);
 	}

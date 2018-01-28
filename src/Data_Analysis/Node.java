@@ -17,6 +17,7 @@ package Data_Analysis;
  *   <li>{@link Data_Analysis.Node#getHeight <em>Height</em>}</li>
  *   <li>{@link Data_Analysis.Node#getX <em>X</em>}</li>
  *   <li>{@link Data_Analysis.Node#getY <em>Y</em>}</li>
+ *   <li>{@link Data_Analysis.Node#getToEdge <em>To Edge</em>}</li>
  * </ul>
  *
  * @see Data_Analysis.Data_AnalysisPackage#getNode()
@@ -153,5 +154,32 @@ public interface Node extends GraphElement {
 	 * @generated
 	 */
 	void setY(int value);
+
+	/**
+	 * Returns the value of the '<em><b>To Edge</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>To Edge</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>To Edge</em>' reference.
+	 * @see #setToEdge(Edge)
+	 * @see Data_Analysis.Data_AnalysisPackage#getNode_ToEdge()
+	 * @model required="true"
+	 *        annotation="gmf.link target.decoration='arrow' style='dot' color='127,127,127'"
+	 * @generated
+	 */
+	Edge getToEdge();
+
+	/**
+	 * Sets the value of the '{@link Data_Analysis.Node#getToEdge <em>To Edge</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Edge</em>' reference.
+	 * @see #getToEdge()
+	 * @generated
+	 */
+	void setToEdge(Edge value);
 
 } // Node

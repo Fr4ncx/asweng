@@ -409,6 +409,15 @@ public interface Data_AnalysisFactory extends EFactory {
 	Cell createCell();
 
 	/**
+	 * Returns a new object of class '<em>Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Document</em>'.
+	 * @generated
+	 */
+	Document createDocument();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

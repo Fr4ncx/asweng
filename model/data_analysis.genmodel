@@ -134,11 +134,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/height"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Node/y"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Node/toEdge"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Edge">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Edge/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Edge/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Edge/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Edge/toNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Edge/width"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Table">
@@ -154,7 +154,7 @@
     <genClasses ecoreClass="data_analysis.ecore#//Diagram"/>
     <genClasses ecoreClass="data_analysis.ecore#//CollectionSchema">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//CollectionSchema/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//CollectionSchema/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//CollectionSchema/documents"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Attribute/name"/>
@@ -168,6 +168,10 @@
     <genClasses ecoreClass="data_analysis.ecore#//Cell">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Cell/cellIndex"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Cell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="data_analysis.ecore#//Document">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Document/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Document/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
