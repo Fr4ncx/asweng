@@ -45,7 +45,11 @@
         xsi:type="Data_Analysis:Classification"/>
     <Analysis/>
   </tasks>
-  <tasks xsi:type="Data_Analysis:DataVisualizationTask">
+  <tasks xsi:type="Data_Analysis:DataVisualizationTask"
+      toFlow="//@flows.3"
+      executionTimestamp="445454554"
+      isExecuted="true"
+      name="visualization">
     <visualElements
         xsi:type="Data_Analysis:Graph">
       <elements
@@ -94,6 +98,10 @@
       </rows>
     </tables>
   </tasks>
+  <tasks xsi:type="Data_Analysis:ExportDataTask"
+      executionTimestamp="66767678"
+      isExecuted="true"
+      name="export JSON"/>
   <flows name="flow1"
       toTask="//@tasks.2">
     <collection>
@@ -116,6 +124,8 @@
   </flows>
   <flows name="flow3"
       toTask="//@tasks.3"/>
+  <flows name="flow4"
+      toTask="//@tasks.4"/>
   <conditions>
     <expressions
         xsi:type="Data_Analysis:OrExp"

@@ -1,41 +1,55 @@
+/**
+* Pipeline constraints
+*/
 context Pipeline {
-
-         constraint dataCollectionAsFirstTask{
-                check: self.firstElementAsDataCollection()
-                message: "The first task must be a task of type Data Collection."
+         constraint firstTask{
+                check: self.firstElementAsDataCollectionTask()
+                message:  "The first task must be Data Collection."
         }
         
-        /*constraint timestamp{
+        constraint integrationTask{
+                check: self.dataIntegrationTasksCheck()
+                message: "At least two data flows for data integration task"
+        }
+        
+        constraint growingExecutionDate{
+        		guard: self.tasks.select(task | task.isExecuted == true)->size() > 0
                 check: self.growingTaskTimestamps()
                 message: "Growing timestamp."
         }
         
-        
-        constraint timestamp{
-                check: self.growingTaskTimestamps()
-                message: "Growing timestamp."
-        }*/
+         constraint commonAttributesBetweenDataFlows{
+         		guard: self.tasks.select(task | task.isTypeOf(DataIntegrationTask))->size() > 0
+                check: self.commonJoinAttributes()
+                message:  "The dataflows of data integration task must have the attributes specified in the join."
+        }    
 }
 
-operation Pipeline firstElementAsDataCollection() : Boolean {
+/**
+* The first task of the pipeline must be a DataCollection task
+*/
+operation Pipeline firstElementAsDataCollectionTask() : Boolean {
 	if (self.tasks.size() == 0 ) {
-		return false;
+		return true;
 	}
    
 	var index = 0;
 	for (task in self.tasks) {
-	  if (task.isTypeOf(DataCollection)) {
+	  if (task.isTypeOf(DataCollectionTask)) {
 	      return true;
-	  } else if (index == 0) {
+	  } else {
 	    return false;
 	  }
 	}
 }
 
+/**
+* The timestamps of all the task must be growing
+*/
 operation Pipeline growingTaskTimestamps() : Boolean {
 	var max = 0;
 	for (task in self.tasks) {
-	 	if (task.executionTimestamp > max) {
+	 	if (task.isExecuted and task.executionTimestamp > max) {
 	 	  max = task.executionTimestamp;
 	 	} else if (task.isExecuted){
 	 	   return false;
@@ -43,4 +57,73 @@ operation Pipeline growingTaskTimestamps() : Boolean {
 	}
 	
 	return true;
+}
+
+
+/**
+* For every task of type data integration there must be at least two flows
+*/
+operation Pipeline dataIntegrationTasksCheck() : Boolean {
+	var dataIntegrationTasks = self.tasks.select(task | task.isTypeOf(DataIntegrationTask));
+	
+	if (dataIntegrationTasks.size() == 0) {
+		return true;
+	}
+	
+	return dataIntegrationTasks.forAll(task | self.checkFlowsForIntegrationTask(task));
+}
+
+/**
+* A dataIntegration task must have two flows
+*/
+operation Pipeline checkFlowsForIntegrationTask(task: DataIntegrationTask) : Boolean {
+	var totInFlows = 0;
+	for (flow in self.flows) {
+ 		if (flow.toTask == task) {
+ 			totInFlows++;
+ 		}
+ 	}
+	return totInFlows >= 2;
+}
+
+
+/**
+* For every task of type data integration apply the validations
+*/
+operation Pipeline commonJoinAttributes() : Boolean {
+	var dataIntegrationTasks = self.tasks.select(task | task.isTypeOf(DataIntegrationTask));
+	
+	return dataIntegrationTasks.forAll(task | self.checkFlowsAttributesForIntegrationTask(task));
+}
+
+
+/**
+* Common attributes between the join attributes (specified in the task) and the Collections passed from the flows
+*/
+operation Pipeline checkFlowsAttributesForIntegrationTask(task: DataIntegrationTask) : Boolean {
+	var schema = task.joinAttributes;
+	var taskFlows: Sequence;
+	for (flow in self.flows) {
+ 		if (flow.toTask == task) {
+ 			taskFlows.add(flow);
+ 		}
+ 	}
+ 	
+ 	return taskFlows->forAll(flow | self.checkAttributesOfCollection(flow, schema));
+}
+
+
+/**
+* Common attributes between the join attributes (specified in the task) and the Collections passed from the flows
+*/
+operation Pipeline checkAttributesOfCollection(flow: DataFlow, schema: DataSchema) : Boolean {
+	return flow.collection.documents->exists(document | self.attributeExistsInDocument(document, schema));
+}
+
+/**
+* At least one attribute in common between document attributes and schema attributes
+*/
+operation Pipeline attributeExistsInDocument(document: Document, schema: DataSchema) : Boolean {
+	var attributes: OrderedSet = document.attributes;
+	return attributes->exists(attribute| schema.schemaAttributes-> exists(schemaAttr| attribute.name == schemaAttr.name));
 }
