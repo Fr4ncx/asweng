@@ -56,6 +56,8 @@ class DataIntegrationTask extends Task {
 }
 
 class DataCleaning extends Task {
+
+  @gmf.compartment
   val Operation[*] operations;
 }
 

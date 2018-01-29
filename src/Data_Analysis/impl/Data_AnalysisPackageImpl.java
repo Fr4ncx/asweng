@@ -2261,6 +2261,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getDataCleaning_Operations(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getDataAnalysisTask_Category(), 
 		   source, 
 		   new String[] {
