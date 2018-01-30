@@ -10,7 +10,8 @@
       <!-- @generated data_analysis -->
       <package
             uri="http://www.example.org/data_Analysis"
-            class="Data_Analysis.Data_AnalysisPackage"/>
+            class="Data_Analysis.Data_AnalysisPackage"
+            genModel="model/data_analysis.genmodel"/>
    </extension>
    <extension
          point="org.eclipse.epsilon.evl.emf.validation">

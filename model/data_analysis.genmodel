@@ -30,6 +30,7 @@
       <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//FormatOperation/Trim"/>
       <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//FormatOperation/StringUpperCase"/>
       <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//FormatOperation/StringToDate"/>
+      <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//FormatOperation/TimeStampToDate"/>
     </genEnums>
     <genClasses ecoreClass="data_analysis.ecore#//Pipeline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Pipeline/tasks"/>

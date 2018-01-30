@@ -1213,6 +1213,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="data_analysis.ecore#//FormatOperation/StringToDate"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_t_1PsQXTEeijSLdDr1G-nw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_tPZCgAXZEeiDQYBjVewbuQ" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="data_analysis.ecore#//FormatOperation/TimeStampToDate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tPZCgQXZEeiDQYBjVewbuQ"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_nBj2AgXTEeijSLdDr1G-nw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_nBj2AwXTEeijSLdDr1G-nw"/>
     </children>

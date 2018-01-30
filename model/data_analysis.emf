@@ -310,5 +310,6 @@ enum FormatOperation {
   Trim = 0;
   StringUpperCase = 0;
   StringToDate = 0;
+  TimeStampToDate = 0;
 }
 

@@ -342,5 +342,6 @@
     <eLiterals name="Trim"/>
     <eLiterals name="StringUpperCase"/>
     <eLiterals name="StringToDate"/>
+    <eLiterals name="TimeStampToDate"/>
   </eClassifiers>
 </ecore:EPackage>

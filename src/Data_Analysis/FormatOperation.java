@@ -46,7 +46,15 @@ public enum FormatOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING_TO_DATE(0, "StringToDate", "StringToDate");
+	STRING_TO_DATE(0, "StringToDate", "StringToDate"), /**
+	 * The '<em><b>Time Stamp To Date</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TIME_STAMP_TO_DATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TIME_STAMP_TO_DATE(0, "TimeStampToDate", "TimeStampToDate");
 
 	/**
 	 * The '<em><b>Trim</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum FormatOperation implements Enumerator {
 	public static final int STRING_TO_DATE_VALUE = 0;
 
 	/**
+	 * The '<em><b>Time Stamp To Date</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Time Stamp To Date</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #TIME_STAMP_TO_DATE
+	 * @model name="TimeStampToDate"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TIME_STAMP_TO_DATE_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>Format Operation</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum FormatOperation implements Enumerator {
 			TRIM,
 			STRING_UPPER_CASE,
 			STRING_TO_DATE,
+			TIME_STAMP_TO_DATE,
 		};
 
 	/**

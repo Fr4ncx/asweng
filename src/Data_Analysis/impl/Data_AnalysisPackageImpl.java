@@ -2042,6 +2042,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		addEEnumLiteral(formatOperationEEnum, FormatOperation.TRIM);
 		addEEnumLiteral(formatOperationEEnum, FormatOperation.STRING_UPPER_CASE);
 		addEEnumLiteral(formatOperationEEnum, FormatOperation.STRING_TO_DATE);
+		addEEnumLiteral(formatOperationEEnum, FormatOperation.TIME_STAMP_TO_DATE);
 
 		// Create resource
 		createResource(eNS_URI);
