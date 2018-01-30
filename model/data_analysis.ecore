@@ -137,7 +137,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveNull" eSuperTypes="#//Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FormatData" eSuperTypes="#//Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormatData" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FormatOperation"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Custom" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//CustomAction"/>
   </eClassifiers>
@@ -335,5 +337,10 @@
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormatOperation">
+    <eLiterals name="Trim"/>
+    <eLiterals name="StringUpperCase"/>
+    <eLiterals name="StringToDate"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -122,6 +122,8 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 				return createAttributeTypeFromString(eDataType, initialValue);
 			case Data_AnalysisPackage.CUSTOM_ACTION:
 				return createCustomActionFromString(eDataType, initialValue);
+			case Data_AnalysisPackage.FORMAT_OPERATION:
+				return createFormatOperationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -143,6 +145,8 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 				return convertAttributeTypeToString(eDataType, instanceValue);
 			case Data_AnalysisPackage.CUSTOM_ACTION:
 				return convertCustomActionToString(eDataType, instanceValue);
+			case Data_AnalysisPackage.FORMAT_OPERATION:
+				return convertFormatOperationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -665,6 +669,26 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	 * @generated
 	 */
 	public String convertCustomActionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormatOperation createFormatOperationFromString(EDataType eDataType, String initialValue) {
+		FormatOperation result = FormatOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFormatOperationToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

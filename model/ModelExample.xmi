@@ -8,9 +8,7 @@
   <tasks xsi:type="Data_Analysis:DataCollectionTask"
       toFlow="//@flows.0"
       executionTimestamp="1517072186"
-      isExecuted="true"
-      name="firstTask"
-      format="CSV"
+      name=""
       endpoint="days"
       condition="//@conditions.0">
     <source
@@ -26,9 +24,9 @@
   </tasks>
   <tasks xsi:type="Data_Analysis:DataCleaning"
       toFlow="//@flows.2"
-      executionTimestamp="55444"
+      executionTimestamp="1517321869"
       isExecuted="true"
-      name="secondTask">
+      name="Task">
     <operations
         xsi:type="Data_Analysis:RemoveNull"
         name="remove null attribute"/>
@@ -40,7 +38,7 @@
       toFlow="//@flows.1"
       executionTimestamp="67785666666"
       isExecuted="true"
-      name="thirdTask">
+      name="">
     <category
         xsi:type="Data_Analysis:Classification"/>
     <Analysis/>
@@ -49,7 +47,7 @@
       toFlow="//@flows.3"
       executionTimestamp="445454554"
       isExecuted="true"
-      name="visualization">
+      name="">
     <visualElements
         xsi:type="Data_Analysis:Graph">
       <elements
@@ -71,7 +69,8 @@
           width="2"
           height="22"
           x="1"
-          y="22"/>
+          y="22"
+          toEdge="//@tasks.3/@visualElements.0/@elements.1"/>
     </visualElements>
     <tables>
       <rows>
@@ -101,7 +100,7 @@
   <tasks xsi:type="Data_Analysis:ExportDataTask"
       executionTimestamp="66767678"
       isExecuted="true"
-      name="export JSON"/>
+      name="JSON"/>
   <flows name="flow1"
       toTask="//@tasks.2">
     <collection>
@@ -123,9 +122,25 @@
     </collection>
   </flows>
   <flows name="flow3"
-      toTask="//@tasks.3"/>
+      toTask="//@tasks.3">
+    <collection>
+      <documents>
+        <attributes
+            name="name"
+            value="francesco"/>
+      </documents>
+    </collection>
+  </flows>
   <flows name="flow4"
-      toTask="//@tasks.4"/>
+      toTask="//@tasks.4">
+    <collection>
+      <documents>
+        <attributes
+            name="name"
+            value="francesco"/>
+      </documents>
+    </collection>
+  </flows>
   <conditions>
     <expressions
         xsi:type="Data_Analysis:OrExp"

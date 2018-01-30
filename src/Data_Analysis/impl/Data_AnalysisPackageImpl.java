@@ -33,6 +33,7 @@ import Data_Analysis.Edge;
 import Data_Analysis.ExportDataTask;
 import Data_Analysis.File;
 import Data_Analysis.FormatData;
+import Data_Analysis.FormatOperation;
 import Data_Analysis.FormatType;
 import Data_Analysis.Graph;
 import Data_Analysis.GraphElement;
@@ -427,6 +428,13 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * @generated
 	 */
 	private EEnum customActionEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum formatOperationEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -883,6 +891,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EClass getFormatData() {
 		return formatDataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFormatData_Type() {
+		return (EAttribute)formatDataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1574,6 +1591,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getFormatOperation() {
+		return formatOperationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Data_AnalysisFactory getData_AnalysisFactory() {
 		return (Data_AnalysisFactory)getEFactoryInstance();
 	}
@@ -1655,6 +1681,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		removeNullEClass = createEClass(REMOVE_NULL);
 
 		formatDataEClass = createEClass(FORMAT_DATA);
+		createEAttribute(formatDataEClass, FORMAT_DATA__TYPE);
 
 		customEClass = createEClass(CUSTOM);
 		createEAttribute(customEClass, CUSTOM__ACTION);
@@ -1765,6 +1792,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		formatTypeEEnum = createEEnum(FORMAT_TYPE);
 		attributeTypeEEnum = createEEnum(ATTRIBUTE_TYPE);
 		customActionEEnum = createEEnum(CUSTOM_ACTION);
+		formatOperationEEnum = createEEnum(FORMAT_OPERATION);
 	}
 
 	/**
@@ -1882,6 +1910,7 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEClass(removeNullEClass, RemoveNull.class, "RemoveNull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(formatDataEClass, FormatData.class, "FormatData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFormatData_Type(), this.getFormatOperation(), "type", null, 0, 1, FormatData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customEClass, Custom.class, "Custom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustom_Action(), this.getCustomAction(), "action", null, 0, 1, Custom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2008,6 +2037,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		addEEnumLiteral(customActionEEnum, CustomAction.MODIFY);
 		addEEnumLiteral(customActionEEnum, CustomAction.DELETE_SCHEMA);
 		addEEnumLiteral(customActionEEnum, CustomAction.DELETE_ATTRIBUTE);
+
+		initEEnum(formatOperationEEnum, FormatOperation.class, "FormatOperation");
+		addEEnumLiteral(formatOperationEEnum, FormatOperation.TRIM);
+		addEEnumLiteral(formatOperationEEnum, FormatOperation.STRING_UPPER_CASE);
+		addEEnumLiteral(formatOperationEEnum, FormatOperation.STRING_TO_DATE);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -118,6 +118,7 @@ class RemoveNull extends Operation {
 }
 
 class FormatData extends Operation {
+  attr FormatOperation type;
 }
 
 class Custom extends Operation {
@@ -233,7 +234,7 @@ class Node extends GraphElement {
   attr int height;
   attr int x;
   attr int y;
-  
+
   @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
   ref Edge[1] toEdge;
 }
@@ -271,7 +272,7 @@ class Diagram extends GraphicElement {
 @gmf.node(label="name")
 class CollectionSchema {
   attr String name;
-  
+
   @gmf.compartment
   val Document[*] documents;
 }
@@ -303,5 +304,11 @@ class Document {
   @gmf.compartment
   val Attribute[*] attributes;
   attr String name;
+}
+
+enum FormatOperation {
+  Trim = 0;
+  StringUpperCase = 0;
+  StringToDate = 0;
 }
 

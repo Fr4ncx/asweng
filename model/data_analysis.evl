@@ -14,8 +14,8 @@ context Pipeline {
         
         constraint growingExecutionDate{
         		guard: self.tasks.select(task | task.isExecuted == true)->size() > 0
-                check: self.growingTaskTimestamps()
-                message: "Growing timestamp."
+                check: self.growingTaskTimestamps(0, self.tasks.select(task | task.isTypeOf(DataCollectionTask) and self.isFirstElementInTheTree(task))->first())
+                message: "The tasks timestamp must be growing-"
         }
         
          constraint commonAttributesBetweenDataFlows{
@@ -35,28 +35,36 @@ operation Pipeline firstElementAsDataCollectionTask() : Boolean {
    
 	var index = 0;
 	for (task in self.tasks) {
-	  if (task.isTypeOf(DataCollectionTask)) {
-	      return true;
-	  } else {
-	    return false;
-	  }
+		return task.isTypeOf(DataCollectionTask);
 	}
 }
 
 /**
 * The timestamps of all the task must be growing
+* @param previousTimeStamp: Integer
+* @param nextTask: Task
 */
-operation Pipeline growingTaskTimestamps() : Boolean {
-	var max = 0;
-	for (task in self.tasks) {
-	 	if (task.isExecuted and task.executionTimestamp > max) {
-	 	  max = task.executionTimestamp;
-	 	} else if (task.isExecuted){
-	 	   return false;
-	 	}
+operation Pipeline growingTaskTimestamps(previousTimeStamp: Integer, nextTask: Task) : Boolean {
+	var max = previousTimeStamp;
+	if (nextTask.isExecuted and nextTask.executionTimestamp > max) {
+ 		max = nextTask.executionTimestamp;
+	} else if (nextTask.isExecuted) {
+		return false;
 	}
 	
-	return true;
+	if (nextTask.toFlow <> null and nextTask.toFlow.toTask <> null) {
+		return self.growingTaskTimestamps(max, nextTask.toFlow.toTask);
+	} else {
+		return true;
+	}
+}
+
+/**
+* It returns true if there is no dataFlow connected to the given task, otherwise false.
+*	@params task: Task
+*/
+operation Pipeline isFirstElementInTheTree(aTask: Task) : Boolean {
+	 return self.flows->forAll(flow | flow.toTask <> aTask);
 }
 
 
@@ -75,6 +83,7 @@ operation Pipeline dataIntegrationTasksCheck() : Boolean {
 
 /**
 * A dataIntegration task must have two flows
+* @param task: DataIntegrationTask
 */
 operation Pipeline checkFlowsForIntegrationTask(task: DataIntegrationTask) : Boolean {
 	var totInFlows = 0;
@@ -99,6 +108,7 @@ operation Pipeline commonJoinAttributes() : Boolean {
 
 /**
 * Common attributes between the join attributes (specified in the task) and the Collections passed from the flows
+* @param task: DataIntegrationTask
 */
 operation Pipeline checkFlowsAttributesForIntegrationTask(task: DataIntegrationTask) : Boolean {
 	var schema = task.joinAttributes;
@@ -115,13 +125,21 @@ operation Pipeline checkFlowsAttributesForIntegrationTask(task: DataIntegrationT
 
 /**
 * Common attributes between the join attributes (specified in the task) and the Collections passed from the flows
+* @param flow: DataFlow
+* @param schema: DataSchema
 */
 operation Pipeline checkAttributesOfCollection(flow: DataFlow, schema: DataSchema) : Boolean {
-	return flow.collection.documents->exists(document | self.attributeExistsInDocument(document, schema));
+	if (flow.collection <> null and flow.collection.documents <> null) {
+		return flow.collection.documents->exists(document | self.attributeExistsInDocument(document, schema));
+	} else {
+		return true;
+	}
 }
 
 /**
 * At least one attribute in common between document attributes and schema attributes
+* @param document: Document
+* @param schema: DataSchema
 */
 operation Pipeline attributeExistsInDocument(document: Document, schema: DataSchema) : Boolean {
 	var attributes: OrderedSet = document.attributes;

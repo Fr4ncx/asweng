@@ -783,13 +783,22 @@ public interface Data_AnalysisPackage extends EPackage {
 	int FORMAT_DATA__NAME = OPERATION__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAT_DATA__TYPE = OPERATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Format Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMAT_DATA_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+	int FORMAT_DATA_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.CustomImpl <em>Custom</em>}' class.
@@ -2060,6 +2069,16 @@ public interface Data_AnalysisPackage extends EPackage {
 	 */
 	int CUSTOM_ACTION = 50;
 
+	/**
+	 * The meta object id for the '{@link Data_Analysis.FormatOperation <em>Format Operation</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.FormatOperation
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatOperation()
+	 * @generated
+	 */
+	int FORMAT_OPERATION = 51;
+
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Pipeline <em>Pipeline</em>}'.
@@ -2529,6 +2548,17 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFormatData();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.FormatData#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see Data_Analysis.FormatData#getType()
+	 * @see #getFormatData()
+	 * @generated
+	 */
+	EAttribute getFormatData_Type();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Custom <em>Custom</em>}'.
@@ -3331,6 +3361,16 @@ public interface Data_AnalysisPackage extends EPackage {
 	EEnum getCustomAction();
 
 	/**
+	 * Returns the meta object for enum '{@link Data_Analysis.FormatOperation <em>Format Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Format Operation</em>'.
+	 * @see Data_Analysis.FormatOperation
+	 * @generated
+	 */
+	EEnum getFormatOperation();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3733,6 +3773,14 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FORMAT_DATA = eINSTANCE.getFormatData();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORMAT_DATA__TYPE = eINSTANCE.getFormatData_Type();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.CustomImpl <em>Custom</em>}' class.
@@ -4413,6 +4461,16 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CUSTOM_ACTION = eINSTANCE.getCustomAction();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.FormatOperation <em>Format Operation</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.FormatOperation
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatOperation()
+		 * @generated
+		 */
+		EEnum FORMAT_OPERATION = eINSTANCE.getFormatOperation();
 
 	}
 
