@@ -375,6 +375,18 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Data_AnalysisPackage.CLUSTER: {
+				Cluster cluster = (Cluster)theEObject;
+				T result = caseCluster(cluster);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Data_AnalysisPackage.DATA_POINT: {
+				DataPoint dataPoint = (DataPoint)theEObject;
+				T result = caseDataPoint(dataPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1081,6 +1093,36 @@ public class Data_AnalysisSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDocument(Document object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cluster</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cluster</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCluster(Cluster object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataPoint(DataPoint object) {
 		return null;
 	}
 

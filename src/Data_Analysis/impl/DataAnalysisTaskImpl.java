@@ -2,25 +2,17 @@
  */
 package Data_Analysis.impl;
 
-import Data_Analysis.Analysis;
 import Data_Analysis.Category;
 import Data_Analysis.DataAnalysisTask;
 import Data_Analysis.Data_AnalysisPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link Data_Analysis.impl.DataAnalysisTaskImpl#getCategory <em>Category</em>}</li>
- *   <li>{@link Data_Analysis.impl.DataAnalysisTaskImpl#getAnalysis <em>Analysis</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,16 +37,6 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 	 * @ordered
 	 */
 	protected Category category;
-
-	/**
-	 * The cached value of the '{@link #getAnalysis() <em>Analysis</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnalysis()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Analysis> analysis;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,25 +105,11 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Analysis> getAnalysis() {
-		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS);
-		}
-		return analysis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return basicSetCategory(null, msgs);
-			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
-				return ((InternalEList<?>)getAnalysis()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -157,8 +124,6 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return getCategory();
-			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
-				return getAnalysis();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,16 +133,11 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				setCategory((Category)newValue);
-				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
-				getAnalysis().clear();
-				getAnalysis().addAll((Collection<? extends Analysis>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -194,9 +154,6 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				setCategory((Category)null);
 				return;
-			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
-				getAnalysis().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -211,8 +168,6 @@ public class DataAnalysisTaskImpl extends TaskImpl implements DataAnalysisTask {
 		switch (featureID) {
 			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__CATEGORY:
 				return category != null;
-			case Data_AnalysisPackage.DATA_ANALYSIS_TASK__ANALYSIS:
-				return analysis != null && !analysis.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

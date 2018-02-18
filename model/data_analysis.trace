@@ -42,9 +42,6 @@
     <compartmentTraces
         visualID="7004"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7005"
-        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2005"
@@ -143,12 +140,18 @@
     <nodeLabelTraces
         visualID="5009"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7018"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3007"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Prediction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'DataAnalysisTask') and _containmentMF_.name = 'category')">
     <nodeLabelTraces
         visualID="5010"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7019"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -157,12 +160,18 @@
     <nodeLabelTraces
         visualID="5011"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7020"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3009"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Classification') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'DataAnalysisTask') and _containmentMF_.name = 'category')">
     <nodeLabelTraces
         visualID="5012"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7021"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -171,12 +180,8 @@
     <nodeLabelTraces
         visualID="5013"
         queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3011"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Analysis') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'DataAnalysisTask') and _containmentMF_.name = 'Analysis')">
-    <nodeLabelTraces
-        visualID="5014"
+    <compartmentTraces
+        visualID="7022"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -355,6 +360,13 @@
         visualID="5043"
         queryText="true"/>
   </childNodeTraces>
+  <childNodeTraces
+      visualID="3035"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Analysis') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Category') and _containmentMF_.name = 'Analysis')">
+    <nodeLabelTraces
+        visualID="5044"
+        queryText="true"/>
+  </childNodeTraces>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Task') and _feature_.name = 'toFlow')">
@@ -409,6 +421,20 @@
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Edge') and _feature_.name = 'toNode')">
     <linkLabelTraces
         visualID="6008"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4009"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Clustering') and _feature_.name = 'inputAttributes')">
+    <linkLabelTraces
+        visualID="6009"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4010"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.example.org/data_Analysis' and _eClass_.name = 'Clustering') and _feature_.name = 'clusters')">
+    <linkLabelTraces
+        visualID="6010"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

@@ -46,7 +46,9 @@ public enum FormatOperation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING_TO_DATE(0, "StringToDate", "StringToDate"), /**
+	STRING_TO_DATE(0, "StringToDate", "StringToDate"),
+
+	/**
 	 * The '<em><b>Time Stamp To Date</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

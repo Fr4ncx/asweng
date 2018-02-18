@@ -75,6 +75,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Cluster"
+          description="Create new Cluster">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Clustering"
           description="Create new Clustering">
         <smallIcon
@@ -149,6 +158,15 @@
           xsi:type="gmftool:CreationTool"
           title="DataIntegrationTask"
           description="Create new DataIntegrationTask">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DataPoint"
+          description="Create new DataPoint">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -395,8 +413,26 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Clusters"
+          description="Create new Clusters">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Condition"
           description="Create new Condition">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="InputAttributes"
+          description="Create new InputAttributes">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

@@ -12,97 +12,83 @@
       endpoint="days"
       condition="//@conditions.0">
     <source
-        xsi:type="Data_Analysis:Database"
-        url="localhost"
-        port="27017"
-        user="fr4ncx"
-        pwd="pwd"/>
+        xsi:type="Data_Analysis:File"
+        url="./data/data.json"/>
     <inputSchema>
       <schemaAttributes
-          name="name"/>
+          name="temperature"
+          type="STRING"/>
+      <schemaAttributes
+          name="humidity"
+          type="STRING"/>
+      <schemaAttributes
+          name="deviceId"
+          type="STRING"/>
+      <schemaAttributes
+          name="_id"
+          type="STRING"/>
     </inputSchema>
   </tasks>
   <tasks xsi:type="Data_Analysis:DataCleaning"
-      toFlow="//@flows.2"
+      toFlow="//@flows.3"
       executionTimestamp="1517321869"
-      isExecuted="true"
       name="Task">
     <operations
         xsi:type="Data_Analysis:RemoveNull"
         name="remove null attribute"/>
-    <operations
-        xsi:type="Data_Analysis:FormatData"
-        name="dates attribute"/>
   </tasks>
   <tasks xsi:type="Data_Analysis:DataAnalysisTask"
-      toFlow="//@flows.1"
+      toFlow="//@flows.4"
       executionTimestamp="67785666666"
-      isExecuted="true"
       name="">
     <category
-        xsi:type="Data_Analysis:Classification"/>
-    <Analysis/>
+        xsi:type="Data_Analysis:Clustering"
+        name="clustering analysis"
+        K="3"
+        inputAttributes="//@schemas.0/@schemaAttributes.0 //@schemas.0/@schemaAttributes.1"/>
   </tasks>
   <tasks xsi:type="Data_Analysis:DataVisualizationTask"
-      toFlow="//@flows.3"
+      toFlow="//@flows.5"
       executionTimestamp="445454554"
-      isExecuted="true"
       name="">
     <visualElements
-        xsi:type="Data_Analysis:Graph">
-      <elements
-          xsi:type="Data_Analysis:Node"
-          name="firstNode"
-          width="33"
-          height="5"
-          x="2"
-          y="1"
-          toEdge="//@tasks.3/@visualElements.0/@elements.1"/>
-      <elements
-          xsi:type="Data_Analysis:Edge"
-          name="edge"
-          toNode="//@tasks.3/@visualElements.0/@elements.2"
-          width="29"/>
-      <elements
-          xsi:type="Data_Analysis:Node"
-          name="secondNode"
-          width="2"
-          height="22"
-          x="1"
-          y="22"
-          toEdge="//@tasks.3/@visualElements.0/@elements.1"/>
-    </visualElements>
-    <tables>
-      <rows>
-        <cells
-            cellIndex="1"
-            value="24"/>
-        <cells
-            cellIndex="0"
-            value="francesco"/>
-        <cells
-            cellIndex="2"
-            value="Italy"/>
-      </rows>
-      <rows>
-        <cells
-            cellIndex="0"
-            value="Alessandro"/>
-        <cells
-            cellIndex="1"
-            value="24"/>
-        <cells
-            cellIndex="3"
-            value="Italy"/>
-      </rows>
-    </tables>
+        xsi:type="Data_Analysis:Graph"
+        name="graph"/>
   </tasks>
   <tasks xsi:type="Data_Analysis:ExportDataTask"
       executionTimestamp="66767678"
-      isExecuted="true"
       name="JSON"/>
+  <tasks xsi:type="Data_Analysis:DataCollectionTask"
+      toFlow="//@flows.1"
+      executionTimestamp="1517072186"
+      name=""
+      endpoint="days"
+      condition="//@conditions.0">
+    <source
+        xsi:type="Data_Analysis:File"
+        url="./data/data2.json"/>
+    <inputSchema>
+      <schemaAttributes
+          name="temperature"
+          type="STRING"/>
+      <schemaAttributes
+          name="humidity"
+          type="STRING"/>
+      <schemaAttributes
+          name="deviceId"
+          type="STRING"/>
+      <schemaAttributes
+          name="_id"
+          type="STRING"/>
+    </inputSchema>
+  </tasks>
+  <tasks xsi:type="Data_Analysis:DataIntegrationTask"
+      toFlow="//@flows.2"
+      name="integration task"
+      joinAttributes="//@schemas.1"
+      outAttributes="//@schemas.2"/>
   <flows name="flow1"
-      toTask="//@tasks.2">
+      toTask="//@tasks.6">
     <collection>
       <documents>
         <attributes
@@ -112,7 +98,7 @@
     </collection>
   </flows>
   <flows name="flow2"
-      toTask="//@tasks.1">
+      toTask="//@tasks.6">
     <collection>
       <documents>
         <attributes
@@ -122,7 +108,7 @@
     </collection>
   </flows>
   <flows name="flow3"
-      toTask="//@tasks.3">
+      toTask="//@tasks.1">
     <collection>
       <documents>
         <attributes
@@ -132,7 +118,7 @@
     </collection>
   </flows>
   <flows name="flow4"
-      toTask="//@tasks.4">
+      toTask="//@tasks.2">
     <collection>
       <documents>
         <attributes
@@ -141,6 +127,36 @@
       </documents>
     </collection>
   </flows>
+  <flows name="flow5"
+      toTask="//@tasks.3"/>
+  <flows name="flow6"
+      toTask="//@tasks.4"/>
+  <schemas name="">
+    <schemaAttributes
+        name="temperature"/>
+    <schemaAttributes
+        name="humidity"/>
+  </schemas>
+  <schemas name="DEVICEID">
+    <schemaAttributes
+        name="deviceId"
+        type="STRING"/>
+  </schemas>
+  <schemas name="outAttributes data integration">
+    <schemaAttributes
+        name="_id"
+        type="STRING"/>
+    <schemaAttributes
+        name="temperature"/>
+    <schemaAttributes
+        name="timestamp"
+        type="STRING"/>
+    <schemaAttributes
+        name="deviceId"
+        type="STRING"/>
+    <schemaAttributes
+        name="humidity"/>
+  </schemas>
   <conditions>
     <expressions
         xsi:type="Data_Analysis:OrExp"

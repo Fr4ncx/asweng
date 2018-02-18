@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/asweng/src" modelPluginID="asweng"
     modelName="Data_Analysis" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>data_analysis.emf</foreignModel>
+  <foreignModel>data_analysis.ecore</foreignModel>
   <genPackages prefix="Data_Analysis" disposableProviderFactory="true" ecorePackage="data_analysis.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="data_analysis.ecore#//CategoryType">
       <genEnumLiterals ecoreEnumLiteral="data_analysis.ecore#//CategoryType/DESCRIPTION"/>
@@ -60,7 +60,6 @@
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//DataAnalysisTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysisTask/category"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//DataAnalysisTask/Analysis"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//DataSchema">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataSchema/name"/>
@@ -127,10 +126,15 @@
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Category">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Category/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Category/Analysis"/>
     </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Description"/>
     <genClasses ecoreClass="data_analysis.ecore#//Prediction"/>
-    <genClasses ecoreClass="data_analysis.ecore#//Clustering"/>
+    <genClasses ecoreClass="data_analysis.ecore#//Clustering">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Clustering/K"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Clustering/inputAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Clustering/clusters"/>
+    </genClasses>
     <genClasses ecoreClass="data_analysis.ecore#//Classification"/>
     <genClasses ecoreClass="data_analysis.ecore#//Graph">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Graph/elements"/>
@@ -180,6 +184,15 @@
     <genClasses ecoreClass="data_analysis.ecore#//Document">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Document/attributes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Document/name"/>
+    </genClasses>
+    <genClasses ecoreClass="data_analysis.ecore#//Cluster">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Cluster/dataPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//Cluster/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_analysis.ecore#//Cluster/cluster"/>
+    </genClasses>
+    <genClasses ecoreClass="data_analysis.ecore#//DataPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataPoint/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_analysis.ecore#//DataPoint/y"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

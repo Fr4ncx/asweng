@@ -2,10 +2,11 @@
  */
 package Data_Analysis.impl;
 
-import Data_Analysis.Analysis;
-import Data_Analysis.Category;
+import Data_Analysis.Cluster;
+import Data_Analysis.DataPoint;
 import Data_Analysis.Data_AnalysisPackage;
 
+import Data_Analysis.Pipeline;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,19 +25,30 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Category</b></em>'.
+ * An implementation of the model object '<em><b>Cluster</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Data_Analysis.impl.CategoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link Data_Analysis.impl.CategoryImpl#getAnalysis <em>Analysis</em>}</li>
+ *   <li>{@link Data_Analysis.impl.ClusterImpl#getDataPoints <em>Data Points</em>}</li>
+ *   <li>{@link Data_Analysis.impl.ClusterImpl#getName <em>Name</em>}</li>
+ *   <li>{@link Data_Analysis.impl.ClusterImpl#getCluster <em>Cluster</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CategoryImpl extends EObjectImpl implements Category {
+public class ClusterImpl extends EObjectImpl implements Cluster {
+	/**
+	 * The cached value of the '{@link #getDataPoints() <em>Data Points</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataPoint> dataPoints;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,21 +70,21 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnalysis() <em>Analysis</em>}' containment reference list.
+	 * The cached value of the '{@link #getCluster() <em>Cluster</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnalysis()
+	 * @see #getCluster()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Analysis> analysis;
+	protected EList<Pipeline> cluster;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CategoryImpl() {
+	protected ClusterImpl() {
 		super();
 	}
 
@@ -83,7 +95,19 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Data_AnalysisPackage.Literals.CATEGORY;
+		return Data_AnalysisPackage.Literals.CLUSTER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<DataPoint> getDataPoints() {
+		if (dataPoints == null) {
+			dataPoints = new EObjectContainmentEList<DataPoint>(DataPoint.class, this, Data_AnalysisPackage.CLUSTER__DATA_POINTS);
+		}
+		return dataPoints;
 	}
 
 	/**
@@ -104,7 +128,7 @@ public class CategoryImpl extends EObjectImpl implements Category {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.CATEGORY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, Data_AnalysisPackage.CLUSTER__NAME, oldName, name));
 	}
 
 	/**
@@ -112,11 +136,11 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Analysis> getAnalysis() {
-		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, Data_AnalysisPackage.CATEGORY__ANALYSIS);
+	public EList<Pipeline> getCluster() {
+		if (cluster == null) {
+			cluster = new EObjectContainmentEList<Pipeline>(Pipeline.class, this, Data_AnalysisPackage.CLUSTER__CLUSTER);
 		}
-		return analysis;
+		return cluster;
 	}
 
 	/**
@@ -127,8 +151,10 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Data_AnalysisPackage.CATEGORY__ANALYSIS:
-				return ((InternalEList<?>)getAnalysis()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.CLUSTER__DATA_POINTS:
+				return ((InternalEList<?>)getDataPoints()).basicRemove(otherEnd, msgs);
+			case Data_AnalysisPackage.CLUSTER__CLUSTER:
+				return ((InternalEList<?>)getCluster()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,10 +167,12 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Data_AnalysisPackage.CATEGORY__NAME:
+			case Data_AnalysisPackage.CLUSTER__DATA_POINTS:
+				return getDataPoints();
+			case Data_AnalysisPackage.CLUSTER__NAME:
 				return getName();
-			case Data_AnalysisPackage.CATEGORY__ANALYSIS:
-				return getAnalysis();
+			case Data_AnalysisPackage.CLUSTER__CLUSTER:
+				return getCluster();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,12 +186,16 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Data_AnalysisPackage.CATEGORY__NAME:
+			case Data_AnalysisPackage.CLUSTER__DATA_POINTS:
+				getDataPoints().clear();
+				getDataPoints().addAll((Collection<? extends DataPoint>)newValue);
+				return;
+			case Data_AnalysisPackage.CLUSTER__NAME:
 				setName((String)newValue);
 				return;
-			case Data_AnalysisPackage.CATEGORY__ANALYSIS:
-				getAnalysis().clear();
-				getAnalysis().addAll((Collection<? extends Analysis>)newValue);
+			case Data_AnalysisPackage.CLUSTER__CLUSTER:
+				getCluster().clear();
+				getCluster().addAll((Collection<? extends Pipeline>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,11 +209,14 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.CATEGORY__NAME:
+			case Data_AnalysisPackage.CLUSTER__DATA_POINTS:
+				getDataPoints().clear();
+				return;
+			case Data_AnalysisPackage.CLUSTER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Data_AnalysisPackage.CATEGORY__ANALYSIS:
-				getAnalysis().clear();
+			case Data_AnalysisPackage.CLUSTER__CLUSTER:
+				getCluster().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -195,10 +230,12 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Data_AnalysisPackage.CATEGORY__NAME:
+			case Data_AnalysisPackage.CLUSTER__DATA_POINTS:
+				return dataPoints != null && !dataPoints.isEmpty();
+			case Data_AnalysisPackage.CLUSTER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Data_AnalysisPackage.CATEGORY__ANALYSIS:
-				return analysis != null && !analysis.isEmpty();
+			case Data_AnalysisPackage.CLUSTER__CLUSTER:
+				return cluster != null && !cluster.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,4 +256,4 @@ public class CategoryImpl extends EObjectImpl implements Category {
 		return result.toString();
 	}
 
-} //CategoryImpl
+} //ClusterImpl

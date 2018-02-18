@@ -11,6 +11,7 @@ import Data_Analysis.Category;
 import Data_Analysis.CategoryType;
 import Data_Analysis.Cell;
 import Data_Analysis.Classification;
+import Data_Analysis.Cluster;
 import Data_Analysis.Clustering;
 import Data_Analysis.CollectionSchema;
 import Data_Analysis.Condition;
@@ -21,6 +22,7 @@ import Data_Analysis.DataCleaning;
 import Data_Analysis.DataCollectionTask;
 import Data_Analysis.DataFlow;
 import Data_Analysis.DataIntegrationTask;
+import Data_Analysis.DataPoint;
 import Data_Analysis.DataSchema;
 import Data_Analysis.DataVisualizationTask;
 import Data_Analysis.Data_AnalysisFactory;
@@ -406,6 +408,20 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass clusterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum categoryTypeEEnum = null;
 
 	/**
@@ -702,15 +718,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EReference getDataAnalysisTask_Category() {
 		return (EReference)dataAnalysisTaskEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataAnalysisTask_Analysis() {
-		return (EReference)dataAnalysisTaskEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1177,6 +1184,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCategory_Analysis() {
+		return (EReference)categoryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDescription() {
 		return descriptionEClass;
 	}
@@ -1197,6 +1213,33 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 */
 	public EClass getClustering() {
 		return clusteringEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClustering_K() {
+		return (EAttribute)clusteringEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClustering_InputAttributes() {
+		return (EReference)clusteringEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClustering_Clusters() {
+		return (EReference)clusteringEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1555,6 +1598,69 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCluster() {
+		return clusterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCluster_DataPoints() {
+		return (EReference)clusterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCluster_Name() {
+		return (EAttribute)clusterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCluster_Cluster() {
+		return (EReference)clusterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataPoint() {
+		return dataPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataPoint_X() {
+		return (EAttribute)dataPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataPoint_Y() {
+		return (EAttribute)dataPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCategoryType() {
 		return categoryTypeEEnum;
 	}
@@ -1651,7 +1757,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		dataAnalysisTaskEClass = createEClass(DATA_ANALYSIS_TASK);
 		createEReference(dataAnalysisTaskEClass, DATA_ANALYSIS_TASK__CATEGORY);
-		createEReference(dataAnalysisTaskEClass, DATA_ANALYSIS_TASK__ANALYSIS);
 
 		dataSchemaEClass = createEClass(DATA_SCHEMA);
 		createEAttribute(dataSchemaEClass, DATA_SCHEMA__NAME);
@@ -1727,12 +1832,16 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		categoryEClass = createEClass(CATEGORY);
 		createEAttribute(categoryEClass, CATEGORY__NAME);
+		createEReference(categoryEClass, CATEGORY__ANALYSIS);
 
 		descriptionEClass = createEClass(DESCRIPTION);
 
 		predictionEClass = createEClass(PREDICTION);
 
 		clusteringEClass = createEClass(CLUSTERING);
+		createEAttribute(clusteringEClass, CLUSTERING__K);
+		createEReference(clusteringEClass, CLUSTERING__INPUT_ATTRIBUTES);
+		createEReference(clusteringEClass, CLUSTERING__CLUSTERS);
 
 		classificationEClass = createEClass(CLASSIFICATION);
 
@@ -1786,6 +1895,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		documentEClass = createEClass(DOCUMENT);
 		createEReference(documentEClass, DOCUMENT__ATTRIBUTES);
 		createEAttribute(documentEClass, DOCUMENT__NAME);
+
+		clusterEClass = createEClass(CLUSTER);
+		createEReference(clusterEClass, CLUSTER__DATA_POINTS);
+		createEAttribute(clusterEClass, CLUSTER__NAME);
+		createEReference(clusterEClass, CLUSTER__CLUSTER);
+
+		dataPointEClass = createEClass(DATA_POINT);
+		createEAttribute(dataPointEClass, DATA_POINT__X);
+		createEAttribute(dataPointEClass, DATA_POINT__Y);
 
 		// Create enums
 		categoryTypeEEnum = createEEnum(CATEGORY_TYPE);
@@ -1880,7 +1998,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		initEClass(dataAnalysisTaskEClass, DataAnalysisTask.class, "DataAnalysisTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataAnalysisTask_Category(), this.getCategory(), null, "category", null, 0, 1, DataAnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataAnalysisTask_Analysis(), this.getAnalysis(), null, "Analysis", null, 0, -1, DataAnalysisTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataSchemaEClass, DataSchema.class, "DataSchema", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSchema_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataSchema.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1956,12 +2073,16 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 
 		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCategory_Analysis(), this.getAnalysis(), null, "Analysis", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(predictionEClass, Prediction.class, "Prediction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(clusteringEClass, Clustering.class, "Clustering", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClustering_K(), ecorePackage.getEInt(), "K", null, 0, 1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClustering_InputAttributes(), this.getAttributeSchema(), null, "inputAttributes", null, 1, -1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClustering_Clusters(), this.getCluster(), null, "clusters", null, 0, -1, Clustering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2015,6 +2136,15 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDocument_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(clusterEClass, Cluster.class, "Cluster", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCluster_DataPoints(), this.getDataPoint(), null, "dataPoints", null, 0, -1, Cluster.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCluster_Name(), ecorePackage.getEString(), "name", null, 0, 1, Cluster.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCluster_Cluster(), this.getPipeline(), null, "cluster", null, 0, -1, Cluster.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataPointEClass, DataPoint.class, "DataPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataPoint_X(), ecorePackage.getEString(), "x", null, 0, 1, DataPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataPoint_Y(), ecorePackage.getEString(), "y", null, 0, 1, DataPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(categoryTypeEEnum, CategoryType.class, "CategoryType");
@@ -2200,6 +2330,18 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   source, 
 		   new String[] {
 			 "label", "name"
+		   });	
+		addAnnotation
+		  (clusterEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (dataPointEClass, 
+		   source, 
+		   new String[] {
+			 "label", "x"
 		   });
 	}
 
@@ -2260,6 +2402,22 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 			 "color", "127,127,127"
 		   });	
 		addAnnotation
+		  (getClustering_InputAttributes(), 
+		   source, 
+		   new String[] {
+			 "target.decoration", "arrow",
+			 "style", "dot",
+			 "color", "127,127,127"
+		   });	
+		addAnnotation
+		  (getClustering_Clusters(), 
+		   source, 
+		   new String[] {
+			 "target.decoration", "arrow",
+			 "style", "dot",
+			 "color", "127,127,127"
+		   });	
+		addAnnotation
 		  (getNode_ToEdge(), 
 		   source, 
 		   new String[] {
@@ -2306,11 +2464,6 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDataAnalysisTask_Analysis(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (getDataSchema_SchemaAttributes(), 
 		   source, 
 		   new String[] {
@@ -2341,6 +2494,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getCategory_Analysis(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getGraph_Elements(), 
 		   source, 
 		   new String[] {
@@ -2362,6 +2520,11 @@ public class Data_AnalysisPackageImpl extends EPackageImpl implements Data_Analy
 		   });	
 		addAnnotation
 		  (getDocument_Attributes(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getCluster_DataPoints(), 
 		   source, 
 		   new String[] {
 		   });

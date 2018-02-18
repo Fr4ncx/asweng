@@ -65,9 +65,6 @@ class DataAnalysisTask extends Task {
 
   @gmf.compartment
   val Category category;
-
-  @gmf.compartment
-  val Analysis[*] Analysis;
 }
 
 @gmf.node(label="name")
@@ -204,6 +201,9 @@ class LogicalExp {
 @gmf.node(label="name")
 class Category {
   attr String name;
+
+  @gmf.compartment
+  val Analysis[*] Analysis;
 }
 
 class Description extends Category {
@@ -213,6 +213,13 @@ class Prediction extends Category {
 }
 
 class Clustering extends Category {
+  attr int K;
+
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref AttributeSchema[+] inputAttributes;
+
+  @gmf.link(target.decoration="arrow", style="dot", color="127,127,127")
+  ref Cluster[*] clusters;
 }
 
 class Classification extends Category {
@@ -311,5 +318,20 @@ enum FormatOperation {
   StringUpperCase = 0;
   StringToDate = 0;
   TimeStampToDate = 0;
+}
+
+@gmf.node(label="name")
+class Cluster {
+
+  @gmf.compartment
+  val DataPoint[*] dataPoints;
+  attr String name;
+  val Pipeline[*] cluster;
+}
+
+@gmf.node(label="x")
+class DataPoint {
+  attr String x;
+  attr String y;
 }
 

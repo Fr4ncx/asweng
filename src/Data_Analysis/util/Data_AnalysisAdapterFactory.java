@@ -256,6 +256,14 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createDocumentAdapter();
 			}
 			@Override
+			public Adapter caseCluster(Cluster object) {
+				return createClusterAdapter();
+			}
+			@Override
+			public Adapter caseDataPoint(DataPoint object) {
+				return createDataPointAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -930,6 +938,34 @@ public class Data_AnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.Cluster <em>Cluster</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.Cluster
+	 * @generated
+	 */
+	public Adapter createClusterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Data_Analysis.DataPoint <em>Data Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Data_Analysis.DataPoint
+	 * @generated
+	 */
+	public Adapter createDataPointAdapter() {
 		return null;
 	}
 

@@ -101,6 +101,8 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 			case Data_AnalysisPackage.ROW: return createRow();
 			case Data_AnalysisPackage.CELL: return createCell();
 			case Data_AnalysisPackage.DOCUMENT: return createDocument();
+			case Data_AnalysisPackage.CLUSTER: return createCluster();
+			case Data_AnalysisPackage.DATA_POINT: return createDataPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -590,6 +592,26 @@ public class Data_AnalysisFactoryImpl extends EFactoryImpl implements Data_Analy
 	public Document createDocument() {
 		DocumentImpl document = new DocumentImpl();
 		return document;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cluster createCluster() {
+		ClusterImpl cluster = new ClusterImpl();
+		return cluster;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataPoint createDataPoint() {
+		DataPointImpl dataPoint = new DataPointImpl();
+		return dataPoint;
 	}
 
 	/**

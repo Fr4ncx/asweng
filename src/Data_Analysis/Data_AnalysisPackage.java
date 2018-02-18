@@ -459,22 +459,13 @@ public interface Data_AnalysisPackage extends EPackage {
 	int DATA_ANALYSIS_TASK__CATEGORY = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ANALYSIS_TASK__ANALYSIS = TASK_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Data Analysis Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ANALYSIS_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
+	int DATA_ANALYSIS_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.DataSchemaImpl <em>Data Schema</em>}' class.
@@ -1419,13 +1410,22 @@ public interface Data_AnalysisPackage extends EPackage {
 	int CATEGORY__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY__ANALYSIS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY_FEATURE_COUNT = 1;
+	int CATEGORY_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.DescriptionImpl <em>Description</em>}' class.
@@ -1445,6 +1445,15 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int DESCRIPTION__NAME = CATEGORY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION__ANALYSIS = CATEGORY__ANALYSIS;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -1475,6 +1484,15 @@ public interface Data_AnalysisPackage extends EPackage {
 	int PREDICTION__NAME = CATEGORY__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICTION__ANALYSIS = CATEGORY__ANALYSIS;
+
+	/**
 	 * The number of structural features of the '<em>Prediction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1503,13 +1521,49 @@ public interface Data_AnalysisPackage extends EPackage {
 	int CLUSTERING__NAME = CATEGORY__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__ANALYSIS = CATEGORY__ANALYSIS;
+
+	/**
+	 * The feature id for the '<em><b>K</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__K = CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Input Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__INPUT_ATTRIBUTES = CATEGORY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Clusters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTERING__CLUSTERS = CATEGORY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Clustering</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTERING_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
+	int CLUSTERING_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.impl.ClassificationImpl <em>Classification</em>}' class.
@@ -1529,6 +1583,15 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSIFICATION__NAME = CATEGORY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION__ANALYSIS = CATEGORY__ANALYSIS;
 
 	/**
 	 * The number of structural features of the '<em>Classification</em>' class.
@@ -2030,6 +2093,89 @@ public interface Data_AnalysisPackage extends EPackage {
 	int DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.ClusterImpl <em>Cluster</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.ClusterImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCluster()
+	 * @generated
+	 */
+	int CLUSTER = 47;
+
+	/**
+	 * The feature id for the '<em><b>Data Points</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER__DATA_POINTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Cluster</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER__CLUSTER = 2;
+
+	/**
+	 * The number of structural features of the '<em>Cluster</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link Data_Analysis.impl.DataPointImpl <em>Data Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Data_Analysis.impl.DataPointImpl
+	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDataPoint()
+	 * @generated
+	 */
+	int DATA_POINT = 48;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_POINT__X = 0;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_POINT__Y = 1;
+
+	/**
+	 * The number of structural features of the '<em>Data Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_POINT_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2037,7 +2183,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCategoryType()
 	 * @generated
 	 */
-	int CATEGORY_TYPE = 47;
+	int CATEGORY_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.FormatType <em>Format Type</em>}' enum.
@@ -2047,7 +2193,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatType()
 	 * @generated
 	 */
-	int FORMAT_TYPE = 48;
+	int FORMAT_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.AttributeType <em>Attribute Type</em>}' enum.
@@ -2057,7 +2203,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getAttributeType()
 	 * @generated
 	 */
-	int ATTRIBUTE_TYPE = 49;
+	int ATTRIBUTE_TYPE = 51;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.CustomAction <em>Custom Action</em>}' enum.
@@ -2067,7 +2213,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCustomAction()
 	 * @generated
 	 */
-	int CUSTOM_ACTION = 50;
+	int CUSTOM_ACTION = 52;
 
 	/**
 	 * The meta object id for the '{@link Data_Analysis.FormatOperation <em>Format Operation</em>}' enum.
@@ -2077,7 +2223,7 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getFormatOperation()
 	 * @generated
 	 */
-	int FORMAT_OPERATION = 51;
+	int FORMAT_OPERATION = 53;
 
 
 	/**
@@ -2326,17 +2472,6 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataAnalysisTask_Category();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Data_Analysis.DataAnalysisTask#getAnalysis <em>Analysis</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Analysis</em>'.
-	 * @see Data_Analysis.DataAnalysisTask#getAnalysis()
-	 * @see #getDataAnalysisTask()
-	 * @generated
-	 */
-	EReference getDataAnalysisTask_Analysis();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.DataSchema <em>Data Schema</em>}'.
@@ -2876,6 +3011,17 @@ public interface Data_AnalysisPackage extends EPackage {
 	EAttribute getCategory_Name();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Category#getAnalysis <em>Analysis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Analysis</em>'.
+	 * @see Data_Analysis.Category#getAnalysis()
+	 * @see #getCategory()
+	 * @generated
+	 */
+	EReference getCategory_Analysis();
+
+	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Description <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2904,6 +3050,39 @@ public interface Data_AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getClustering();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Clustering#getK <em>K</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>K</em>'.
+	 * @see Data_Analysis.Clustering#getK()
+	 * @see #getClustering()
+	 * @generated
+	 */
+	EAttribute getClustering_K();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Data_Analysis.Clustering#getInputAttributes <em>Input Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Input Attributes</em>'.
+	 * @see Data_Analysis.Clustering#getInputAttributes()
+	 * @see #getClustering()
+	 * @generated
+	 */
+	EReference getClustering_InputAttributes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Data_Analysis.Clustering#getClusters <em>Clusters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Clusters</em>'.
+	 * @see Data_Analysis.Clustering#getClusters()
+	 * @see #getClustering()
+	 * @generated
+	 */
+	EReference getClustering_Clusters();
 
 	/**
 	 * Returns the meta object for class '{@link Data_Analysis.Classification <em>Classification</em>}'.
@@ -3321,6 +3500,81 @@ public interface Data_AnalysisPackage extends EPackage {
 	EAttribute getDocument_Name();
 
 	/**
+	 * Returns the meta object for class '{@link Data_Analysis.Cluster <em>Cluster</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cluster</em>'.
+	 * @see Data_Analysis.Cluster
+	 * @generated
+	 */
+	EClass getCluster();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Cluster#getDataPoints <em>Data Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data Points</em>'.
+	 * @see Data_Analysis.Cluster#getDataPoints()
+	 * @see #getCluster()
+	 * @generated
+	 */
+	EReference getCluster_DataPoints();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.Cluster#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Data_Analysis.Cluster#getName()
+	 * @see #getCluster()
+	 * @generated
+	 */
+	EAttribute getCluster_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Data_Analysis.Cluster#getCluster <em>Cluster</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Cluster</em>'.
+	 * @see Data_Analysis.Cluster#getCluster()
+	 * @see #getCluster()
+	 * @generated
+	 */
+	EReference getCluster_Cluster();
+
+	/**
+	 * Returns the meta object for class '{@link Data_Analysis.DataPoint <em>Data Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Point</em>'.
+	 * @see Data_Analysis.DataPoint
+	 * @generated
+	 */
+	EClass getDataPoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.DataPoint#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see Data_Analysis.DataPoint#getX()
+	 * @see #getDataPoint()
+	 * @generated
+	 */
+	EAttribute getDataPoint_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Data_Analysis.DataPoint#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see Data_Analysis.DataPoint#getY()
+	 * @see #getDataPoint()
+	 * @generated
+	 */
+	EAttribute getDataPoint_Y();
+
+	/**
 	 * Returns the meta object for enum '{@link Data_Analysis.CategoryType <em>Category Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3587,14 +3841,6 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_ANALYSIS_TASK__CATEGORY = eINSTANCE.getDataAnalysisTask_Category();
-
-		/**
-		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_ANALYSIS_TASK__ANALYSIS = eINSTANCE.getDataAnalysisTask_Analysis();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.DataSchemaImpl <em>Data Schema</em>}' class.
@@ -4053,6 +4299,14 @@ public interface Data_AnalysisPackage extends EPackage {
 		EAttribute CATEGORY__NAME = eINSTANCE.getCategory_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATEGORY__ANALYSIS = eINSTANCE.getCategory_Analysis();
+
+		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.DescriptionImpl <em>Description</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4081,6 +4335,30 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLUSTERING = eINSTANCE.getClustering();
+
+		/**
+		 * The meta object literal for the '<em><b>K</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLUSTERING__K = eINSTANCE.getClustering_K();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLUSTERING__INPUT_ATTRIBUTES = eINSTANCE.getClustering_InputAttributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Clusters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLUSTERING__CLUSTERS = eINSTANCE.getClustering_Clusters();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.impl.ClassificationImpl <em>Classification</em>}' class.
@@ -4421,6 +4699,66 @@ public interface Data_AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.ClusterImpl <em>Cluster</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.ClusterImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getCluster()
+		 * @generated
+		 */
+		EClass CLUSTER = eINSTANCE.getCluster();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Points</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLUSTER__DATA_POINTS = eINSTANCE.getCluster_DataPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLUSTER__NAME = eINSTANCE.getCluster_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Cluster</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLUSTER__CLUSTER = eINSTANCE.getCluster_Cluster();
+
+		/**
+		 * The meta object literal for the '{@link Data_Analysis.impl.DataPointImpl <em>Data Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Data_Analysis.impl.DataPointImpl
+		 * @see Data_Analysis.impl.Data_AnalysisPackageImpl#getDataPoint()
+		 * @generated
+		 */
+		EClass DATA_POINT = eINSTANCE.getDataPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_POINT__X = eINSTANCE.getDataPoint_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_POINT__Y = eINSTANCE.getDataPoint_Y();
 
 		/**
 		 * The meta object literal for the '{@link Data_Analysis.CategoryType <em>Category Type</em>}' enum.
